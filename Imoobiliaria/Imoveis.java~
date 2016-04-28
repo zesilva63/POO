@@ -97,7 +97,7 @@ public abstract class Imoveis {
      * @param preco_min
      */
     public void setPreco_Minimo(double preco_min) {
-        this.Preco_Minimo = preco_min;
+        this.Preco_Minimo = preco;
     }
     
 }

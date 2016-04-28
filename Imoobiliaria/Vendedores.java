@@ -1,15 +1,15 @@
 
 /**
- * Write a description of class Vendedores here.
+ * Classe destinada a designar um Vendedor na Imoobiliária.
  * 
- * @author (your name) 
+ * @author Grupo 60 
  * @version (a version number or a date)
  */
-public class Vendedores extends Utilizadores
-{
-    // instance variables - replace the example below with your own
-    private int x;
-
+public class Vendedores extends Utilizadores {
+    
+    // instance variables
+    
+    
     /**
      * Constructor for objects of class Vendedores
      */
