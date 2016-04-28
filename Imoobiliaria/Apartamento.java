@@ -1,23 +1,17 @@
-
 /**
  * Write a description of class Apartamento here.
  * 
- * @author (your name) 
+ * @author Grupo 60 
  * @version (a version number or a date)
  */
-public class Apartamento extends Imoveis
-{
-    // instance variables - replace the example below with your own
-    private int x;
+public class Apartamento extends Imovel {
 
-    /**
-     * Constructor for objects of class Apartamento
-     */
-    public Apartamento()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
+	private String tipo;
+	private double area;
+	private int quartos;
+	private int casas_Banho;
+	private int numero;
+	private int andar;
+	private boolean garagem;
 
 }

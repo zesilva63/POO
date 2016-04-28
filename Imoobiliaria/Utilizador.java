@@ -1,12 +1,14 @@
-
 /**
- * Abstract class Utilizadores - write a description of the class here
+ * Abstract class Utilizador - Classe relativa á implementação abstrata de um utilizador com a informação comum a todos eles.
  * 
  * @author Grupo 60
  * @version (version number or date here)
  */
-public abstract class Utilizadores
-{
+
+
+
+public abstract class Utilizador {
+    
     // instance variables
     private String Email;
     private String Nome;
@@ -17,7 +19,7 @@ public abstract class Utilizadores
     /**
      * Cria uma instância de um Utilizador
      */
-    public Utilizadores() {
+    public Utilizador() {
         this.Email = "n/a";
         this.Nome = "n/a";
         this.Password = "n/a";
@@ -29,7 +31,7 @@ public abstract class Utilizadores
      * Construtor por cópia.
      * @param c 
      */
-    public Utilizadores(Utilizadores c) {
+    public Utilizador(Utilizador c) {
         this.Email = c.getEmail();
         this.Nome = c.getNome();
         this.Password = c.getPassword();
@@ -45,7 +47,7 @@ public abstract class Utilizadores
      * @param morada
      * @param data_nascimento
      */
-    public Utilizadores(String email, String nome, String password, String morada, String data_nascimento) {
+    public Utilizador(String email, String nome, String password, String morada, String data_nascimento) {
         this.Email = email;
         this.Nome = nome;
         this.Password = password;

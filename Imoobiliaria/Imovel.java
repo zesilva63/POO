@@ -1,34 +1,35 @@
-
 /**
- * Abstract class Imoveis - write a description of the class here
+ * Abstract class Imovel - write a description of the class here
  * 
  * @author Grupo 60
  * @version (version number or date here)
  */
-public abstract class Imoveis {
+public abstract class Imovel {
     
-    // instance variables
+    // Variaveis de instância
     
+    /* Define a rua onde se encontra um Imovel */
     private String Rua;
+    /* Define o Preço de um Imovel */
     private double Preco;
+    /* Define o preço minimo de um Imovel, apenas visivel ao vendedor */
     private double Preco_Minimo;
 
     
     /**
-     * Cria uma instância de um Imovel
+     * Construtor de um Imovel
      */
-    public Imoveis() {
+    public Imovel() {
         this.Rua = "n/a";
         this.Preco = 0;
         this.Preco_Minimo = 0;
     }
-
     
     /**
      * Construtor por cópia.
      * @param c 
      */
-    public Imoveis(Imoveis c) {
+    public Imovel(Imovel c) {
         this.Rua = c.getRua();
         this.Preco = c.getPreco();
         this.Preco_Minimo = c.getPreco_Minimo();
@@ -41,7 +42,7 @@ public abstract class Imoveis {
      * @param preco
      * @param preco_min
      */
-    public Imoveis(String rua, double preco, double preco_min) {
+    public Imovel(String rua, double preco, double preco_min) {
         this.Rua = rua;
         this.Preco = preco;
         this.Preco_Minimo = preco_min;

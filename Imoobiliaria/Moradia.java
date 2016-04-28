@@ -1,33 +1,19 @@
-
 /**
  * Write a description of class Moradia here.
  * 
- * @author (your name) 
+ * @author Grupo 60 
  * @version (a version number or a date)
  */
-public class Moradia extends Imoveis
-{
-    // instance variables - replace the example below with your own
-    private int x;
+public class Moradia extends Imovel {
 
-    /**
-     * Constructor for objects of class Moradia
-     */
-    public Moradia()
-    {
-        // initialise instance variables
-        x = 0;
-    }
+	/* Variaveis de instância */
+	private String tipo;
+	private double area;
+	private double area_Coberta;
+	private double area_Terreno;
+	private int quartos;
+	private int casas_Banho;
+	private int numero;
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+
 }

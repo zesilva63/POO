@@ -1,33 +1,15 @@
-
 /**
  * Write a description of class Loja here.
  * 
- * @author (your name) 
+ * @author Grupo 60
  * @version (a version number or a date)
  */
-public class Loja extends Imoveis
-{
-    // instance variables - replace the example below with your own
-    private int x;
+public class Loja extends Imovel {
 
-    /**
-     * Constructor for objects of class Loja
-     */
-    public Loja()
-    {
-        // initialise instance variables
-        x = 0;
-    }
+	private double area;
+	private boolean wc;
+	private String tipo_negocio;
+	private int numero;
+	/* falta ver habitacional, se tiver guardar informaçao do apartamento */
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
 }

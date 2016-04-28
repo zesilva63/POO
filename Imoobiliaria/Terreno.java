@@ -1,33 +1,15 @@
-
 /**
  * Write a description of class Terreno here.
  * 
- * @author (your name) 
+ * @author Grupo 60
  * @version (a version number or a date)
  */
-public class Terreno extends Imoveis
-{
-    // instance variables - replace the example below with your own
-    private int x;
+public class Terreno extends Imovel {
 
-    /**
-     * Constructor for objects of class Terreno
-     */
-    public Terreno()
-    {
-        // initialise instance variables
-        x = 0;
-    }
+	private String tipo;
+	private float diametro_canalizacoes; /* milimetros */
+	private float carga_eletrica;
+	private boolean saneamento;
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+    
 }
