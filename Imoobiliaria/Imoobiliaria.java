@@ -6,11 +6,20 @@
  */
 
 
-import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class Imoobiliaria {
    
-    private List<Imovel> imoveis;
-    private List<Utilizador> users;
-
+    private Map<String,Imovel> imoveis;
+    private Map<String,Utilizador> utilizadores;
+    
+    
+    /**
+     * Construtor de um Imovel
+     */
+    public Imoobiliaria() {
+        this.imoveis = new TreeMap<>();
+        this.utilizadores = new TreeMap<>();
+    }
 }
