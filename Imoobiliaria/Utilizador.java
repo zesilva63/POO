@@ -144,4 +144,11 @@ public abstract class Utilizador {
         this.Data_Nascimento = data;
     }
     
+
+    /*
+     * Devolve uma cópia desta instância
+     * @return 
+     */
+     public abstract Utilizador clone();
+
 }

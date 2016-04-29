@@ -120,6 +120,10 @@ public class Apartamento extends Imovel {
     public void setGaragem(boolean garagem){
         this.garagem = garagem;
     }
+    
+    public Apartamento clone(){
+        return new Apartamento(this);
+    }
 
 
 }

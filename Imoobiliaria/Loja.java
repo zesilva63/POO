@@ -84,5 +84,9 @@ public class Loja extends Imovel {
         this.numero = numero;
     }
     
+    public Loja clone(){
+        return new Loja(this);
+    }
+    
     
 }

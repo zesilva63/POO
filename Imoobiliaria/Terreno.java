@@ -81,4 +81,8 @@ public class Terreno extends Imovel {
         this.saneamento = saneamento;
     }
     
+    public Terreno clone(){
+        return new Terreno(this);
+    }
+    
 }

@@ -101,4 +101,13 @@ public abstract class Imovel {
         this.Preco_Minimo = preco_min;
     }
     
+
+    /*
+     * Devolve uma cópia desta instância
+     * @return 
+    */
+     public abstract Imovel clone();
+    
+
+
 }

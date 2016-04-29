@@ -122,4 +122,8 @@ public class Moradia extends Imovel {
         this.numero = numero;
     }
     
+    public Moradia clone(){
+        return new Moradia(this);
+    }
+    
 }
