@@ -12,5 +12,5 @@ A74576
 A74185
 
 * Aluno 3:
-[Júlio Dinid Sá Peixoto](https://github.com/dinispeixoto)
+[Júlio Dinis Sá Peixoto](https://github.com/dinispeixoto)
 
