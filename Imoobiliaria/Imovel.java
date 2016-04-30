@@ -1,8 +1,7 @@
 /**
- * Abstract class Imovel - write a description of the class here
+ * Classe relativa a um Imovel.
  *
  * @author Grupo 60
- * @version (version number or date here)
  */
 public abstract class Imovel {
 

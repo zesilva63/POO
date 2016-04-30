@@ -1,8 +1,7 @@
 /**
- * Write a description of class Loja here.
+ * Classe relativa a uma Loja.
  *
  * @author Grupo 60
- * @version (a version number or a date)
  */
 public class Loja extends Imovel {
 

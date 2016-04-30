@@ -2,7 +2,6 @@
  * Abstract class Utilizador - Classe relativa á implementação abstrata de um utilizador com a informação comum a todos eles.
  *
  * @author Grupo 60
- * @version (version number or date here)
  */
 
 

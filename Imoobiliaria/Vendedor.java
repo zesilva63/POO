@@ -2,7 +2,6 @@
  * Classe destinada a designar um Vendedor na Imoobiliária.
  *
  * @author Grupo 60
- * @version (a version number or a date)
  */
 
 import java.util.Set;

@@ -1,8 +1,7 @@
 /**
- * Write a description of class Moradia here.
+ * Classe relativa a uma Moradia.
  *
  * @author Grupo 60
- * @version (a version number or a date)
  */
 public class Moradia extends Imovel {
 
