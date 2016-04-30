@@ -15,10 +15,10 @@ public class Imoobiliaria {
 
 
     /**
-     * Construtor de um Imovel
+     * Construtor de uma Imoobiliaria
      */
     public Imoobiliaria() {
-        this.imoveis = new TreeMap<>();
-        this.utilizadores = new TreeMap<>();
+        this.imoveis = new TreeMap<String,Imovel>();
+        this.utilizadores = new TreeMap<String,Utilizador>();
     }
 }
