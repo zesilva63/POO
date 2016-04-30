@@ -15,22 +15,24 @@ public class Vendedor extends Utilizador {
     
 
     public Vendedor(){
-        this("","","","","");
-        portfolio = new TreeSet<>();
-        vendidos = new TreeSet<>();
+        super("","","","","");
+        this.portfolio = new TreeSet<Imovel>();
+        this.vendidos = new TreeSet<Imovel>();
     }
     
 
     public Vendedor(Vendedor v){
         super(v);
-        portfolio = new TreeSet<>();
-        vendidos = new TreeSet<>();
+        this.portfolio = v.getPortfolio();
+        this.vendidos = v.getVendidos();
     }
     
-    public Vendedor(String email, String nome, String password, String morada, String data_nascimento){
+    public Vendedor(String email, String nome, String password, String morada, String data_nascimento, Set<Imovel> p, Set<Imovel> v){
         super(email, nome, password, morada, data_nascimento);
-        portfolio = new TreeSet<>();
-        vendidos = new TreeSet<>();
+        this.portfolio = new TreeSet<Imovel>();
+        setPortfolio(p);
+        this.vendidos = new TreeSet<Imovel>();
+        setVendidos(v);
     }
     
     
@@ -39,17 +41,17 @@ public class Vendedor extends Utilizador {
     }
    
 
-    public Set<Imovel> getvendidos(){
+    public Set<Imovel> getVendidos(){
         return this.vendidos.stream().map(i -> {return i.clone();}).collect(Collectors.toSet());
     }
    
 
-    public void setportfolio(Set<Imovel> imoveis){
+    public void setPortfolio(Set<Imovel> imoveis){
         this.portfolio = imoveis.stream().map(i -> {return i.clone();}).collect(Collectors.toSet());
     }
    
 
-    public void setvendidos(Set<Imovel> imoveis){
+    public void setVendidos(Set<Imovel> imoveis){
         this.vendidos = imoveis.stream().map(i -> {return i.clone();}).collect(Collectors.toSet());
     }
    

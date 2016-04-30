@@ -11,32 +11,37 @@ import java.util.stream.Collectors;
 
 public class Comprador extends Utilizador {
 
+    // Variaveis de instância
+
 	private Set<Imovel> favoritos;
     
 
+
     public Comprador(){
-        this("","","","","");
-        favoritos = new TreeSet<>();
+        super("","","","","");
+        favoritos = new TreeSet<Imovel>();
     }
     
 
     public Comprador(Comprador v){
         super(v);
-        favoritos = new TreeSet<>();
+        this.favoritos = v.getFavoritos();
     }
     
-    public Comprador(String email, String nome, String password, String morada, String data_nascimento){
+    public Comprador(String email, String nome, String password, String morada, String data_nascimento, Set<Imovel> f){
         super(email, nome, password, morada, data_nascimento);
-        favoritos = new TreeSet<>();
+        favoritos = new TreeSet<Imovel>();
+        setFavoritos(f);
     }
     
+
     
-    public Set<Imovel> getfavoritos(){
+    public Set<Imovel> getFavoritos(){
         return this.favoritos.stream().map(i -> {return i.clone();}).collect(Collectors.toSet());
     }
    
 
-    public void setfavoritos(Set<Imovel> imoveis){
+    public void setFavoritos(Set<Imovel> imoveis){
         this.favoritos = imoveis.stream().map(i -> {return i.clone();}).collect(Collectors.toSet());
     }
    
@@ -45,5 +50,7 @@ public class Comprador extends Utilizador {
         return new Comprador(this);
     }
 
+
+    
 
 }

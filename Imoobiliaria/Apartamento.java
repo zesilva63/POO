@@ -28,6 +28,7 @@ public class Apartamento extends Imovel {
         this.garagem = false;
     }
     
+
     /**
      * Construtor por cópia.
      * @param c 
@@ -65,66 +66,99 @@ public class Apartamento extends Imovel {
         this.garagem = garagem;
     }
 
+
     public String getTipo(){
         return this.tipo;
     }
     
+
     public void setTipo(String tipo){
         this.tipo = tipo;
     }
     
+
     public double getArea(){
         return this.area;
     }
     
+
     public void setArea(double area){
         this.area = area;
     }
     
+
     public int getQuartos(){
         return this.quartos;
     }
     
+
     public void setQuartos(int quartos){
         this.quartos = quartos;
     }
     
+
     public int getCasasBanho(){
         return this.casas_Banho;
     }
     
+
     public void setCasasBanho(int casas_banho){
         this.casas_Banho = casas_Banho;
     }
     
+
     public int getNumero(){
         return this.numero;
     }
     
+
     public void setNumero(int numero){
         this.numero = numero;
     }
     
+
     public int getAndar(){
         return this.andar;
     }
     
+
     public void setAndar(int andar){
         this.andar = andar;
     }
     
+
     public boolean getGaragem(){
         return this.garagem;
     }
     
+
     public void setGaragem(boolean garagem){
         this.garagem = garagem;
     }
     
+
     public Apartamento clone(){
         return new Apartamento(this);
     }
+    
 
+    /**
+     * Compara a igualdade com outro objecto
+     * @param obj
+     * @return 
+     */
+    public boolean equals(Object obj) {
+        if(obj == this) {
+            return true;
+        }
+        if(obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Apartamento o = (Apartamento) obj;
+        return super.equals(o) && o.getTipo().equals(this.tipo) && o.getArea() == this.area && o.getQuartos() == this.quartos
+               && o.getCasasBanho() == this.casas_Banho && o.getNumero() == this.numero && o.getAndar() == this.andar &&
+               o.getGaragem() == this.garagem;
+    }
 
 }
 

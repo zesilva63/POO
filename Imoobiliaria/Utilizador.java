@@ -9,7 +9,7 @@
 
 public abstract class Utilizador {
     
-    // instance variables
+    // Variaveis de instância
     private String Email;
     private String Nome;
     private String Password;
@@ -150,5 +150,23 @@ public abstract class Utilizador {
      * @return 
      */
      public abstract Utilizador clone();
+
+
+     /**
+     * Compara a igualdade com outro objecto
+     * @param obj
+     * @return 
+     */
+    public boolean equals(Object obj) {
+        if(obj == this) {
+            return true;
+        }
+        if(obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Utilizador o = (Utilizador) obj;
+        return o.getEmail().equals(this.Email) && o.getNome().equals(this.Nome) && o.getPassword().equals(this.Password) 
+               && o.getMorada().equals(this.Morada) && o.getData_Nascimento().equals(this.Data_Nascimento);
+    }
 
 }

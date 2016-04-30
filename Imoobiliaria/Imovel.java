@@ -107,7 +107,23 @@ public abstract class Imovel {
      * @return 
     */
      public abstract Imovel clone();
-    
+
+     /**
+     * Compara a igualdade com outro objecto
+     * @param obj
+     * @return 
+     */
+    public boolean equals(Object obj) {
+        if(obj == this) {
+            return true;
+        }
+        if(obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Imovel o = (Imovel) obj;
+        return o.getRua().equals(this.Rua) && o.getPreco() == this.Preco && 
+                o.getPreco_Minimo() == this.Preco_Minimo;
+    }
 
 
 }
