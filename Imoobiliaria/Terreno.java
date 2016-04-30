@@ -1,16 +1,18 @@
 /**
- * Write a description of class Terreno here.
- * 
+ * Classe que designa um Terreno.
+ *
  * @author Grupo 60
- * @version (a version number or a date)
  */
 public class Terreno extends Imovel {
 
+    // Variaveis de instância
+    private int area;
     private String tipo;
     private float diametro_canalizacoes; /* milimetros */
     private float carga_eletrica;
     private boolean saneamento;
-    
+
+
     /**
      * Construtor de um Terreno
      */
@@ -21,10 +23,11 @@ public class Terreno extends Imovel {
         this.carga_eletrica = 0;
         this.saneamento = false;
     }
-    
+
+
     /**
      * Construtor por cópia.
-     * @param c 
+     * @param c
     */
     public Terreno(Terreno c) {
         super(c);
@@ -33,13 +36,14 @@ public class Terreno extends Imovel {
         this.carga_eletrica = c.getCargaEletrica();
         this.saneamento = c.getSaneamento();
     }
-    
+
+
     /**
      * Construtor por parametro
      * @param tipo
      * @param diametro_canalizacoes
      * @param carga_eletrica
-     * @param saneamento 
+     * @param saneamento
      */
     public Terreno(String rua, double preco, double preco_min, String tipo, float diametro_canalizacoes, float carga_eletrica, boolean saneamento) {
         super(rua,preco,preco_min);
@@ -49,40 +53,113 @@ public class Terreno extends Imovel {
         this.saneamento = saneamento;
     }
 
+
+    /**
+     * Obter a Area de um Terreno.
+     * @return
+     */
+    public int getArea(){
+        return this.area;
+    }
+
+    /**
+    * Define a Aréa de um Terreno
+    * @param a
+    */
+    public void setArea(int a){
+        this.area = a;
+    }
+
+    /**
+     * Obter o tipo de um Terreno, se para contrução de habitações ou de armazens.
+     * @return
+     */
     public String getTipo(){
         return this.tipo;
     }
-    
-    public void setTipo(String tipo){
-        this.tipo = tipo;
+
+    /**
+    * Define o Tipo de um Terreno
+    * @param t
+    */
+    public void setTipo(String t){
+        this.tipo = t;
     }
-    
+
+    /**
+     * Obter Diametro das Canalizações de um Terreno.
+     * @return
+     */
     public float getDiametroCanalizacoes(){
         return this.diametro_canalizacoes;
     }
-    
-    public void setDiametroCanalizacoes(float diametro_canalizacoes){
-        this.diametro_canalizacoes = diametro_canalizacoes;
+
+    /**
+    * Define o Diametro das Canalizações de um Terreno
+    * @param diametro
+    */
+    public void setDiametroCanalizacoes(float diametro){
+        this.diametro_canalizacoes = diametro;
     }
-    
+
+    /**
+     * Obter a Carga Eletrica possivel de um Terreno se o mesmo a tiver.
+     * @return
+     */
     public float getCargaEletrica(){
         return this.carga_eletrica;
     }
-    
-    public void setCargaEletrica(float carga_eletrica){
-        this.carga_eletrica = carga_eletrica;
+
+    /**
+    * Define a Carga Eletrica permitida de um Terreno.
+    * @param carga
+    */
+    public void setCargaEletrica(float carga){
+        this.carga_eletrica = carga;
     }
-    
+
+    /**
+     * Obter o valor de existencia de Saneamento num Terreno.
+     * @return
+     */
     public boolean getSaneamento(){
         return this.saneamento;
     }
-    
-    public void setSaneamento(boolean saneamento){
-        this.saneamento = saneamento;
+
+    /**
+    * Define a existência de Saneamento num Terreno
+    * @param valor
+    */
+    public void setSaneamento(boolean valor){
+        this.saneamento = valor;
     }
-    
+
+
+    /*
+     * Devolve uma cópia desta instância Terreno.
+     * @return
+     */
     public Terreno clone(){
         return new Terreno(this);
     }
-    
+
+
+    /**
+     * Compara a igualdade com outro objecto
+     * @param obj
+     * @return
+     */
+    public boolean equals(Object obj) {
+        if(obj == this) {
+            return true;
+        }
+        if(obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Terreno o = (Terreno) obj;
+        return super.equals(o) && o.getArea() == this.area && o.getTipo().equals(this.tipo)
+        && o.getDiametroCanalizacoes() == this.diametro_canalizacoes
+        && o.getCargaEletrica() == this.carga_eletrica && o.getSaneamento() == this.saneamento;
+    }
+
 }

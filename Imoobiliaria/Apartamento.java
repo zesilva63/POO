@@ -1,7 +1,7 @@
 /**
  * Write a description of class Apartamento here.
- * 
- * @author Grupo 60 
+ *
+ * @author Grupo 60
  * @version (a version number or a date)
  */
 public class Apartamento extends Imovel {
@@ -13,7 +13,7 @@ public class Apartamento extends Imovel {
     private int numero;
     private int andar;
     private boolean garagem;
-    
+
     /**
      * Construtor de um Apartamento
      */
@@ -27,11 +27,10 @@ public class Apartamento extends Imovel {
         this.andar = 0;
         this.garagem = false;
     }
-    
 
     /**
      * Construtor por cópia.
-     * @param c 
+     * @param c
      */
     public Apartamento(Apartamento c) {
         super(c);
@@ -43,8 +42,7 @@ public class Apartamento extends Imovel {
         this.andar = c.getAndar();
         this.garagem = c.getGaragem();
     }
-    
-    
+
     /**
      * Construtor por parametro
      * @param tipo
@@ -70,82 +68,86 @@ public class Apartamento extends Imovel {
     public String getTipo(){
         return this.tipo;
     }
-    
+
 
     public void setTipo(String tipo){
         this.tipo = tipo;
     }
-    
+
 
     public double getArea(){
         return this.area;
     }
-    
+
 
     public void setArea(double area){
         this.area = area;
     }
-    
+
 
     public int getQuartos(){
         return this.quartos;
     }
-    
+
 
     public void setQuartos(int quartos){
         this.quartos = quartos;
     }
-    
+
 
     public int getCasasBanho(){
         return this.casas_Banho;
     }
-    
+
 
     public void setCasasBanho(int casas_banho){
         this.casas_Banho = casas_Banho;
     }
-    
+
 
     public int getNumero(){
         return this.numero;
     }
-    
+
 
     public void setNumero(int numero){
         this.numero = numero;
     }
-    
+
 
     public int getAndar(){
         return this.andar;
     }
-    
+
 
     public void setAndar(int andar){
         this.andar = andar;
     }
-    
+
 
     public boolean getGaragem(){
         return this.garagem;
     }
-    
+
 
     public void setGaragem(boolean garagem){
         this.garagem = garagem;
     }
-    
 
+
+    /*
+     * Devolve uma cópia desta instância Apartamento.
+     * @return
+     */
     public Apartamento clone(){
         return new Apartamento(this);
     }
-    
+
 
     /**
      * Compara a igualdade com outro objecto
      * @param obj
-     * @return 
+     * @return
      */
     public boolean equals(Object obj) {
         if(obj == this) {
@@ -161,4 +163,3 @@ public class Apartamento extends Imovel {
     }
 
 }
-

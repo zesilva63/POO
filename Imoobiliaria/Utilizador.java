@@ -1,6 +1,6 @@
 /**
  * Abstract class Utilizador - Classe relativa á implementação abstrata de um utilizador com a informação comum a todos eles.
- * 
+ *
  * @author Grupo 60
  * @version (version number or date here)
  */
@@ -8,35 +8,35 @@
 
 
 public abstract class Utilizador {
-    
+
     // Variaveis de instância
-    private String Email;
-    private String Nome;
-    private String Password;
-    private String Morada;
-    private String Data_Nascimento;
-    
+    private String email;
+    private String nome;
+    private String password;
+    private String morada;
+    private String data_Nascimento;
+
     /**
      * Cria uma instância de um Utilizador
      */
     public Utilizador() {
-        this.Email = "n/a";
-        this.Nome = "n/a";
-        this.Password = "n/a";
-        this.Morada = "n/a";
-        this.Data_Nascimento = "n/a";
+        this.email = "n/a";
+        this.nome = "n/a";
+        this.password = "n/a";
+        this.morada = "n/a";
+        this.data_Nascimento = "n/a";
     }
 
     /**
      * Construtor por cópia.
-     * @param c 
+     * @param c
      */
     public Utilizador(Utilizador c) {
-        this.Email = c.getEmail();
-        this.Nome = c.getNome();
-        this.Password = c.getPassword();
-        this.Morada = c.getMorada();
-        this.Data_Nascimento = c.getData_Nascimento();
+        this.email = c.getEmail();
+        this.nome = c.getNome();
+        this.password = c.getPassword();
+        this.morada = c.getMorada();
+        this.data_Nascimento = c.getData_Nascimento();
     }
 
     /**
@@ -48,106 +48,106 @@ public abstract class Utilizador {
      * @param data_nascimento
      */
     public Utilizador(String email, String nome, String password, String morada, String data_nascimento) {
-        this.Email = email;
-        this.Nome = nome;
-        this.Password = password;
-        this.Morada = morada;
-        this.Data_Nascimento = data_nascimento;
+        this.email = email;
+        this.nome = nome;
+        this.password = password;
+        this.morada = morada;
+        this.data_Nascimento = data_nascimento;
     }
 
     /**
      * Obter o Email de um Utilizador.
-     * @return 
+     * @return
      */
     public String getEmail() {
-        return this.Email;
+        return this.email;
     }
-    
-    
+
+
     /**
      * Define o Email de um Utilizador
-     * @param email
+     * @param n_email
      */
-    public void setEmail(String email) {
-        this.Email = email;
+    public void setEmail(String n_email) {
+        this.email = n_email;
     }
-    
-    
+
+
     /**
      * Obter o Nome de um Utilizador.
-     * @return 
+     * @return
      */
     public String getNome() {
-        return this.Nome;
+        return this.nome;
     }
-    
-    
+
+
     /**
      * Define o Nome de um Utilizador
-     * @param nome
+     * @param n_nome
      */
-    public void setNome(String nome) {
-        this.Nome = nome;
+    public void setNome(String n_nome) {
+        this.nome = n_nome;
     }
-    
-    
+
+
     /**
      * Obter a Password de um Utilizador.
-     * @return 
+     * @return
      */
     public String getPassword() {
-        return this.Password;
+        return this.password;
     }
-    
-    
+
+
     /**
      * Define a Password de um Utilizador
-     * @param password
+     * @param pass
      */
-    public void setPassword(String password) {
-        this.Password = password;
+    public void setPassword(String pass) {
+        this.password = pass;
     }
-    
-    
+
+
     /**
      * Obter a Morada de um Utilizador.
-     * @return 
+     * @return
      */
     public String getMorada() {
-        return this.Morada;
+        return this.morada;
     }
-    
-    
+
+
     /**
      * Define a Morada de um Utilizador
-     * @param morada
+     * @param n_morada
      */
-    public void setMorada(String morada) {
-        this.Morada = morada;
+    public void setMorada(String n_morada) {
+        this.morada = n_morada;
     }
-    
-    
+
+
     /**
      * Obter a Data de Nascimento de um Utilizador.
-     * @return 
+     * @return
      */
     public String getData_Nascimento() {
-        return this.Data_Nascimento;
+        return this.data_Nascimento;
     }
-    
-    
+
+
     /**
      * Define a Data de Nascimento de um Utilizador
      * @param data
      */
     public void setData_Nascimento(String data) {
-        this.Data_Nascimento = data;
+        this.data_Nascimento = data;
     }
-    
+
 
     /*
      * Devolve uma cópia desta instância
-     * @return 
+     * @return
      */
      public abstract Utilizador clone();
 
@@ -155,7 +155,7 @@ public abstract class Utilizador {
      /**
      * Compara a igualdade com outro objecto
      * @param obj
-     * @return 
+     * @return
      */
     public boolean equals(Object obj) {
         if(obj == this) {
@@ -165,8 +165,8 @@ public abstract class Utilizador {
             return false;
         }
         Utilizador o = (Utilizador) obj;
-        return o.getEmail().equals(this.Email) && o.getNome().equals(this.Nome) && o.getPassword().equals(this.Password) 
-               && o.getMorada().equals(this.Morada) && o.getData_Nascimento().equals(this.Data_Nascimento);
+        return o.getEmail().equals(this.email) && o.getNome().equals(this.nome) && o.getPassword().equals(this.password)
+               && o.getMorada().equals(this.morada) && o.getData_Nascimento().equals(this.data_Nascimento);
     }
 
 }

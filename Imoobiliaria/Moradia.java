@@ -1,7 +1,7 @@
 /**
  * Write a description of class Moradia here.
- * 
- * @author Grupo 60 
+ *
+ * @author Grupo 60
  * @version (a version number or a date)
  */
 public class Moradia extends Imovel {
@@ -28,10 +28,10 @@ public class Moradia extends Imovel {
         this.casas_Banho = 0;
         this.numero = 0;
     }
-    
+
     /**
      * Construtor por cópia.
-     * @param c 
+     * @param c
      */
     public Moradia(Moradia c) {
         super(c);
@@ -43,7 +43,7 @@ public class Moradia extends Imovel {
         this.casas_Banho = c.getCasasBanho();
         this.numero = c.getNumero();
     }
-    
+
     /**
      * Construtor por parametro
      * @param tipo
@@ -64,66 +64,106 @@ public class Moradia extends Imovel {
         this.casas_Banho = casas_Banho;
         this.numero = numero;
     }
-    
-    
+
+
     public String getTipo(){
         return this.tipo;
     }
-    
+
+
     public void setTipo(String tipo){
         this.tipo = tipo;
     }
-    
+
+
     public double getArea(){
         return this.area;
     }
-    
+
+
     public void setArea(double area){
         this.area = area;
     }
-    
+
+
     public double getAreaCoberta(){
         return this.area_Coberta;
     }
-    
+
+
     public void setAreaCoberta(double area_Coberta){
         this.area_Coberta = area_Coberta;
     }
-    
+
+
     public double getAreaTerreno(){
         return this.area_Terreno;
     }
-    
+
+
     public void setAreaTerreno(double area_Terreno){
         this.area_Terreno = area_Terreno;
     }
-    
+
+
     public int getQuartos(){
         return this.quartos;
     }
-    
+
+
     public void setQuartos(int quartos){
         this.quartos = quartos;
     }
-    
+
+
     public int getCasasBanho(){
         return this.casas_Banho;
     }
-    
+
+
     public void setCasasBanho(int casas_Banho){
         this.casas_Banho = casas_Banho;
     }
-    
+
+
     public int getNumero(){
         return this.numero;
     }
-    
+
+
     public void setNumero(int numero){
         this.numero = numero;
     }
-    
+
+
+    /*
+     * Devolve uma cópia desta instância Moradia.
+     * @return
+     */
     public Moradia clone(){
         return new Moradia(this);
     }
-    
+
+
+    /**
+     * Compara a igualdade com outro objecto
+     * @param obj
+     * @return
+     */
+    public boolean equals(Object obj) {
+        if(obj == this) {
+            return true;
+        }
+        if(obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Moradia o = (Moradia) obj;
+        return super.equals(o) && o.getTipo().equals(this.tipo) && o.getArea() == this.area
+               && o.getAreaCoberta() == this.area_Coberta && o.getAreaTerreno() == this.area_Terreno
+               && o.getQuartos() == this.quartos && o.getCasasBanho() == this.casas_Banho
+               && o.getNumero() == this.numero;
+    }
+
+
+
 }

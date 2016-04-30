@@ -1,13 +1,13 @@
 /**
  * Abstract class Imovel - write a description of the class here
- * 
+ *
  * @author Grupo 60
  * @version (version number or date here)
  */
 public abstract class Imovel {
-    
+
     // Variaveis de instância
-    
+
     /* Define a rua onde se encontra um Imovel */
     private String Rua;
     /* Define o Preço de um Imovel */
@@ -15,7 +15,7 @@ public abstract class Imovel {
     /* Define o preço minimo de um Imovel, apenas visivel ao vendedor */
     private double Preco_Minimo;
 
-    
+
     /**
      * Construtor de um Imovel
      */
@@ -24,10 +24,10 @@ public abstract class Imovel {
         this.Preco = 0;
         this.Preco_Minimo = 0;
     }
-    
+
     /**
      * Construtor por cópia.
-     * @param c 
+     * @param c
      */
     public Imovel(Imovel c) {
         this.Rua = c.getRua();
@@ -35,7 +35,6 @@ public abstract class Imovel {
         this.Preco_Minimo = c.getPreco_Minimo();
     }
 
-    
     /**
      * Construtor por parametro
      * @param rua
@@ -47,17 +46,16 @@ public abstract class Imovel {
         this.Preco = preco;
         this.Preco_Minimo = preco_min;
     }
-    
-    
+
+
     /**
      * Obter a Rua de um Imovel.
-     * @return 
+     * @return
      */
     public String getRua() {
         return this.Rua;
     }
-    
-    
+
     /**
      * Define a Rua de um Imovel
      * @param rua
@@ -65,11 +63,10 @@ public abstract class Imovel {
     public void setRua(String rua) {
         this.Rua = rua;
     }
-    
-    
+
     /**
      * Obter o Preco de um Imovel.
-     * @return 
+     * @return
      */
     public double getPreco() {
         return this.Preco;
@@ -82,17 +79,15 @@ public abstract class Imovel {
     public void setPreco(double preco) {
         this.Preco = preco;
     }
-    
-    
+
     /**
      * Obter o Preco Minimo de um Imovel.
-     * @return 
+     * @return
      */
     public double getPreco_Minimo() {
         return this.Preco_Minimo;
     }
-    
-    
+
     /**
      * Define o Preco Minimo de um Imovel
      * @param preco_min
@@ -100,18 +95,19 @@ public abstract class Imovel {
     public void setPreco_Minimo(double preco_min) {
         this.Preco_Minimo = preco_min;
     }
-    
+
 
     /*
-     * Devolve uma cópia desta instância
-     * @return 
+     * Devolve uma cópia desta instância Imóvel.
+     * @return
     */
      public abstract Imovel clone();
+
 
      /**
      * Compara a igualdade com outro objecto
      * @param obj
-     * @return 
+     * @return
      */
     public boolean equals(Object obj) {
         if(obj == this) {
@@ -121,7 +117,7 @@ public abstract class Imovel {
             return false;
         }
         Imovel o = (Imovel) obj;
-        return o.getRua().equals(this.Rua) && o.getPreco() == this.Preco && 
+        return o.getRua().equals(this.Rua) && o.getPreco() == this.Preco &&
                 o.getPreco_Minimo() == this.Preco_Minimo;
     }
 
