@@ -159,4 +159,22 @@ public abstract class Utilizador {
                && o.getMorada().equals(this.morada) && o.getData_Nascimento().equals(this.data_Nascimento);
     }
 
+    // TO STRING
+
+    public String toString() {
+        StringBuilder str;
+        str = new StringBuilder();
+        str.append("Email: ");
+        str.append(this.email);
+        str.append("Nome: ");
+        str.append(this.nome);
+        str.append("Password: ");
+        str.append(this.password);
+        str.append("Morada: ");
+        str.append(this.morada);
+        str.append("Data de Nascimento: ");
+        str.append(this.data_Nascimento);
+        return str.toString();
+    }
+
 }

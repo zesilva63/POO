@@ -9,11 +9,11 @@ public abstract class Imovel {
     // VARIAVEIS DE INSTÂNCIA
 
     /* Define a rua onde se encontra um Imovel */
-    private String Rua;
+    private String rua;
     /* Define o Preço de um Imovel */
-    private double Preco;
+    private double preco;
     /* Define o preço minimo de um Imovel, apenas visivel ao vendedor */
-    private double Preco_Minimo;
+    private double preco_Minimo;
 
 
    // CONSTRUTORES
@@ -22,9 +22,9 @@ public abstract class Imovel {
      * Construtor vazio de um Imovel
      */
     public Imovel() {
-        this.Rua = "n/a";
-        this.Preco = 0;
-        this.Preco_Minimo = 0;
+        this.rua = "n/a";
+        this.preco = 0;
+        this.preco_Minimo = 0;
     }
 
     /**
@@ -32,9 +32,9 @@ public abstract class Imovel {
      * @param c
      */
     public Imovel(Imovel i) {
-        this.Rua = i.getRua();
-        this.Preco = i.getPreco();
-        this.Preco_Minimo = i.getPreco_Minimo();
+        this.rua = i.getRua();
+        this.preco = i.getPreco();
+        this.preco_Minimo = i.getPreco_Minimo();
     }
 
     /**
@@ -44,9 +44,9 @@ public abstract class Imovel {
      * @param preco_min
      */
     public Imovel(String rua, double preco, double preco_min) {
-        this.Rua = rua;
-        this.Preco = preco;
-        this.Preco_Minimo = preco_min;
+        this.rua = rua;
+        this.preco = preco;
+        this.preco_Minimo = preco_min;
     }
 
 
@@ -57,7 +57,7 @@ public abstract class Imovel {
      * @return
      */
     public String getRua() {
-        return this.Rua;
+        return this.rua;
     }
 
     /**
@@ -65,7 +65,7 @@ public abstract class Imovel {
      * @param rua
      */
     public void setRua(String rua) {
-        this.Rua = rua;
+        this.rua = rua;
     }
 
     /**
@@ -73,7 +73,7 @@ public abstract class Imovel {
      * @return
      */
     public double getPreco() {
-        return this.Preco;
+        return this.preco;
     }
 
     /**
@@ -81,7 +81,7 @@ public abstract class Imovel {
      * @param preco
      */
     public void setPreco(double preco) {
-        this.Preco = preco;
+        this.preco = preco;
     }
 
     /**
@@ -89,7 +89,7 @@ public abstract class Imovel {
      * @return
      */
     public double getPreco_Minimo() {
-        return this.Preco_Minimo;
+        return this.preco_Minimo;
     }
 
     /**
@@ -97,7 +97,7 @@ public abstract class Imovel {
      * @param preco_min
      */
     public void setPreco_Minimo(double preco_min) {
-        this.Preco_Minimo = preco_min;
+        this.preco_Minimo = preco_min;
     }
 
     // CLONE
@@ -124,8 +124,23 @@ public abstract class Imovel {
             return false;
         }
         Imovel o = (Imovel) obj;
-        return o.getRua().equals(this.Rua) && o.getPreco() == this.Preco &&
-                o.getPreco_Minimo() == this.Preco_Minimo;
+        return o.getRua().equals(this.rua) && o.getPreco() == this.preco &&
+                o.getPreco_Minimo() == this.preco_Minimo;
+    }
+
+
+    // TO STRING
+
+    public String toString() {
+        StringBuilder str;
+        str = new StringBuilder();
+        str.append("Rua: ");
+        str.append(this.rua);
+        str.append("Preço: ");
+        str.append(this.preco);
+        str.append("Preço Minimo: ");
+        str.append(this.preco_Minimo);
+        return str.toString();
     }
 
 }
