@@ -162,4 +162,24 @@ public class Terreno extends Imovel {
         && o.getCargaEletrica() == this.carga_eletrica && o.getSaneamento() == this.saneamento;
     }
 
+    // TO STRING
+
+    public String toString() {
+      StringBuilder str;
+      str = new StringBuilder();
+      str.append(super.toString()).append("\n");
+      str.append("Tipo de Terreno: ");
+      str.append(this.tipo);
+      str.append("Área: ");
+      str.append(this.area);
+      str.append("Diametro das Canalizações: ");
+      str.append(this.diametro_canalizacoes);
+      str.append("Capacidade Elétrica: ");
+      str.append(this.carga_eletrica);
+      str.append("Saneamento: ");
+      str.append(this.saneamento);
+      return str.toString();
+   }
+
 }
+

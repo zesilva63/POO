@@ -17,7 +17,7 @@ public abstract class Utilizador {
     private String data_Nascimento;
 
     /**
-     * Cria uma instância de um Utilizador
+     * Cria uma instância de um Utilizador.
      */
     public Utilizador() {
         this.email = "n/a";
@@ -55,6 +55,7 @@ public abstract class Utilizador {
         this.data_Nascimento = data_nascimento;
     }
 
+
     /**
      * Obter o Email de um Utilizador.
      * @return
@@ -62,7 +63,6 @@ public abstract class Utilizador {
     public String getEmail() {
         return this.email;
     }
-
 
     /**
      * Define o Email de um Utilizador
@@ -72,7 +72,6 @@ public abstract class Utilizador {
         this.email = n_email;
     }
 
-
     /**
      * Obter o Nome de um Utilizador.
      * @return
@@ -80,7 +79,6 @@ public abstract class Utilizador {
     public String getNome() {
         return this.nome;
     }
-
 
     /**
      * Define o Nome de um Utilizador
@@ -90,7 +88,6 @@ public abstract class Utilizador {
         this.nome = n_nome;
     }
 
-
     /**
      * Obter a Password de um Utilizador.
      * @return
@@ -98,7 +95,6 @@ public abstract class Utilizador {
     public String getPassword() {
         return this.password;
     }
-
 
     /**
      * Define a Password de um Utilizador
@@ -108,7 +104,6 @@ public abstract class Utilizador {
         this.password = pass;
     }
 
-
     /**
      * Obter a Morada de um Utilizador.
      * @return
@@ -116,7 +111,6 @@ public abstract class Utilizador {
     public String getMorada() {
         return this.morada;
     }
-
 
     /**
      * Define a Morada de um Utilizador
@@ -126,7 +120,6 @@ public abstract class Utilizador {
         this.morada = n_morada;
     }
 
-
     /**
      * Obter a Data de Nascimento de um Utilizador.
      * @return
@@ -134,7 +127,6 @@ public abstract class Utilizador {
     public String getData_Nascimento() {
         return this.data_Nascimento;
     }
-
 
     /**
      * Define a Data de Nascimento de um Utilizador
@@ -144,13 +136,11 @@ public abstract class Utilizador {
         this.data_Nascimento = data;
     }
 
-
     /*
      * Devolve uma cópia desta instância
      * @return
      */
      public abstract Utilizador clone();
-
 
      /**
      * Compara a igualdade com outro objecto

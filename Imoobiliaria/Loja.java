@@ -6,92 +6,122 @@
  */
 public class Loja extends Imovel {
 
+   // VARIAVEIS DE INSTÂNCIA
+
     private double area;
     private boolean wc;
-    private String tipo_negocio;
+    private String tipo_Negocio;
     private int numero;
-    /* falta ver habitacional, se tiver guardar informaçao do apartamento */
+    private Apartamento apartamento;
 
+    // CONSTRUTORES
 
    /**
-    * Construtor de uma Loja
+    * Construtor vazio de uma Loja
     */
     public Loja(){
         super();
         this.area = 0;
         this.wc = false;
-        this.tipo_negocio = "n/a";
+        this.tipo_Negocio = "n/a";
         this.numero = 0;
     }
 
    /**
-     * Construtor por cópia.
+     * Construtor por cópia de uma Loja.
      * @param c
    */
     public Loja(Loja c) {
         super(c);
         this.area = c.getArea();
         this.wc = c.getWC();
-        this.tipo_negocio = c.getTipo_Negocio();
+        this.tipo_Negocio = c.getTipo_Negocio();
         this.numero = c.getNumero();
     }
 
    /**
-     * Construtor por parametro
+     * Construtor por parametro de uma Loja.
      * @param area
      * @param wc
      * @param tipo_negocio
      * @param numero
    */
-
    public Loja(String rua, double preco, double preco_min, double area, boolean wc, String tipo_negocio,int numero){
        super(rua,preco,preco_min);
        this.area = area;
        this.wc = wc;
-       this.tipo_negocio = tipo_negocio;
+       this.tipo_Negocio = tipo_negocio;
        this.numero = numero;
     }
 
 
+    // GETTERS E SETTERS
+
+    /**
+     * Obter a Area de uma Loja.
+     * @return
+     */
     public double getArea(){
         return this.area;
     }
 
-
+    /**
+     * Define a Area de uma Loja.
+     * @param area
+     */
     public void setArea(double area){
         this.area = area;
     }
 
-
+    /**
+     * Obter o valor da existẽncia de WC numa Loja.
+     * @return
+     */
     public boolean getWC(){
         return this.wc;
     }
 
-
+    /**
+     * Define a existência ou não de WC numa Loja.
+     * @param wc
+     */
     public void setWC(boolean wc){
         this.wc = wc;
     }
 
-
+    /**
+     * Obter o Tipo de Negócio de uma Loja.
+     * @return
+     */
     public String getTipo_Negocio(){
-        return this.tipo_negocio;
+        return this.tipo_Negocio;
     }
 
-
+    /**
+     * Define o Tipo de Negocio de uma Loja.
+     * @param tipo_negocio
+     */
     public void setTipo_Negocio(String tipo_negocio){
-        this.tipo_negocio = tipo_negocio;
+        this.tipo_Negocio = tipo_negocio;
     }
 
-
+    /**
+     * Obter o número de uma Loja.
+     * @return
+     */
     public int getNumero(){
         return this.numero;
     }
 
-
-    public void setNumero(int numero){
-        this.numero = numero;
+    /**
+     * Define o numero de uma Loja.
+     * @param num
+     */
+    public void setNumero(int num){
+        this.numero = num;
     }
 
+    // CLONE
 
     /*
      * Devolve uma cópia desta instância Loja.
@@ -101,6 +131,7 @@ public class Loja extends Imovel {
         return new Loja(this);
     }
 
+    // EQUALS
 
     /**
      * Compara a igualdade com outro objecto
@@ -116,7 +147,25 @@ public class Loja extends Imovel {
         }
         Loja o = (Loja) obj;
         return super.equals(o) && o.getArea() == this.area && o.getWC() == this.wc
-               && o.getTipo_Negocio().equals(this.tipo_negocio) && o.getNumero() == this.numero;
+               && o.getTipo_Negocio().equals(this.tipo_Negocio) && o.getNumero() == this.numero;
     }
+
+    // TO STRING
+
+    public String toString() {
+        StringBuilder str;
+        str = new StringBuilder();
+        str.append(super.toString()).append("\n");
+        str.append("Área: ");
+        str.append(this.area);
+        str.append("WC: ");
+        str.append(this.wc);
+        str.append("Tipo de negócio viável na loja: ");
+        str.append(this.tipo_Negocio);
+        str.append("Número da porta:");
+        str.append(this.numero);
+        return str.toString();
+    }
+
 
 }

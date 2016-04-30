@@ -1,11 +1,11 @@
 /**
- * Write a description of class Apartamento here.
+ * Classe relativa a um Apartamento.
  *
  * @author Grupo 60
- * @version (a version number or a date)
  */
 public class Apartamento extends Imovel {
 
+    // VARIAVEIS DE INSTÂNCIA
     private String tipo;
     private double area;
     private int quartos;
@@ -14,8 +14,11 @@ public class Apartamento extends Imovel {
     private int andar;
     private boolean garagem;
 
+
+    // CONSTRUTORES
+
     /**
-     * Construtor de um Apartamento
+     * Construtor vazio de um Apartamento.
      */
     public Apartamento() {
         super();
@@ -29,7 +32,7 @@ public class Apartamento extends Imovel {
     }
 
     /**
-     * Construtor por cópia.
+     * Construtor por cópia de um Apartamento.
      * @param c
      */
     public Apartamento(Apartamento c) {
@@ -44,7 +47,7 @@ public class Apartamento extends Imovel {
     }
 
     /**
-     * Construtor por parametro
+     * Construtor por parametro de um Apartamento.
      * @param tipo
      * @param area
      * @param quartos
@@ -64,72 +67,114 @@ public class Apartamento extends Imovel {
         this.garagem = garagem;
     }
 
-
+    /**
+     * Obter o Tipo de um Apartamento.
+     * @return
+     */
     public String getTipo(){
         return this.tipo;
     }
 
-
+    /**
+     * Define o tipo de um Apartamento.
+     * @param tipo
+     */
     public void setTipo(String tipo){
         this.tipo = tipo;
     }
 
-
+    /**
+     * Obter a Area de um Apartamento.
+     * @return
+     */
     public double getArea(){
         return this.area;
     }
 
-
+    /**
+     * Definir a Area de um Apartamento.
+     * @param area
+     */
     public void setArea(double area){
         this.area = area;
     }
 
-
+    /**
+     * Obter o numero de Quartos de um Apartamento.
+     * @return
+     */
     public int getQuartos(){
         return this.quartos;
     }
 
-
+    /**
+     * Definir o numero de Quartos de um Apartamento.
+     * @param quartos
+     */
     public void setQuartos(int quartos){
         this.quartos = quartos;
     }
 
-
+    /**
+     * Obter o numero de Casas de Banho de um Apartamento.
+     * @return
+     */
     public int getCasasBanho(){
         return this.casas_Banho;
     }
 
-
+    /**
+     * Definir o numero de Casas de Banho de um Apartamento.
+     * @param casas_banho
+     */
     public void setCasasBanho(int casas_banho){
         this.casas_Banho = casas_Banho;
     }
 
-
+    /**
+     * Obter o numero de um Apartamento.
+     * @return
+     */
     public int getNumero(){
         return this.numero;
     }
 
-
+    /**
+     * Definir o numero de um Apartamento.
+     * @param tipo
+     */
     public void setNumero(int numero){
         this.numero = numero;
     }
 
-
+    /**
+     * Obter o Andar de um Apartamento.
+     * @return
+     */
     public int getAndar(){
         return this.andar;
     }
 
-
+    /**
+     * Definir o Andar de um Apartamento.
+     * @param andar
+     */
     public void setAndar(int andar){
         this.andar = andar;
     }
 
-
+    /**
+     * Obter o valor referente á existência de Garagem num Apartamento.
+     * @return
+     */
     public boolean getGaragem(){
         return this.garagem;
     }
 
-
+    /**
+     * Definir a existencia de Garagem para um Apartamento.
+     * @param tipo
+     */
     public void setGaragem(boolean garagem){
         this.garagem = garagem;
     }
@@ -160,6 +205,30 @@ public class Apartamento extends Imovel {
         return super.equals(o) && o.getTipo().equals(this.tipo) && o.getArea() == this.area && o.getQuartos() == this.quartos
                && o.getCasasBanho() == this.casas_Banho && o.getNumero() == this.numero && o.getAndar() == this.andar &&
                o.getGaragem() == this.garagem;
+    }
+
+
+    // TO STRING
+
+    public String toString() {
+        StringBuilder str;
+        str = new StringBuilder();
+        str.append(super.toString()).append("\n");
+        str.append("Tipo de Apartamento: ");
+        str.append(this.tipo);
+        str.append("Área: ");
+        str.append(this.area);
+        str.append("Número de Quartos: ");
+        str.append(this.quartos);
+        str.append("Número de Casas de Banho: ");
+        str.append(this.casas_Banho);
+        str.append("Número da porta: ");
+        str.append(this.numero);
+        str.append("Andar: ");
+        str.append(this.andar);
+        str.append("Garagem: ");
+        str.append(this.garagem);
+        return str.toString();
     }
 
 }

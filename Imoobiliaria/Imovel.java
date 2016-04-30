@@ -6,7 +6,7 @@
  */
 public abstract class Imovel {
 
-    // Variaveis de instância
+    // VARIAVEIS DE INSTÂNCIA
 
     /* Define a rua onde se encontra um Imovel */
     private String Rua;
@@ -16,8 +16,10 @@ public abstract class Imovel {
     private double Preco_Minimo;
 
 
+   // CONSTRUTORES
+
     /**
-     * Construtor de um Imovel
+     * Construtor vazio de um Imovel
      */
     public Imovel() {
         this.Rua = "n/a";
@@ -26,13 +28,13 @@ public abstract class Imovel {
     }
 
     /**
-     * Construtor por cópia.
+     * Construtor por cópia de um Imovel.
      * @param c
      */
-    public Imovel(Imovel c) {
-        this.Rua = c.getRua();
-        this.Preco = c.getPreco();
-        this.Preco_Minimo = c.getPreco_Minimo();
+    public Imovel(Imovel i) {
+        this.Rua = i.getRua();
+        this.Preco = i.getPreco();
+        this.Preco_Minimo = i.getPreco_Minimo();
     }
 
     /**
@@ -47,6 +49,8 @@ public abstract class Imovel {
         this.Preco_Minimo = preco_min;
     }
 
+
+    // GETTERS E SETTERS
 
     /**
      * Obter a Rua de um Imovel.
@@ -96,6 +100,7 @@ public abstract class Imovel {
         this.Preco_Minimo = preco_min;
     }
 
+    // CLONE
 
     /*
      * Devolve uma cópia desta instância Imóvel.
@@ -103,6 +108,8 @@ public abstract class Imovel {
     */
      public abstract Imovel clone();
 
+
+     // EQUALS
 
      /**
      * Compara a igualdade com outro objecto
@@ -120,6 +127,5 @@ public abstract class Imovel {
         return o.getRua().equals(this.Rua) && o.getPreco() == this.Preco &&
                 o.getPreco_Minimo() == this.Preco_Minimo;
     }
-
 
 }

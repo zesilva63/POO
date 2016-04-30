@@ -6,7 +6,8 @@
  */
 public class Moradia extends Imovel {
 
-    /* Variaveis de instância */
+    // VARIAVEIS DE INSTANCIA
+
     private String tipo;
     private double area;
     private double area_Coberta;
@@ -14,6 +15,9 @@ public class Moradia extends Imovel {
     private int quartos;
     private int casas_Banho;
     private int numero;
+
+
+    // CONSTRUTORES
 
     /**
     * Construtor de uma Moradia
@@ -65,76 +69,122 @@ public class Moradia extends Imovel {
         this.numero = numero;
     }
 
+    // GETTERS E SETTERS
 
+    /**
+     * Obter o Tipo de uma Moradia.
+     * @return
+     */
     public String getTipo(){
         return this.tipo;
     }
 
-
+    /**
+     * Define o Tipo de uma Moradia.
+     * @param tipo
+     */
     public void setTipo(String tipo){
         this.tipo = tipo;
     }
 
-
+    /**
+     * Obter a Area de uma Moradia.
+     * @return
+     */
     public double getArea(){
         return this.area;
     }
 
-
+    /**
+     * Define a Area de uma Moradia.
+     * @param area
+     */
     public void setArea(double area){
         this.area = area;
     }
 
-
+    /**
+     * Obter a Area Coberta de uma Moradia.
+     * @return
+     */
     public double getAreaCoberta(){
         return this.area_Coberta;
     }
 
-
-    public void setAreaCoberta(double area_Coberta){
-        this.area_Coberta = area_Coberta;
+    /**
+     * Define a Area Coberta de uma Moradia.
+     * @param area_coberta
+     */
+    public void setAreaCoberta(double area_coberta){
+        this.area_Coberta = area_coberta;
     }
 
-
+    /**
+     * Obter a Area do Terreno de uma Moradia.
+     * @return
+     */
     public double getAreaTerreno(){
         return this.area_Terreno;
     }
 
-
-    public void setAreaTerreno(double area_Terreno){
-        this.area_Terreno = area_Terreno;
+    /**
+     * Define a Area do Terreno de uma Moradia.
+     * @param area_terreno
+     */
+    public void setAreaTerreno(double area_terreno){
+        this.area_Terreno = area_terreno;
     }
 
-
+    /**
+     * Obter o número de Quartos de uma Moradia.
+     * @return
+     */
     public int getQuartos(){
         return this.quartos;
     }
 
-
+    /**
+     * Define o numero de Quartos de uma Moradia.
+     * @param quartos
+     */
     public void setQuartos(int quartos){
         this.quartos = quartos;
     }
 
-
+    /**
+     * Obter o numero de Casas de Banho de uma Moradia.
+     * @return
+     */
     public int getCasasBanho(){
         return this.casas_Banho;
     }
 
-
-    public void setCasasBanho(int casas_Banho){
-        this.casas_Banho = casas_Banho;
+    /**
+     * Define o numero de Casas de Banho de uma Moradia.
+     * @param casas_banho
+     */
+    public void setCasasBanho(int casas_banho){
+        this.casas_Banho = casas_banho;
     }
 
-
+    /**
+     * Obter o numero de uma Moradia.
+     * @return
+     */
     public int getNumero(){
         return this.numero;
     }
 
-
-    public void setNumero(int numero){
-        this.numero = numero;
+    /**
+     * Define o numero de uma Moradia.
+     * @param num
+     */
+    public void setNumero(int num){
+        this.numero = num;
     }
 
+
+    // CLONE
 
     /*
      * Devolve uma cópia desta instância Moradia.
@@ -144,6 +194,8 @@ public class Moradia extends Imovel {
         return new Moradia(this);
     }
 
+
+    // EQUALS
 
     /**
      * Compara a igualdade com outro objecto
@@ -165,5 +217,27 @@ public class Moradia extends Imovel {
     }
 
 
+    // TO STRING
+
+    public String toString() {
+      StringBuilder str;
+      str = new StringBuilder();
+      str.append(super.toString()).append("\n");
+      str.append("Tipo de Moradia: ");
+      str.append(this.tipo);
+      str.append("Área: ");
+      str.append(this.area);
+      str.append("Área Coberta: ");
+      str.append(this.area_Coberta);
+      str.append("Área do Terreno: ");
+      str.append(this.area_Terreno);
+      str.append("Número de Quartos: ");
+      str.append(this.quartos);
+      str.append("Número de Casas de Banho: ");
+      str.append(this.casas_Banho);
+      str.append("Número da porta: ");
+      str.append(this.numero);
+      return str.toString();
+   }
 
 }
