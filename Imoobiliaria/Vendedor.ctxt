@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Vendedor()
+comment0.text=\n\ Cria\ uma\ inst\u00E2ncia\ de\ um\ Vendedor.\n
+comment1.params=v
+comment1.target=Vendedor(Vendedor)
+comment1.text=\n\ Construtor\ por\ c\u00F3pia.\n\ @param\ v\n
+comment2.params=email\ nome\ password\ morada\ data_nascimento\ p\ v
+comment2.target=Vendedor(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.util.Set,\ java.util.Set)
+comment2.text=\n\ Construtor\ por\ parametro\n\ @param\ email\n\ @param\ nome\n\ @param\ password\n\ @param\ morada\n\ @param\ data_nascimento\n\ @param\ p\n\ @param\ v\n
+comment3.params=
+comment3.target=java.util.Set\ getPortfolio()
+comment4.params=
+comment4.target=java.util.Set\ getVendidos()
+comment5.params=imoveis
+comment5.target=void\ setPortfolio(java.util.Set)
+comment6.params=imoveis
+comment6.target=void\ setVendidos(java.util.Set)
+comment7.params=
+comment7.target=Vendedor\ clone()
+comment8.params=obj
+comment8.target=boolean\ equals(java.lang.Object)
+numComments=9

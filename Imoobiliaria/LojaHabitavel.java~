@@ -38,7 +38,7 @@ public class LojaHabitavel extends Imovel {
         this.wc = c.getWC();
         this.tipo_Negocio = c.getTipo_Negocio();
         this.numero = c.getNumero();
-        this.apartamento = new Apartamento(c.getApartamento().clone());
+        this.apartamento = new Apartamento(c.getApartamento());
     }
 
    /**

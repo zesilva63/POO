@@ -14,7 +14,6 @@ public class Imoobiliaria {
     private Map<String,Utilizador> utilizadores;
     private Utilizador utilizador;
 
-
     /**
      * Construtor vazio de uma Imoobiliaria.
      */
