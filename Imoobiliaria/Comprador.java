@@ -77,5 +77,11 @@ public class Comprador extends Utilizador {
          return (super.equals(c)); /* falta equals de cada um dos imoveis caso seja necessário */
     }
 
-
+	 /**
+	 * Adiciona um Imovel aos Favoritos.
+	 * @param
+	 */
+	 public void adiciona_Favorito(Imovel i) {
+		 this.favoritos.add(i);
+	 }
 }
