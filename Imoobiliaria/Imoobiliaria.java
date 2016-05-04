@@ -12,13 +12,19 @@ public class Imoobiliaria {
 
     private Map<String,Imovel> imoveis;
     private Map<String,Utilizador> utilizadores;
+    private Utilizador utilizador;
 
 
     /**
-     * Construtor de uma Imoobiliaria
+     * Construtor vazio de uma Imoobiliaria.
      */
     public Imoobiliaria() {
         this.imoveis = new TreeMap<String,Imovel>();
         this.utilizadores = new TreeMap<String,Utilizador>();
+        this.utilizador = new Utilizador();
     }
+
+    
+
+
 }
