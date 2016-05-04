@@ -13,7 +13,6 @@ public class Imoobiliaria {
     private Map<String,Imovel> imoveis;
     private Map<String,Utilizador> utilizadores;
 
-
     /**
      * Construtor de uma Imoobiliaria
      */
