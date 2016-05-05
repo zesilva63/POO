@@ -3,6 +3,9 @@
  *
  * @author Grupo 60
  */
+
+import java.util.GregorianCalendar;
+
 public class Consulta {
 
    // VARIAVEIS DE INSTANCIA
@@ -19,12 +22,12 @@ public class Consulta {
 
    public Consulta(Consulta c) {
       email = c.getEmail();
-      data = c.getData().clone();
+      data = c.getData();
    }
 
    public Consulta(String e, GregorianCalendar c) {
       this.email = e;
-      this.data = new GregorianCalendar(c);
+      this.data = new GregorianCalendar();
    }
 
 
@@ -46,13 +49,10 @@ public class Consulta {
       this.email = n_email;
    }
 
+
    public GregorianCalendar getData() {
-      return this.data.clone();
+      return this.data;
    }
 
-   public void setData(GregorianCalendar c) {
-      this.data = c.clone();
-   }
 
-   
 }

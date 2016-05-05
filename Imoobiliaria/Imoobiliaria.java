@@ -31,8 +31,8 @@ public class Imoobiliaria {
     }
 
 
-   public Imoobiliaria(Vendedor v, TreeMap<String,Utilizador> u, TreeMap<String,Imovel> i) {
-      this.utilizador = new Vendedor(v.clone());
+   public Imoobiliaria(TreeMap<String,Utilizador> u, TreeMap<String,Imovel> i) {
+      this.utilizador = null;
 
       this.imoveis = new TreeMap<String,Imovel>();
       for (Imovel imovel : i.values()) {
@@ -45,20 +45,6 @@ public class Imoobiliaria {
       }
    }
 
-
-   public Imoobiliaria(Comprador c, TreeMap<String,Utilizador> u, TreeMap<String,Imovel> i) {
-      this.utilizador = new Comprador(c.clone());
-
-      this.imoveis = new TreeMap<String,Imovel>();
-      for (Imovel imovel : i.values()) {
-         this.imoveis.put("imovel"/*substituir por hash*/, imovel.clone());
-      }
-
-      this.utilizadores = new TreeMap<String,Utilizador>();
-      for (Utilizador utilizador : u.values()) {
-         this.utilizadores.put("imovel"/*substituir por hash*/, utilizador.clone());
-      }
-   }
 
     // FUNCOES REQUERIDAS
 
