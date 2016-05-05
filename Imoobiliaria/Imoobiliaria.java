@@ -85,7 +85,7 @@ public class Imoobiliaria {
     * @return
     */
     public List <Habitavel> getHabitaveis ( int preco ) {
-        ArrayList<Habitavel> l = new ArrayList<Habitave>();
+        ArrayList<Habitavel> l = new ArrayList<Habitavel>();
         for(Imovel h: this.imoveis.values()) {
             if(((h instanceof Moradia) || (h instanceof Apartamento) || (h instanceof LojaHabitavel)) && h.getPreco() <= preco) {
                 Habitavel hab = (Habitavel) h;
@@ -95,6 +95,40 @@ public class Imoobiliaria {
         return l;
    }
 
+   public void registarUtilizador ( Utilizador utilizador ) throws UtilizadorExistenteException{
 
+       if( this.utilizadores.containsValue(utilizador) ){
+           throw new UtilizadorExistenteException ("Ja existe");
+        }
+        else {
+            this.utilizadores.put(utilizador.getEmail(),utilizador);
+        }
+   }
+  
+     public void iniciaSessao(String email, String password) throws SemAutorizacaoException {
 
-}
+        if (this.utilizador == null) {
+               
+            if(utilizadores.containsKey(email)){
+                 Utilizador user = utilizadores.get(email);
+                 if (password.equals(user.getPassword())) {
+                        utilizador = user.clone();
+                 } 
+                 else {
+                        throw new SemAutorizacaoException("Dados Errados");
+                 }
+            }
+            else throw new SemAutorizacaoException("Dados Errados");
+        }    
+            /* nenhum registado com estes dados */
+        else {
+            throw new SemAutorizacaoException("Ja tem uma sessao iniciada");
+            /* ja iniciou sessao */
+        }
+
+    }
+    
+    public void fecharSessao(){
+        this.utilizador=null;
+    }
+   }
