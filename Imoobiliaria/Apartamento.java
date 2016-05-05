@@ -3,7 +3,7 @@
  *
  * @author Grupo 60
  */
-public class Apartamento extends Imovel {
+public class Apartamento extends Imovel implements Habitavel {
 
     // VARIAVEIS DE INSTÂNCIA
     private String tipo;

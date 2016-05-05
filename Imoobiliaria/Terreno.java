@@ -3,7 +3,7 @@
  *
  * @author Grupo 60
  */
-public class Terreno extends Imovel {
+public class Terreno extends Imovel implements Habitavel {
 
     // Variaveis de instância
     private int area;

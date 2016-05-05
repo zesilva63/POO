@@ -3,7 +3,7 @@
  *
  * @author Grupo 60
  */
-public class Moradia extends Imovel {
+public class Moradia extends Imovel implements Habitavel {
 
     // VARIAVEIS DE INSTANCIA
 

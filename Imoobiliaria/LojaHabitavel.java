@@ -3,7 +3,7 @@
  *
  * @author Grupo 60
  */
-public class LojaHabitavel extends Imovel {
+public class LojaHabitavel extends Imovel implements Habitavel {
 
    // VARIAVEIS DE INSTÂNCIA
 
@@ -140,7 +140,7 @@ public class LojaHabitavel extends Imovel {
     public void setApartamento(Apartamento apartamento){
         this.apartamento = apartamento.clone();
     }
-    
+
     // CLONE
 
     /*
@@ -167,7 +167,8 @@ public class LojaHabitavel extends Imovel {
         }
         LojaHabitavel o = (LojaHabitavel) obj;
         return super.equals(o) && o.getArea() == this.area && o.getWC() == this.wc
-               && o.getTipo_Negocio().equals(this.tipo_Negocio) && o.getNumero() == this.numero;
+               && o.getTipo_Negocio().equals(this.tipo_Negocio) && o.getNumero() == this.numero
+               && o.apartamento.equals(this.apartamento);
     }
 
     // TO STRING
