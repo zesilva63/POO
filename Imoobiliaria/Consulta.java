@@ -1,3 +1,5 @@
+import java.util.GregorianCalendar;
+
 /**
  * Implementação de uma Consulta
  *
