@@ -88,10 +88,12 @@ public class Imoobiliaria {
 
     public void registaImovel ( Imovel im ) throws ImovelExisteException , SemAutorizacaoException{
         if(this.utilizador.getClass().getSimpleName().equals("Vendedor")){
-            if(	containsValue(im)){
+            if(utilizadores.containsValue(im)){
                 this.imoveis.put("33"/*MUDAR!!!*/,im);
-                this.utilizador.getPortfolio().add(im);
-                this.utilizadores.get(this.utilizador.getEmail()).getPortfolio.add(im);
+                Vendedor v1 = (Vendedor) this.utilizador;
+                v1.getPortfolio().add(im);
+                Vendedor v2 = (Vendedor) this.utilizadores.get(this.utilizador.getEmail());
+                v2.getPortfolio().add(im);
                 /*adicionar ao portfolio dos vendedores*/
             }
             else throw new ImovelExisteException("Imovel já existe.");
@@ -132,8 +134,8 @@ public class Imoobiliaria {
             if((i.getClass().getSimpleName().equals(classe)) && i.getPreco() <= preco) {
                 Imovel novo = (Imovel) i;
                 GregorianCalendar data = new GregorianCalendar();
-                if(this.utilizador != null) i.adicionaConsulta(this.utilizador.getEmail(),data.clone());
-                else i.adicionaConsulta("N/A",data.clone());
+                if(this.utilizador != null) i.adicionaConsulta(this.utilizador.getEmail(),data);
+                else i.adicionaConsulta("N/A",data);
                 l.add(novo);
             }
         }
@@ -151,8 +153,8 @@ public class Imoobiliaria {
             if(((h instanceof Moradia) || (h instanceof Apartamento) || (h instanceof LojaHabitavel)) && h.getPreco() <= preco) {
                 Habitavel hab = (Habitavel) h;
                 GregorianCalendar data = new GregorianCalendar();
-                if(this.utilizador != null) i.adicionaConsulta(this.utilizador.getEmail(),data.clone());
-                else i.adicionaConsulta("N/A",data.clone());
+                if(this.utilizador != null) h.adicionaConsulta(this.utilizador.getEmail(),data);
+                else h.adicionaConsulta("N/A",data);
                 l.add(hab);
             }
         }

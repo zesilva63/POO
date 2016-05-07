@@ -18,11 +18,11 @@ public class Leilao
     }
     
     
-    private Comprador vencedor(ArrayList<Licitacao> list){
+    /*private Comprador vencedor(ArrayList<Licitacao> list){
         Collections.sort(list,new ComparatorLicitacao());
         return list.get(0);
     
-    }
+    }*/
     
     public void iniciaLeilao ( Imovel im , int horas ) throws SemAutorizacaoException{
         /*nao sei se temos que verificar se o imovel existe*/
@@ -44,7 +44,7 @@ public class Leilao
     public Comprador encerraLeilao (){
         this.imovel=null;
         this.tempo=0;
-        return vencedor(licitadores);
+        return null /*vencedor(licitadores)*/;
     }
 }
 
