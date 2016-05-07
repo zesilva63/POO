@@ -60,6 +60,7 @@ public class Imoobiliaria {
         }
    }
 
+
      public void iniciaSessao(String email, String password) throws SemAutorizacaoException {
 
         if (this.utilizador == null) {
@@ -85,6 +86,7 @@ public class Imoobiliaria {
         this.utilizador = null;
     }
 
+
     public void setEstado(String idImovel , String estado) throws ImovelInexistenteException , SemAutorizacaoException , EstadoInvalidoException {
 
       if(this.utilizador.getClass().getSimpleName().equals("Vendedor"))  {
@@ -96,11 +98,11 @@ public class Imoobiliaria {
                throw new EstadoInvalidoException("Estado Inválido.");
             }
          } else {
-            throw new ImovelInexistenteException("Não existe o imovel.");
+            throw new ImovelInexistenteException("Imóvel Inexistente.");
          }
       }
       else {
-           throw new SemAutorizacaoException("Não é um Vendedor.");
+           throw new SemAutorizacaoException("Sem autorização para efectuar tal ação.");
       }
    }
 
