@@ -8,12 +8,12 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.List;
 import java.util.ArrayList;
-
+import java.util.GregorianCalendar;
 
 public class Imoobiliaria {
 
-   // VARIAVEIS DE INSTANCIA
 
+   // VARIAVEIS DE INSTANCIA
     private Map<String,Imovel> imoveis;
     private Map<String,Utilizador> utilizadores;
     private Utilizador utilizador;
@@ -31,36 +31,62 @@ public class Imoobiliaria {
     }
 
 
-   public Imoobiliaria(Vendedor v, TreeMap<String,Utilizador> u, TreeMap<String,Imovel> i) {
-      this.utilizador = new Vendedor(v.clone());
+    public Imoobiliaria(TreeMap<String,Utilizador> u, TreeMap<String,Imovel> i) {
 
-      this.imoveis = new TreeMap<String,Imovel>();
-      for (Imovel imovel : i.values()) {
-         this.imoveis.put("imovel"/*substituir por hash*/, imovel.clone());
-      }
+       this.utilizador = null;
 
-      this.utilizadores = new TreeMap<String,Utilizador>();
-      for (Utilizador utilizador : u.values()) {
-         this.utilizadores.put("imovel"/*substituir por hash*/, utilizador.clone());
-      }
-   }
+       this.imoveis = new TreeMap<String,Imovel>();
+       for (Imovel imovel : i.values()) {
+          this.imoveis.put("imovel"/*substituir por hash*/, imovel.clone());
+       }
 
+       this.utilizadores = new TreeMap<String,Utilizador>();
+       for (Utilizador utilizador : u.values()) {
+          this.utilizadores.put("imovel"/*substituir por hash*/, utilizador.clone());
+       }
 
-   public Imoobiliaria(Comprador c, TreeMap<String,Utilizador> u, TreeMap<String,Imovel> i) {
-      this.utilizador = new Comprador(c.clone());
+    }
 
-      this.imoveis = new TreeMap<String,Imovel>();
-      for (Imovel imovel : i.values()) {
-         this.imoveis.put("imovel"/*substituir por hash*/, imovel.clone());
-      }
-
-      this.utilizadores = new TreeMap<String,Utilizador>();
-      for (Utilizador utilizador : u.values()) {
-         this.utilizadores.put("imovel"/*substituir por hash*/, utilizador.clone());
-      }
-   }
 
     // FUNCOES REQUERIDAS
+
+    public void registarUtilizador ( Utilizador utilizador ) throws UtilizadorExistenteException{
+
+       if(this.utilizadores.containsValue(utilizador)){
+           throw new UtilizadorExistenteException ("Ja existe este Utilizador");
+        }
+        else {
+            this.utilizadores.put(utilizador.getEmail(),utilizador);
+        }
+   }
+
+     public void iniciaSessao(String email, String password) throws SemAutorizacaoException {
+
+        if (this.utilizador == null) {
+
+            if(utilizadores.containsKey(email)){
+                 Utilizador user = utilizadores.get(email);
+                 if (password.equals(user.getPassword())) {
+                        utilizador = user.clone();
+                 }
+                 else {
+                        throw new SemAutorizacaoException("Dados Errados");
+                 }
+            }
+            else throw new SemAutorizacaoException("Dados Errados");
+        }
+        else {
+            throw new SemAutorizacaoException("Ja tem uma sessao iniciada");
+        }
+
+    }
+
+    public void fecharSessao(){
+        this.utilizador = null;
+    }
+
+    
+
 
     /**
     * Devolve uma lista com os imoveis de um dado Tipo e até um certo Preço.
@@ -73,6 +99,9 @@ public class Imoobiliaria {
         for(Imovel i: this.imoveis.values()) {
             if((i.getClass().getSimpleName().equals(classe)) && i.getPreco() <= preco) {
                 Imovel novo = (Imovel) i;
+                GregorianCalendar data = new GregorianCalendar();
+                if(this.utilizador != null) i.adicionaConsulta(this.utilizador.getEmail(),data.clone());
+                else i.adicionaConsulta("N/A",data.clone());
                 l.add(novo);
             }
         }
@@ -89,46 +118,15 @@ public class Imoobiliaria {
         for(Imovel h: this.imoveis.values()) {
             if(((h instanceof Moradia) || (h instanceof Apartamento) || (h instanceof LojaHabitavel)) && h.getPreco() <= preco) {
                 Habitavel hab = (Habitavel) h;
+                GregorianCalendar data = new GregorianCalendar();
+                if(this.utilizador != null) i.adicionaConsulta(this.utilizador.getEmail(),data.clone());
+                else i.adicionaConsulta("N/A",data.clone());
                 l.add(hab);
             }
         }
         return l;
    }
 
-   public void registarUtilizador ( Utilizador utilizador ) throws UtilizadorExistenteException{
 
-       if( this.utilizadores.containsValue(utilizador) ){
-           throw new UtilizadorExistenteException ("Ja existe");
-        }
-        else {
-            this.utilizadores.put(utilizador.getEmail(),utilizador);
-        }
-   }
-  
-     public void iniciaSessao(String email, String password) throws SemAutorizacaoException {
 
-        if (this.utilizador == null) {
-               
-            if(utilizadores.containsKey(email)){
-                 Utilizador user = utilizadores.get(email);
-                 if (password.equals(user.getPassword())) {
-                        utilizador = user.clone();
-                 } 
-                 else {
-                        throw new SemAutorizacaoException("Dados Errados");
-                 }
-            }
-            else throw new SemAutorizacaoException("Dados Errados");
-        }    
-            /* nenhum registado com estes dados */
-        else {
-            throw new SemAutorizacaoException("Ja tem uma sessao iniciada");
-            /* ja iniciou sessao */
-        }
-
-    }
-    
-    public void fecharSessao(){
-        this.utilizador=null;
-    }
-   }
+}

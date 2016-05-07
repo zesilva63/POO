@@ -13,7 +13,8 @@ public abstract class Imovel {
     private double preco;
     /* Define o preço minimo de um Imovel, apenas visivel ao vendedor */
     private double preco_Minimo;
-
+    /* Lista com as Consultas de cada Imovel */
+    private List<Consulta> consultas;
 
    // CONSTRUTORES
 
@@ -24,16 +25,23 @@ public abstract class Imovel {
         this.rua = "n/a";
         this.preco = 0;
         this.preco_Minimo = 0;
+        this.consultas = new ArrayList<Consulta>();
     }
 
     /**
      * Construtor por cópia de um Imovel.
-     * @param c
+     * @param i
      */
     public Imovel(Imovel i) {
         this.rua = i.getRua();
         this.preco = i.getPreco();
         this.preco_Minimo = i.getPreco_Minimo();
+        this.consultas = new ArrayList<Consulta>();
+        Iterator<Consulta> it = i.consultas.iterator();
+        while(it.hasNext()) {
+          Consulta consult = it.next();
+          this.consultas.add(consult.clone());
+        }
     }
 
     /**
@@ -41,11 +49,18 @@ public abstract class Imovel {
      * @param rua
      * @param preco
      * @param preco_min
+     * @param cons
      */
-    public Imovel(String rua, double preco, double preco_min) {
+    public Imovel(String rua, double preco, double preco_min, ArrayList<Consulta> cons) {
         this.rua = rua;
         this.preco = preco;
         this.preco_Minimo = preco_min;
+        this.consultas = new ArrayList<Consulta>();
+        Iterator<Consulta> it = cons.iterator();
+        while(it.hasNext()) {
+          Consulta consult = it.next();
+          this.consultas.add(consult.clone());
+        }
     }
 
 
@@ -98,6 +113,45 @@ public abstract class Imovel {
     public void setPreco_Minimo(double preco_min) {
         this.preco_Minimo = preco_min;
     }
+
+    /**
+     * Obter as Consultas de um Imovel.
+     * @return
+     */
+    public ArrayList<Consulta> getConsultas() {
+         ArrayList<Consulta> novo = new ArrayList<Consulta>();
+         Iterator<Consulta> it = this.consultas.iterator();
+         while(it.hasNext()) {
+           Consulta consult = it.next();
+           novo.add(consult.clone());
+         }
+         return novo;
+    }
+
+    /**
+    * Define as consultas de um Imovel.
+    * @param lista
+    */
+    public void setConsultas(ArrayList<Consulta> lista) {
+      Iterator<Consulta> it = lista.iterator();
+      while(it.hasNext()) {
+         Consulta consult = it.next();
+         this.consultas.add(consult.clone());
+      }
+    }
+
+
+    // METODOS
+    /**
+    * Adiciona uma consulta a lista de Consultas efetuadas a um Imovel.
+    * @param email
+    * @param data
+    */
+    public void adicionaConsulta(String email, GregorianCalendar data) {
+       Consulta nova = new Consulta(email,data);
+       this.consultas.add(nova);
+    }
+
 
     // CLONE
 
