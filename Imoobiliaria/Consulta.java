@@ -71,7 +71,10 @@ public class Consulta {
       return this.data;
    }
 
-
+   //CLONE
+   public Consulta clone(){
+    return new Consulta(this);
+    }
 
 
 }

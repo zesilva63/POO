@@ -1,3 +1,8 @@
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.GregorianCalendar;
+
 /**
  * Classe relativa a um Imovel.
  *
