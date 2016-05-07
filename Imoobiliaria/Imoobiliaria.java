@@ -85,7 +85,24 @@ public class Imoobiliaria {
         this.utilizador = null;
     }
 
-    
+    public void setEstado(String idImovel , String estado) {
+
+      if(this.utilizador.getClass().getSimpleName().equals("Vendedor")) {
+         Imovel i = this.imoveis.get(idImovel);
+         if(i != null) { // imovel existe
+            if(estado.equals("em venda") || estado.equals("vendido") || estado.equals("reservado")) {
+               i.setEstado(estado);
+            } else {
+               // estado nao valido
+            }
+         } else {
+            //imovel nao existe
+         }
+      }
+      else { // nao ser um vendedor
+
+      }
+   }
 
 
     /**
