@@ -1,7 +1,7 @@
 import java.util.GregorianCalendar;
 
 /**
- * Implementação de uma Consulta
+ * Implementação de uma Consulta a um Imovel por parte de um Utilizador.
  *
  * @author Grupo 60
  */
@@ -17,19 +17,31 @@ public class Consulta {
 
    // CONSTRUTORES
 
+   /**
+   * Construtor vazio de uma Consulta.
+   */
    public Consulta() {
       email = " ";
       data = new GregorianCalendar();
    }
 
+   /**
+   * Construtor de uma Consulta por cópia.
+   * @param c
+   */
    public Consulta(Consulta c) {
       email = c.getEmail();
-      data = c.getData();
+      data = (GregorianCalendar) c.getData().clone();
    }
 
+   /**
+   * Construtor por parametros.
+   * @param e
+   * @param c
+   */
    public Consulta(String e, GregorianCalendar c) {
       this.email = e;
-      this.data = new GregorianCalendar();
+      this.data = (GregorianCalendar) c.clone();
    }
 
 
@@ -51,10 +63,15 @@ public class Consulta {
       this.email = n_email;
    }
 
-
+   /**
+   * Obter a data em que uma dada Consulta foi efetuada.
+   * @return
+   */
    public GregorianCalendar getData() {
       return this.data;
    }
+
+
 
 
 }
