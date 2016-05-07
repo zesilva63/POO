@@ -3,6 +3,10 @@
  *
  * @author Grupo 60
  */
+
+import java.util.List;
+import java.util.ArrayList;
+
 public class Apartamento extends Imovel implements Habitavel {
 
     // VARIAVEIS DE INSTÂNCIA
@@ -56,8 +60,8 @@ public class Apartamento extends Imovel implements Habitavel {
      * @param andar
      * @param garagem
      */
-    public Apartamento(String rua, double preco, double preco_min, String tipo, double area, int quartos, int casas_Banho, int numero, int andar, boolean garagem) {
-        super(rua,preco,preco_min);
+    public Apartamento(String rua, double preco, double preco_min, String estado, ArrayList<Consulta> consultas, String tipo, double area, int quartos, int casas_Banho, int numero, int andar, boolean garagem) {
+        super(rua,preco,preco_min,estado,consultas);
         this.tipo = tipo;
         this.area = area;
         this.quartos = quartos;

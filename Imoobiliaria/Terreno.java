@@ -3,6 +3,10 @@
  *
  * @author Grupo 60
  */
+
+import java.util.List;
+import java.util.ArrayList;
+
 public class Terreno extends Imovel implements Habitavel {
 
     // Variaveis de instância
@@ -45,8 +49,8 @@ public class Terreno extends Imovel implements Habitavel {
      * @param carga_eletrica
      * @param saneamento
      */
-    public Terreno(String rua, double preco, double preco_min, String tipo, float diametro_canalizacoes, float carga_eletrica, boolean saneamento) {
-        super(rua,preco,preco_min);
+    public Terreno(String rua, double preco, double preco_min, String estado, ArrayList<Consulta> consultas, String tipo, float diametro_canalizacoes, float carga_eletrica, boolean saneamento) {
+        super(rua,preco,preco_min,estado,consultas);
         this.tipo = tipo;
         this.diametro_canalizacoes = diametro_canalizacoes;
         this.carga_eletrica = carga_eletrica;

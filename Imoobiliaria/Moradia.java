@@ -3,6 +3,10 @@
  *
  * @author Grupo 60
  */
+
+import java.util.List;
+import java.util.ArrayList;
+
 public class Moradia extends Imovel implements Habitavel {
 
     // VARIAVEIS DE INSTANCIA
@@ -57,8 +61,8 @@ public class Moradia extends Imovel implements Habitavel {
      * @param casas_Banho
      * @param numero
      */
-    public Moradia(String rua, double preco, double preco_min, String tipo, double area, double area_Coberta, double area_Terreno, int quartos, int casas_Banho, int numero ) {
-        super(rua,preco,preco_min);
+    public Moradia(String rua, double preco, double preco_min, String estado, ArrayList<Consulta> consultas, String tipo, double area, double area_Coberta, double area_Terreno, int quartos, int casas_Banho, int numero ) {
+        super(rua,preco,preco_min,estado,consultas);
         this.tipo = tipo;
         this.area = area;
         this.area_Coberta = area_Coberta;

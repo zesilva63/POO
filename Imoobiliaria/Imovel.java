@@ -3,6 +3,13 @@
  *
  * @author Grupo 60
  */
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.util.Iterator;
+
+
 public abstract class Imovel {
 
     // VARIAVEIS DE INSTÂNCIA
@@ -200,8 +207,8 @@ public abstract class Imovel {
             return false;
         }
         Imovel o = (Imovel) obj;
-        return o.getRua().equals(this.rua) && o.getPreco() == this.preco &&
-                o.getPreco_Minimo() == this.preco_Minimo;
+        return o.getRua().equals(this.rua) && o.getPreco() == this.preco
+        && o.getPreco_Minimo() == this.preco_Minimo && o.estado.equals(this.estado);
     }
 
 
@@ -216,6 +223,8 @@ public abstract class Imovel {
         str.append(this.preco);
         str.append("Preço Minimo: ");
         str.append(this.preco_Minimo);
+        str.append("Estado: ");
+        str.append(this.estado);
         return str.toString();
     }
 

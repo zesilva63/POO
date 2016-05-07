@@ -3,6 +3,11 @@
  *
  * @author Grupo 60
  */
+
+
+import java.util.List;
+import java.util.ArrayList;
+
 public class LojaHabitavel extends Imovel implements Habitavel {
 
    // VARIAVEIS DE INSTÂNCIA
@@ -48,14 +53,15 @@ public class LojaHabitavel extends Imovel implements Habitavel {
      * @param tipo_negocio
      * @param numero
    */
-   public LojaHabitavel(String rua, double preco, double preco_min, double area, boolean wc, String tipo_negocio,int numero,
+   public LojaHabitavel(String rua, double preco, double preco_min, String estado, ArrayList<Consulta> consultas, double area, boolean wc, String tipo_negocio,int numero,
    String tipo, int quartos, int casa_banho, int andar, boolean garagem) {
-       super(rua,preco,preco_min);
+
+       super(rua,preco,preco_min,estado,consultas);
        this.area = area;
        this.wc = wc;
        this.tipo_Negocio = tipo_negocio;
        this.numero = numero;
-       this.apartamento = new Apartamento(rua, preco, preco_min, tipo, area, quartos, casa_banho, numero, andar, garagem);
+       this.apartamento = new Apartamento(rua, preco, preco_min, estado, consultas, tipo, area, quartos, casa_banho, numero, andar, garagem);
     }
 
 
