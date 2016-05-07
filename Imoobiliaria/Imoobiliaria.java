@@ -58,7 +58,7 @@ public class Imoobiliaria {
         else {
             this.utilizadores.put(utilizador.getEmail(),utilizador);
         }
-   }
+    }
 
 
      public void iniciaSessao(String email, String password) throws SemAutorizacaoException {
@@ -77,7 +77,7 @@ public class Imoobiliaria {
             else throw new SemAutorizacaoException("Dados Errados");
         }
         else {
-            throw new SemAutorizacaoException("Ja tem uma sessao iniciada");
+            throw new SemAutorizacaoException("Ja tem uma sessão iniciada");
         }
 
     }
@@ -86,6 +86,19 @@ public class Imoobiliaria {
         this.utilizador = null;
     }
 
+    public void registaImovel ( Imovel im ) throws ImovelExisteException , SemAutorizacaoException{
+        if(this.utilizador.getClass().getSimpleName().equals("Vendedor")){
+            if(	containsValue(im)){
+                this.imoveis.put("33"/*MUDAR!!!*/,im);
+                this.utilizador.getPortfolio().add(im);
+                this.utilizadores.get(this.utilizador.getEmail()).getPortfolio.add(im);
+                /*adicionar ao portfolio dos vendedores*/
+            }
+            else throw new ImovelExisteException("Imovel já existe.");
+        }
+        else throw new SemAutorizacaoException("Apenas Vendedores estão autorizados.");
+    
+    }
 
     public void setEstado(String idImovel , String estado) throws ImovelInexistenteException , SemAutorizacaoException , EstadoInvalidoException {
 
@@ -104,7 +117,7 @@ public class Imoobiliaria {
       else {
            throw new SemAutorizacaoException("Sem autorização para efectuar tal ação.");
       }
-   }
+    }
 
 
     /**
@@ -144,7 +157,7 @@ public class Imoobiliaria {
             }
         }
         return l;
-   }
+    }
 
 
 
