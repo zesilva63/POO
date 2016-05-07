@@ -1,2 +1,4 @@
 #BlueJ class context
-numComments=0
+comment0.params=e1\ e2
+comment0.target=int\ compare(Licitacao,\ Licitacao)
+numComments=1
