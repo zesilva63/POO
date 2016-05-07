@@ -13,6 +13,8 @@ public abstract class Imovel {
     private double preco;
     /* Define o preço minimo de um Imovel, apenas visivel ao vendedor */
     private double preco_Minimo;
+    /* Define se um Imovel está "em venda", "vendido" ou "reservado" */
+    private String estado;
     /* Lista com as Consultas de cada Imovel */
     private List<Consulta> consultas;
 
@@ -25,6 +27,7 @@ public abstract class Imovel {
         this.rua = "n/a";
         this.preco = 0;
         this.preco_Minimo = 0;
+        this.estado = "em venda";
         this.consultas = new ArrayList<Consulta>();
     }
 
@@ -36,6 +39,7 @@ public abstract class Imovel {
         this.rua = i.getRua();
         this.preco = i.getPreco();
         this.preco_Minimo = i.getPreco_Minimo();
+        this.estado = i.getEstado();
         this.consultas = new ArrayList<Consulta>();
         Iterator<Consulta> it = i.consultas.iterator();
         while(it.hasNext()) {
@@ -49,12 +53,14 @@ public abstract class Imovel {
      * @param rua
      * @param preco
      * @param preco_min
+     * @param estado
      * @param cons
      */
-    public Imovel(String rua, double preco, double preco_min, ArrayList<Consulta> cons) {
+    public Imovel(String rua, double preco, double preco_min, String estado, ArrayList<Consulta> cons) {
         this.rua = rua;
         this.preco = preco;
         this.preco_Minimo = preco_min;
+        this.estado = estado;
         this.consultas = new ArrayList<Consulta>();
         Iterator<Consulta> it = cons.iterator();
         while(it.hasNext()) {
@@ -112,6 +118,23 @@ public abstract class Imovel {
      */
     public void setPreco_Minimo(double preco_min) {
         this.preco_Minimo = preco_min;
+    }
+
+
+    /**
+     * Obter o Estado de um Imovel.
+     * @return
+     */
+    public String getEstado() {
+        return this.estado;
+    }
+
+    /**
+     * Define o Estado de um Imovel
+     * @param estado
+     */
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     /**
