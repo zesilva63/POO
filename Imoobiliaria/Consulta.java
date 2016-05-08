@@ -1,4 +1,3 @@
-import java.util.GregorianCalendar;
 
 /**
  * Implementação de uma Consulta a um Imovel por parte de um Utilizador.

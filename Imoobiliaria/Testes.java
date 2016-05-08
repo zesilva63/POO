@@ -53,7 +53,7 @@ public class Testes
             fail();
         }
 
-        t = new Terreno("1","rua do carv",20000,1000,"em venda",null,"n sei",69,33,true);  // Preencher parâmetros do construtor
+        t = new Terreno("1","rua do carv",2000,1000,"em venda",null,"n sei",69,33,true);  // Preencher parâmetros do construtor
         try {
             imo.registaImovel(t);
         } catch (Exception e) {
@@ -62,9 +62,9 @@ public class Testes
 
         int s = imo.getImovel("Terreno", Integer.MAX_VALUE).size();
         assertTrue(s>0);
-        /*Set<String> ids = imo.getTopImoveis(0);
+        Set<String> ids = imo.getTopImoveis(0);
         assertTrue(ids.contains(t.getId()));
-        assertTrue(imo.getMapeamentoImoveis().keySet().contains(t));
+        /*assertTrue(imo.getMapeamentoImoveis().keySet().contains(t));
         assertTrue(imo.getConsultas().size()>0);
         */
         imo.fechaSessao();
@@ -78,9 +78,9 @@ public class Testes
         password = c.getPassword();
         try {
             imo.iniciaSessao(email, password);
-            /*imo.setFavorito(t.getId());
+            imo.setFavorito(t.getId());
             assertTrue(imo.getFavoritos().contains(t));
-            */
+            
         } catch(Exception e) {
             e.printStackTrace();
             fail();

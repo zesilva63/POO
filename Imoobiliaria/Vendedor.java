@@ -63,12 +63,12 @@ public class Vendedor extends Utilizador {
 
 
     public void setPortfolio(Map<String,Imovel> imoveis){
-        this.portfolio = imoveis.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
+        this.portfolio = imoveis.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue()));
     }
 
 
     public void setVendidos(Map<String,Imovel> imoveis){
-        this.vendidos = imoveis.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
+        this.vendidos = imoveis.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue()));
     }
 
 
@@ -87,11 +87,11 @@ public class Vendedor extends Utilizador {
    }
 
    public void adicionaPortfolio(Imovel i) {
-      this.portfolio.put(i.getId(),i.clone());
+      this.portfolio.put(i.getId(),i);
    }
 
    public void adicionaVendidos(Imovel i) {
-      this.vendidos.put(i.getId(),i.clone());
+      this.vendidos.put(i.getId(),i);
    }
 
 }

@@ -4,6 +4,8 @@
  * @author Grupo 60
  */
 
+import java.util.Set;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.List;
@@ -37,14 +39,13 @@ public class Imoobiliaria {
 
        this.imoveis = new TreeMap<String,Imovel>();
        for (Imovel imovel : i.values()) {
-          this.imoveis.put("imovel"/*substituir por hash*/, imovel.clone());
+          this.imoveis.put(imovel.getId(), imovel.clone());
        }
 
        this.utilizadores = new TreeMap<String,Utilizador>();
        for (Utilizador utilizador : u.values()) {
-          this.utilizadores.put("imovel"/*substituir por hash*/, utilizador.clone());
+          this.utilizadores.put(utilizador.getEmail(), utilizador.clone());
        }
-
     }
 
 
@@ -68,7 +69,7 @@ public class Imoobiliaria {
             if(utilizadores.containsKey(email)){
                  Utilizador user = utilizadores.get(email);
                  if (password.equals(user.getPassword())) {
-                        utilizador = user.clone();
+                        utilizador = user;
                  }
                  else {
                         throw new SemAutorizacaoException("Dados Errados");
@@ -90,20 +91,19 @@ public class Imoobiliaria {
 
     // VENDEDORES
 
+
     public void registaImovel(Imovel im) throws ImovelExisteException , SemAutorizacaoException {
         if(this.utilizador.getClass().getSimpleName().equals("Vendedor")){
             if(this.imoveis.containsValue(im) == false) {
-                this.imoveis.put("33"/*MUDAR!!!*/,im);
+                this.imoveis.put(im.getId(),im);
                 Vendedor v1 = (Vendedor) this.utilizador;
                 v1.adicionaPortfolio(im);
-                Vendedor v2 = (Vendedor) this.utilizadores.get(this.utilizador.getEmail());
-                v2.adicionaPortfolio(im);
             }
             else throw new ImovelExisteException("Imovel já existe.");
         }
         else throw new SemAutorizacaoException("Apenas Vendedores estão autorizados.");
-
     }
+
 
 
     public void setEstado(String idImovel , String estado) throws ImovelInexistenteException , SemAutorizacaoException , EstadoInvalidoException {
@@ -125,6 +125,20 @@ public class Imoobiliaria {
       }
     }
 
+
+
+    public Set<String> getTopImoveis (int n) {
+      Set<String> lista = new HashSet<String>();
+      Vendedor v = (Vendedor) this.utilizador;
+      for(Imovel im : v.getPortfolio().values()){
+         if(n < im.getConsultas().size()){
+            lista.add(im.getId());
+         }
+      }
+      return lista;
+   }
+
+
     // TODOS OS UTILIZADORES
 
     /**
@@ -141,11 +155,12 @@ public class Imoobiliaria {
                 GregorianCalendar data = new GregorianCalendar();
                 if(this.utilizador != null) i.adicionaConsulta(this.utilizador.getEmail(),data);
                 else i.adicionaConsulta("N/A",data);
-                l.add(novo);
+                l.add(novo.clone());
             }
         }
         return l;
     }
+
 
     /**
     * Devolve uma lista com os Imoveis Habitaveis até um dado Preço.
@@ -168,6 +183,17 @@ public class Imoobiliaria {
 
     // COMPRADORES
 
+
+    public void setFavorito(String idImovel) throws SemAutorizacaoException, ImovelInexistenteException {
+        if(this.utilizador.getClass().getSimpleName().equals("Comprador")){
+            if(this.imoveis.containsKey(idImovel)) {
+                Comprador c = (Comprador) this.utilizador;
+                c.adicionaFavorito(this.imoveis.get(idImovel));
+            }
+            else throw new ImovelInexistenteException("O Imovel não existe.");
+        }
+        else throw new SemAutorizacaoException("Apenas Compradores registados estão autorizados.");
+    }
 
 
 

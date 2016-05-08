@@ -83,6 +83,6 @@ public class Comprador extends Utilizador {
 	 * @param
 	 */
 	 public void adicionaFavorito(Imovel i) {
-		 this.favoritos.put(i.getId(),i.clone());
+		 this.favoritos.put(i.getId(),i);
 	 }
 }
