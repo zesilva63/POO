@@ -44,9 +44,9 @@ public class Vendedor extends Utilizador {
     public Vendedor(String email, String nome, String password, String morada, String data_nascimento, Set<Imovel> p, Set<Imovel> v){
         super(email, nome, password, morada, data_nascimento);
         this.portfolio = new TreeSet<Imovel>();
-        setPortfolio(p);
+        if(p!= null) this.setPortfolio(p);
         this.vendidos = new TreeSet<Imovel>();
-        setVendidos(v);
+        if(p!=null) this.setVendidos(v);
     }
 
 
@@ -82,6 +82,10 @@ public class Vendedor extends Utilizador {
         return false;
       Vendedor v = (Vendedor) obj;
         return (super.equals(v)); /* falta equals de cada um dos imoveis caso seja necessário */
+   }
+
+   public void adicionaPortfolio(Imovel i) {
+      this.portfolio.add(i.clone());
    }
 
 }

@@ -82,25 +82,27 @@ public class Imoobiliaria {
 
     }
 
+
     public void fecharSessao(){
         this.utilizador = null;
     }
 
-    public void registaImovel ( Imovel im ) throws ImovelExisteException , SemAutorizacaoException{
+
+    public void registaImovel(Imovel im) throws ImovelExisteException , SemAutorizacaoException {
         if(this.utilizador.getClass().getSimpleName().equals("Vendedor")){
-            if(utilizadores.containsValue(im)){
+            if(this.imoveis.containsValue(im) == false) {
                 this.imoveis.put("33"/*MUDAR!!!*/,im);
                 Vendedor v1 = (Vendedor) this.utilizador;
-                v1.getPortfolio().add(im);
+                v1.adicionaPortfolio(im);
                 Vendedor v2 = (Vendedor) this.utilizadores.get(this.utilizador.getEmail());
-                v2.getPortfolio().add(im);
-                /*adicionar ao portfolio dos vendedores*/
+                v2.adicionaPortfolio(im);
             }
             else throw new ImovelExisteException("Imovel já existe.");
         }
         else throw new SemAutorizacaoException("Apenas Vendedores estão autorizados.");
-    
+
     }
+
 
     public void setEstado(String idImovel , String estado) throws ImovelInexistenteException , SemAutorizacaoException , EstadoInvalidoException {
 
@@ -160,7 +162,5 @@ public class Imoobiliaria {
         }
         return l;
     }
-
-
 
 }

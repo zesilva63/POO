@@ -74,11 +74,14 @@ public abstract class Imovel {
         this.preco_Minimo = preco_min;
         this.estado = estado;
         this.consultas = new ArrayList<Consulta>();
-        Iterator<Consulta> it = cons.iterator();
-        while(it.hasNext()) {
-          Consulta consult = it.next();
-          this.consultas.add(consult.clone());
-        }
+        Iterator<Consulta> it; 
+        if(cons!=null){
+            it = cons.iterator();
+            while(it.hasNext()) {
+                Consulta consult = it.next();
+                this.consultas.add(consult.clone());
+            }
+        }    
     }
 
 
