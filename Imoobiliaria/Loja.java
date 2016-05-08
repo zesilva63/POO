@@ -51,8 +51,8 @@ public class Loja extends Imovel {
      * @param tipo_negocio
      * @param numero
    */
-   public Loja(String rua, double preco, double preco_min, String estado, ArrayList<Consulta> consultas, double area, boolean wc, String tipo_negocio,int numero){
-       super(rua,preco,preco_min,estado,consultas);
+   public Loja(String codigo, String rua, double preco, double preco_min, String estado, ArrayList<Consulta> consultas, double area, boolean wc, String tipo_negocio,int numero){
+       super(codigo,rua,preco,preco_min,estado,consultas);
        this.area = area;
        this.wc = wc;
        this.tipo_Negocio = tipo_negocio;

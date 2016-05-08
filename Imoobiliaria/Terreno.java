@@ -49,8 +49,8 @@ public class Terreno extends Imovel implements Habitavel {
      * @param carga_eletrica
      * @param saneamento
      */
-    public Terreno(String rua, double preco, double preco_min, String estado, ArrayList<Consulta> consultas, String tipo, float diametro_canalizacoes, float carga_eletrica, boolean saneamento) {
-        super(rua,preco,preco_min,estado,consultas);
+    public Terreno(String codigo, String rua, double preco, double preco_min, String estado, ArrayList<Consulta> consultas, String tipo, float diametro_canalizacoes, float carga_eletrica, boolean saneamento) {
+        super(codigo,rua,preco,preco_min,estado,consultas);
         this.tipo = tipo;
         this.diametro_canalizacoes = diametro_canalizacoes;
         this.carga_eletrica = carga_eletrica;

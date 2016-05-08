@@ -19,6 +19,8 @@ public abstract class Imovel {
 
     // VARIAVEIS DE INSTÂNCIA
 
+    /* Codigo de um Imovel */
+    private String id;
     /* Define a rua onde se encontra um Imovel */
     private String rua;
     /* Define o Preço de um Imovel */
@@ -36,6 +38,7 @@ public abstract class Imovel {
      * Construtor vazio de um Imovel
      */
     public Imovel() {
+        this.id = "n/a";
         this.rua = "n/a";
         this.preco = 0;
         this.preco_Minimo = 0;
@@ -48,6 +51,7 @@ public abstract class Imovel {
      * @param i
      */
     public Imovel(Imovel i) {
+        this.id = i.getId();
         this.rua = i.getRua();
         this.preco = i.getPreco();
         this.preco_Minimo = i.getPreco_Minimo();
@@ -68,24 +72,42 @@ public abstract class Imovel {
      * @param estado
      * @param cons
      */
-    public Imovel(String rua, double preco, double preco_min, String estado, ArrayList<Consulta> cons) {
+    public Imovel(String idImovel, String rua, double preco, double preco_min, String estado, ArrayList<Consulta> cons) {
+        this.id = idImovel;
         this.rua = rua;
         this.preco = preco;
         this.preco_Minimo = preco_min;
         this.estado = estado;
         this.consultas = new ArrayList<Consulta>();
-        Iterator<Consulta> it; 
+        Iterator<Consulta> it;
         if(cons!=null){
             it = cons.iterator();
             while(it.hasNext()) {
                 Consulta consult = it.next();
                 this.consultas.add(consult.clone());
             }
-        }    
+        }
     }
 
 
     // GETTERS E SETTERS
+
+    /**
+     * Obter o ID de um Imovel.
+     * @return
+     */
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * Define o ID de um Imovel
+     * @param idImovel
+     */
+    public void setId(String idImovel) {
+        this.id = idImovel;
+    }
+
 
     /**
      * Obter a Rua de um Imovel.

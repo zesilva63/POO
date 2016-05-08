@@ -48,7 +48,7 @@ public class Imoobiliaria {
     }
 
 
-    // FUNCOES REQUERIDAS
+    // REGISTOS DO PROGRAMA
 
     public void registarUtilizador ( Utilizador utilizador ) throws UtilizadorExistenteException{
 
@@ -83,10 +83,12 @@ public class Imoobiliaria {
     }
 
 
-    public void fecharSessao(){
+    public void fechaSessao(){
         this.utilizador = null;
     }
 
+
+    // VENDEDORES
 
     public void registaImovel(Imovel im) throws ImovelExisteException , SemAutorizacaoException {
         if(this.utilizador.getClass().getSimpleName().equals("Vendedor")){
@@ -123,6 +125,7 @@ public class Imoobiliaria {
       }
     }
 
+    // TODOS OS UTILIZADORES
 
     /**
     * Devolve uma lista com os imoveis de um dado Tipo e até um certo Preço.
@@ -162,5 +165,10 @@ public class Imoobiliaria {
         }
         return l;
     }
+
+    // COMPRADORES
+
+
+
 
 }

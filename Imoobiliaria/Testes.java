@@ -53,7 +53,7 @@ public class Testes
             fail();
         }
 
-        t = new Terreno("rua do carv",20000,1000,"em venda",null,"n sei",69,33,true);  // Preencher parâmetros do construtor
+        t = new Terreno("1","rua do carv",20000,1000,"em venda",null,"n sei",69,33,true);  // Preencher parâmetros do construtor
         try {
             imo.registaImovel(t);
         } catch (Exception e) {
@@ -67,7 +67,7 @@ public class Testes
         assertTrue(imo.getMapeamentoImoveis().keySet().contains(t));
         assertTrue(imo.getConsultas().size()>0);
         */
-        imo.fecharSessao();
+        imo.fechaSessao();
         Comprador c = new Comprador();  // Preencher parâmetros do construtor
         try {
             imo.registarUtilizador(c);

@@ -4,21 +4,23 @@
  * @author Grupo 60
  */
 
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.stream.Collectors;
+import static java.util.stream.Collectors.toMap;
+
 
 public class Vendedor extends Utilizador {
 
-    private Set<Imovel> portfolio, vendidos;
+    private Map<String,Imovel> portfolio, vendidos;
 
     /**
      * Cria uma instância de um Vendedor.
      */
     public Vendedor(){
         super("","","","","");
-        this.portfolio = new TreeSet<Imovel>();
-        this.vendidos = new TreeSet<Imovel>();
+        this.portfolio = new HashMap<String,Imovel>();
+        this.vendidos = new HashMap<String,Imovel>();
     }
 
     /**
@@ -41,32 +43,32 @@ public class Vendedor extends Utilizador {
      * @param p
      * @param v
      */
-    public Vendedor(String email, String nome, String password, String morada, String data_nascimento, Set<Imovel> p, Set<Imovel> v){
+    public Vendedor(String email, String nome, String password, String morada, String data_nascimento, HashMap<String,Imovel> p, HashMap<String,Imovel> v){
         super(email, nome, password, morada, data_nascimento);
-        this.portfolio = new TreeSet<Imovel>();
+        this.portfolio = new HashMap<String,Imovel>();
         if(p!= null) this.setPortfolio(p);
-        this.vendidos = new TreeSet<Imovel>();
+        this.vendidos = new HashMap<String,Imovel>();
         if(p!=null) this.setVendidos(v);
     }
 
 
-    public Set<Imovel> getPortfolio(){
-        return this.portfolio.stream().map(i -> {return i.clone();}).collect(Collectors.toSet());
+    public Map<String,Imovel> getPortfolio(){
+        return this.portfolio.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
     }
 
 
-    public Set<Imovel> getVendidos(){
-        return this.vendidos.stream().map(i -> {return i.clone();}).collect(Collectors.toSet());
+    public Map<String,Imovel> getVendidos(){
+        return this.vendidos.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
     }
 
 
-    public void setPortfolio(Set<Imovel> imoveis){
-        this.portfolio = imoveis.stream().map(i -> {return i.clone();}).collect(Collectors.toSet());
+    public void setPortfolio(Map<String,Imovel> imoveis){
+        this.portfolio = imoveis.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
     }
 
 
-    public void setVendidos(Set<Imovel> imoveis){
-        this.vendidos = imoveis.stream().map(i -> {return i.clone();}).collect(Collectors.toSet());
+    public void setVendidos(Map<String,Imovel> imoveis){
+        this.vendidos = imoveis.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
     }
 
 
@@ -85,7 +87,11 @@ public class Vendedor extends Utilizador {
    }
 
    public void adicionaPortfolio(Imovel i) {
-      this.portfolio.add(i.clone());
+      this.portfolio.put(i.getId(),i.clone());
+   }
+
+   public void adicionaVendidos(Imovel i) {
+      this.vendidos.put(i.getId(),i.clone());
    }
 
 }

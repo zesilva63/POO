@@ -4,14 +4,15 @@
  * @author Grupo 60
  */
 
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.stream.Collectors;
+import static java.util.stream.Collectors.toMap;
 
 public class Comprador extends Utilizador {
 
     // VARIAVEIS DE INSTÂNCIA
-	private Set<Imovel> favoritos;
+	private Map<String,Imovel> favoritos;
 
 
 	// CONSTRUTORES
@@ -21,7 +22,7 @@ public class Comprador extends Utilizador {
 	 */
     public Comprador(){
         super("","","","","");
-        favoritos = new TreeSet<Imovel>();
+        favoritos = new HashMap<String,Imovel>();
     }
 
 	 /**
@@ -42,21 +43,21 @@ public class Comprador extends Utilizador {
      * @param data_nascimento
      * @param f
      */
-    public Comprador(String email, String nome, String password, String morada, String data_nascimento, Set<Imovel> f){
+    public Comprador(String email, String nome, String password, String morada, String data_nascimento, HashMap<String,Imovel> f){
         super(email, nome, password, morada, data_nascimento);
-        favoritos = new TreeSet<Imovel>();
+        favoritos = new HashMap<String,Imovel>();
         setFavoritos(f);
     }
 
 	 // GETTERS E SETTERS
 
-    public Set<Imovel> getFavoritos(){
-        return this.favoritos.stream().map(i -> {return i.clone();}).collect(Collectors.toSet());
-    }
+    public Map<String,Imovel> getFavoritos(){
+		 return this.favoritos.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
+	 }
 
 
-    public void setFavoritos(Set<Imovel> imoveis){
-        this.favoritos = imoveis.stream().map(i -> {return i.clone();}).collect(Collectors.toSet());
+    public void setFavoritos(Map<String,Imovel> imoveis){
+		 this.favoritos = imoveis.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
     }
 
 	 // CLONE
@@ -81,7 +82,7 @@ public class Comprador extends Utilizador {
 	 * Adiciona um Imovel aos Favoritos.
 	 * @param
 	 */
-	 public void adiciona_Favorito(Imovel i) {
-		 this.favoritos.add(i);
+	 public void adicionaFavorito(Imovel i) {
+		 this.favoritos.put(i.getId(),i.clone());
 	 }
 }
