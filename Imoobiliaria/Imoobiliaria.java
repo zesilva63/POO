@@ -5,12 +5,14 @@
  */
 
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.io.*;
 
 public class Imoobiliaria {
 
@@ -51,6 +53,18 @@ public class Imoobiliaria {
 
     // REGISTOS DO PROGRAMA
 
+
+    public static Imoobiliaria initApp() throws IOException, ClassNotFoundException {
+      String ficheiro = "file.txt";
+      ObjectInputStream ois = new ObjectInputStream(new FileInputStream(ficheiro));
+
+      Imoobiliaria te= (Imoobiliaria) ois.readObject();
+
+      ois.close();
+      return te;
+    }
+
+
     public void registarUtilizador ( Utilizador utilizador ) throws UtilizadorExistenteException{
 
        if(this.utilizadores.containsValue(utilizador)){
@@ -87,6 +101,16 @@ public class Imoobiliaria {
     public void fechaSessao(){
         this.utilizador = null;
     }
+
+
+
+   public void gravaObj(String fich) throws IOException {
+      ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fich));
+      oos.writeObject(this);
+
+      oos.flush();
+      oos.close();
+   }
 
 
     // VENDEDORES
@@ -196,5 +220,19 @@ public class Imoobiliaria {
     }
 
 
+
+    public TreeSet<Imovel> getFavoritos() throws SemAutorizacaoException {
+        TreeSet<Imovel> lista = null;
+        if(this.utilizador.getClass().getSimpleName().equals("Comprador")) {
+                lista = new TreeSet<Imovel>(new ComparatorPreco());
+                Comprador c = (Comprador) this.utilizador;
+                for(Imovel im: c.getFavoritos().values()){
+                    lista.add(im);
+                }
+        }
+        else throw new SemAutorizacaoException("Apenas Compradores registados estão autorizados.");
+
+        return lista;
+    }
 
 }
