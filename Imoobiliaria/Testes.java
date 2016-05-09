@@ -29,7 +29,7 @@ public class Testes
         imo = new Imoobiliaria();
         try {
             imo.iniciaSessao("",null);
-			fail();
+            fail();
         } catch(SemAutorizacaoException e) {
 
         } catch(Exception e) {
@@ -62,8 +62,14 @@ public class Testes
 
         int s = imo.getImovel("Terreno", Integer.MAX_VALUE).size();
         assertTrue(s>0);
-        Set<String> ids = imo.getTopImoveis(0);
-        assertTrue(ids.contains(t.getId()));
+        try {
+            Set<String> ids = imo.getTopImoveis (0);
+            assertTrue(ids.contains(t.getId()));
+        }
+         catch (Exception e) {
+            fail();
+        }
+        
         /*assertTrue(imo.getMapeamentoImoveis().keySet().contains(t));
         assertTrue(imo.getConsultas().size()>0);
         */
