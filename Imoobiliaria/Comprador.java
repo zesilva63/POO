@@ -57,7 +57,7 @@ public class Comprador extends Utilizador {
 
 
     public void setFavoritos(Map<String,Imovel> imoveis){
-		 this.favoritos = imoveis.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
+		if(imoveis !=null) this.favoritos = imoveis.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
     }
 
 	 // CLONE

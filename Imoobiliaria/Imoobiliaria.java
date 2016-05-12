@@ -178,19 +178,17 @@ public class Imoobiliaria {
       }
     }
 
-
-
-    public Set<String> getTopImoveis (int n) throws SemAutorizacaoException {
+    public Set<String> getTopImoveis (int n){
       Set<String> lista = new HashSet<String>();
-      if(this.utilizador.getClass().getSimpleName().equals("Vendedor")){
+      //if(this.utilizador.getClass().getSimpleName().equals("Vendedor")){
          Vendedor v = (Vendedor) this.utilizador;
          for(Imovel im : v.getPortfolio().values()){
             if(n < im.getConsultas().size()){
                lista.add(im.getId());
             }
          }
-      }
-      else throw new SemAutorizacaoException("Apenas Vendedores estão autorizados.");
+     // }
+      //else throw new SemAutorizacaoException("Apenas Vendedores estão autorizados.");
       return lista;
    }
 

@@ -5,7 +5,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.Set;
-import java.util.TreeSet;
 
 /**
  * The test class Testes.
@@ -29,52 +28,49 @@ public class Testes
         imo = new Imoobiliaria();
         try {
             imo.iniciaSessao("",null);
-            fail();
+			fail();
         } catch(SemAutorizacaoException e) {
-
+            
         } catch(Exception e) {
             fail();
         }
-
-        Set<Imovel> l = new TreeSet<Imovel>();
+        
         try {
             v = new Vendedor("abc@lei.com","joao","1234","rua do carvalho","11-01-2000",null,null);  // Preencher parâmetros do construtor
             imo.registarUtilizador(v);
         } catch(Exception e) {
             fail();
         }
-
+        
         String email = v.getEmail();
         String password = v.getPassword();
-
+        
         try {
             imo.iniciaSessao(email, password);
         } catch(Exception e) {
             fail();
         }
-
+        
         t = new Terreno("1","rua do carv",2000,1000,"em venda",null,"n sei",69,33,true);  // Preencher parâmetros do construtor
         try {
             imo.registaImovel(t);
         } catch (Exception e) {
             fail();
         }
-
+            
         int s = imo.getImovel("Terreno", Integer.MAX_VALUE).size();
         assertTrue(s>0);
-        try {
-            Set<String> ids = imo.getTopImoveis (0);
-            assertTrue(ids.contains(t.getId()));
-        }
-         catch (Exception e) {
-            fail();
-        }
-        
+        Set<String> ids = imo.getTopImoveis(0);
+        assertTrue(ids.contains(t.getId()));
         /*assertTrue(imo.getMapeamentoImoveis().keySet().contains(t));
-        assertTrue(imo.getConsultas().size()>0);
-        */
+        try {
+            assertTrue(imo.getConsultas().size()>0);
+        } catch(Exception e) {
+            fail();
+        }*/
+        
         imo.fechaSessao();
-        Comprador c = new Comprador();  // Preencher parâmetros do construtor
+        Comprador c = new Comprador("abc@lei.com","joao","1234","rua do carvalho","11-01-2000",null);  // Preencher parâmetros do construtor
         try {
             imo.registarUtilizador(c);
         } catch(Exception e) {
@@ -86,11 +82,10 @@ public class Testes
             imo.iniciaSessao(email, password);
             imo.setFavorito(t.getId());
             assertTrue(imo.getFavoritos().contains(t));
-            
         } catch(Exception e) {
             e.printStackTrace();
             fail();
         }
     }
-
+    
 }
