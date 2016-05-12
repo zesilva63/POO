@@ -62,8 +62,8 @@ public class Testes
         assertTrue(s>0);
         Set<String> ids = imo.getTopImoveis(0);
         assertTrue(ids.contains(t.getId()));
-        /*assertTrue(imo.getMapeamentoImoveis().keySet().contains(t));
-        try {
+        assertTrue(imo.getMapeamentoImoveis().keySet().contains(t));
+        /*try {
             assertTrue(imo.getConsultas().size()>0);
         } catch(Exception e) {
             fail();

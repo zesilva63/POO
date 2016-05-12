@@ -9,6 +9,7 @@ import java.util.TreeSet;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
@@ -24,6 +25,8 @@ public class Imoobiliaria {
     private Map<String,Utilizador> utilizadores;
     /* Utilizador registado na aplicação */
     private Utilizador utilizador;
+    /* Leilão */
+    private Leilao leilao;
 
 
     // CONSTRUTORES
@@ -180,18 +183,30 @@ public class Imoobiliaria {
 
     public Set<String> getTopImoveis (int n){
       Set<String> lista = new HashSet<String>();
-      //if(this.utilizador.getClass().getSimpleName().equals("Vendedor")){
-         Vendedor v = (Vendedor) this.utilizador;
-         for(Imovel im : v.getPortfolio().values()){
-            if(n < im.getConsultas().size()){
-               lista.add(im.getId());
+      Vendedor v = (Vendedor) this.utilizador;
+      for(Imovel im : v.getPortfolio().values()){
+         if(n < im.getConsultas().size()){
+            lista.add(im.getId());
             }
          }
-     // }
-      //else throw new SemAutorizacaoException("Apenas Vendedores estão autorizados.");
       return lista;
    }
-
+   
+   public Map <Imovel,Vendedor> getMapeamentoImoveis (){
+        Map<Imovel,Vendedor> imoveis = new HashMap<Imovel,Vendedor>();
+        for(Imovel im : this.imoveis.values()){
+            for(Utilizador util : this.utilizadores.values()){
+                if(util.getClass().getSimpleName().equals("Vendedor")){
+                    Vendedor v = (Vendedor) util;
+                    if(v.getPortfolio().containsValue(im)){
+                        imoveis.put(im,v);
+                        break;
+                    }
+                }
+            }
+        }
+        return imoveis;
+    }
 
    public List <Consulta> getConsultas() throws SemAutorizacaoException {
       ArrayList<Consulta> lista = new ArrayList<Consulta>();
@@ -202,7 +217,8 @@ public class Imoobiliaria {
       return lista;
    }
 
-
+   
+   
     // TODOS OS UTILIZADORES
 
     /**
@@ -280,5 +296,20 @@ public class Imoobiliaria {
 
         return lista;
     }
+    
+    
+    //LEILAO
+    public void iniciaLeilao ( Imovel im , int horas ) throws SemAutorizacaoException{
+        /*nao sei se temos que verificar se o imovel existe*/
+        if(this.utilizador.getClass().getSimpleName().equals("Vendedor")){
+            this.leilao.iniciaLeilao(im,horas);
+        }
+        else throw new SemAutorizacaoException ("Apenas Vendedores.");/*ou será para ver se so podem ter vendedores a inicar??*/
 
+    }
+    
+    public Comprador encerraLeilao (){
+        String vencedor = this.leilao.encerraLeilao();
+        return (Comprador)utilizadores.get(vencedor);
+    }
 }

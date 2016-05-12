@@ -1,9 +1,7 @@
-
-
-
 import java.util.ArrayList;
 import java.lang.Double;
 import java.util.Comparator;
+import java.util.Collections;
 
 public class Leilao {
    
@@ -17,20 +15,9 @@ public class Leilao {
         this.tempo = horas;
     }
 
-
-    /*private Comprador vencedor(ArrayList<Licitacao> list){
-        Collections.sort(list,new ComparatorLicitacao());
-        return list.get(0);
-
-    }*/
-
-    public void iniciaLeilao ( Imovel im , int horas ) throws SemAutorizacaoException{
-        /*nao sei se temos que verificar se o imovel existe*/
-        if(im == null){
-            Leilao leilao = new Leilao(im,horas);
-        }
-        else throw new SemAutorizacaoException ("Leilao ja se encontra aberto");/*ou será para ver se so podem ter vendedores a inicar??*/
-
+    public Leilao iniciaLeilao ( Imovel im , int horas ){
+        Leilao leilao = new Leilao(im,horas);
+        return leilao;
     }
     //Adicionar comprador ao leilão:
     public void adicionaComprador ( String idComprador , double limite ,  double incrementos , double minutos ) throws LeilaoTerminadoException{
@@ -41,9 +28,10 @@ public class Leilao {
 
     }
     //Encerrar um leilão:
-    public Comprador encerraLeilao (){
+    public String encerraLeilao (){
         this.imovel=null;
         this.tempo=0;
-        return null /*vencedor(licitadores)*/;
+        Collections.sort(licitadores, new ComparatorLicitacao());
+        return licitadores.get(0).getLicitador();
     }
 }
