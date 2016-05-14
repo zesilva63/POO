@@ -227,19 +227,19 @@ public class Moradia extends Imovel implements Habitavel {
       str = new StringBuilder();
       str.append(super.toString()).append("\n");
       str.append("Tipo de Moradia: ");
-      str.append(this.tipo);
+      str.append(this.tipo+"\n");
       str.append("Área: ");
-      str.append(this.area);
+      str.append(this.area+"\n");
       str.append("Área Coberta: ");
-      str.append(this.area_Coberta);
+      str.append(this.area_Coberta+"\n");
       str.append("Área do Terreno: ");
-      str.append(this.area_Terreno);
+      str.append(this.area_Terreno+"\n");
       str.append("Número de Quartos: ");
-      str.append(this.quartos);
+      str.append(this.quartos+"\n");
       str.append("Número de Casas de Banho: ");
-      str.append(this.casas_Banho);
+      str.append(this.casas_Banho+"\n");
       str.append("Número da porta: ");
-      str.append(this.numero);
+      str.append(this.numero+"\n");
       return str.toString();
    }
 

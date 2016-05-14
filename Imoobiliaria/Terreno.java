@@ -173,15 +173,15 @@ public class Terreno extends Imovel implements Habitavel {
       str = new StringBuilder();
       str.append(super.toString()).append("\n");
       str.append("Tipo de Terreno: ");
-      str.append(this.tipo);
+      str.append(this.tipo+"\n");
       str.append("Área: ");
-      str.append(this.area);
+      str.append(this.area+"\n");
       str.append("Diametro das Canalizações: ");
-      str.append(this.diametro_canalizacoes);
+      str.append(this.diametro_canalizacoes+"\n");
       str.append("Capacidade Elétrica: ");
-      str.append(this.carga_eletrica);
+      str.append(this.carga_eletrica+"\n");
       str.append("Saneamento: ");
-      str.append(this.saneamento);
+      str.append(this.saneamento+"\n");
       return str.toString();
    }
 

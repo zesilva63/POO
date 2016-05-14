@@ -21,7 +21,7 @@ public class Comprador extends Utilizador {
 	 * Cria uma instância de um Comprador.
 	 */
     public Comprador(){
-        super("","","","","");
+        super("Comprador","","","","");
         favoritos = new HashMap<String,Imovel>();
     }
 
@@ -46,18 +46,18 @@ public class Comprador extends Utilizador {
     public Comprador(String email, String nome, String password, String morada, String data_nascimento, HashMap<String,Imovel> f){
         super(email, nome, password, morada, data_nascimento);
         favoritos = new HashMap<String,Imovel>();
-        setFavoritos(f);
+        if (f!=null) setFavoritos(f);
     }
 
 	 // GETTERS E SETTERS
 
     public Map<String,Imovel> getFavoritos(){
 		 return this.favoritos.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
-	 }
+	}
 
 
     public void setFavoritos(Map<String,Imovel> imoveis){
-		if(imoveis !=null) this.favoritos = imoveis.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
+		 this.favoritos = imoveis.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
     }
 
 	 // CLONE

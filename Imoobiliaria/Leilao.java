@@ -1,37 +1,50 @@
-import java.util.ArrayList;
+import java.util.TreeSet;
+import java.util.Iterator;
 import java.lang.Double;
 import java.util.Comparator;
-import java.util.Collections;
 
 public class Leilao {
    
-    private ArrayList<Licitacao> licitadores;
+    private TreeSet<Licitacao> licitadores;
     private Imovel imovel;
     private int tempo;
 
     private Leilao (Imovel im, int horas){
-        this.licitadores = new ArrayList<Licitacao>();
+        this.licitadores = new TreeSet<Licitacao>(new ComparatorLicitacao()); 
         this.imovel = im.clone();
         this.tempo = horas;
     }
 
-    public Leilao iniciaLeilao ( Imovel im , int horas ){
-        Leilao leilao = new Leilao(im,horas);
-        return leilao;
+    /*private Comprador vencedor(ArrayList<Licitacao> list){
+        Collections.sort(list,new ComparatorLicitacao());
+        return list.get(0);
+
+    }*/
+
+    public void iniciaLeilao ( Imovel im , int horas ) throws SemAutorizacaoException{
+        /*nao sei se temos que verificar se o imovel existe*/
+        if(im == null){
+            Leilao leilao = new Leilao(im,horas);
+        }
+        else throw new SemAutorizacaoException ("Leilao ja se encontra aberto");/*ou será para ver se so podem ter vendedores a inicar??*/
+
     }
+    
     //Adicionar comprador ao leilão:
     public void adicionaComprador ( String idComprador , double limite ,  double incrementos , double minutos ) throws LeilaoTerminadoException{
+        
         if(tempo!=0){
             Licitacao l = new Licitacao(idComprador,limite,incrementos,minutos);
+            this.licitadores.add(l); 
         }
         else new LeilaoTerminadoException("Leilão Terminado");
 
     }
+    
     //Encerrar um leilão:
-    public String encerraLeilao (){
-        this.imovel=null;
+    public Comprador encerraLeilao(){
+        this.imovel=null; 
         this.tempo=0;
-        Collections.sort(licitadores, new ComparatorLicitacao());
-        return licitadores.get(0).getLicitador();
+        return null /*vencedor(licitadores)*/;
     }
 }

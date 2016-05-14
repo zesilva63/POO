@@ -18,7 +18,7 @@ public class Vendedor extends Utilizador {
      * Cria uma instância de um Vendedor.
      */
     public Vendedor(){
-        super("","","","","");
+        super("Vendedor","","","","");
         this.portfolio = new HashMap<String,Imovel>();
         this.vendidos = new HashMap<String,Imovel>();
     }

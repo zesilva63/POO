@@ -1,4 +1,3 @@
-
 /**
  * Compara as datas das Consultas.
  *

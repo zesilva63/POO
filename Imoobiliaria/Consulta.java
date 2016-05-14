@@ -76,5 +76,13 @@ public class Consulta {
     return new Consulta(this);
    }
 
-
+   public String toString() {
+       StringBuilder str;
+       str = new StringBuilder();
+       str.append("Email: ");
+       str.append(this.email).append("\n");
+       str.append("Data: ");
+       str.append(this.data.getTime().toString());
+       return str.toString();
+   }
 }

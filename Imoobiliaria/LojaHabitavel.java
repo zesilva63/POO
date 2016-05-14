@@ -1,4 +1,4 @@
-/**
+ /**
  * Classe relativa a uma LojaHabitavel.
  *
  * @author Grupo 60
@@ -184,13 +184,13 @@ public class LojaHabitavel extends Imovel implements Habitavel {
         str = new StringBuilder();
         str.append(super.toString()).append("\n");
         str.append("Área: ");
-        str.append(this.area);
+        str.append(this.area+"\n");
         str.append("WC: ");
-        str.append(this.wc);
+        str.append(this.wc+"\n");
         str.append("Tipo de negócio viável na LojaHabitavel: ");
-        str.append(this.tipo_Negocio);
-        str.append("Número da porta:");
-        str.append(this.numero);
+        str.append(this.tipo_Negocio+"\n");
+        str.append("Número da porta: ");
+        str.append(this.numero+"\n");
         return str.toString();
     }
 

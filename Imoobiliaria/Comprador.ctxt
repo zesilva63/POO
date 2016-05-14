@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Comprador()
+comment0.text=\r\n\ Cria\ uma\ inst\u00E2ncia\ de\ um\ Comprador.\r\n
+comment1.params=c
+comment1.target=Comprador(Comprador)
+comment1.text=\r\n\ Construtor\ por\ c\u00F3pia.\r\n\ @param\ c\r\n
+comment2.params=email\ nome\ password\ morada\ data_nascimento\ f
+comment2.target=Comprador(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.util.HashMap)
+comment2.text=\r\n\ Construtor\ por\ parametro\r\n\ @param\ email\r\n\ @param\ nome\r\n\ @param\ password\r\n\ @param\ morada\r\n\ @param\ data_nascimento\r\n\ @param\ f\r\n
+comment3.params=
+comment3.target=java.util.Map\ getFavoritos()
+comment4.params=imoveis
+comment4.target=void\ setFavoritos(java.util.Map)
+comment5.params=
+comment5.target=Comprador\ clone()
+comment6.params=obj
+comment6.target=boolean\ equals(java.lang.Object)
+comment7.params=i
+comment7.target=void\ adicionaFavorito(Imovel)
+comment7.text=\r\n\ Adiciona\ um\ Imovel\ aos\ Favoritos.\r\n\ @param\r\n
+numComments=8

@@ -248,13 +248,13 @@ public abstract class Imovel {
         StringBuilder str;
         str = new StringBuilder();
         str.append("Rua: ");
-        str.append(this.rua);
+        str.append(this.rua+"\n");
         str.append("Preço: ");
-        str.append(this.preco);
+        str.append(this.preco+"\n");
         str.append("Preço Minimo: ");
-        str.append(this.preco_Minimo);
+        str.append(this.preco_Minimo+"\n");
         str.append("Estado: ");
-        str.append(this.estado);
+        str.append(this.estado+"\n");
         return str.toString();
     }
 

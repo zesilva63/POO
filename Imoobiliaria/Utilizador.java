@@ -4,8 +4,6 @@
  * @author Grupo 60
  */
 
-
-
 public abstract class Utilizador {
 
     // Variaveis de instância
@@ -164,15 +162,9 @@ public abstract class Utilizador {
         StringBuilder str;
         str = new StringBuilder();
         str.append("Email: ");
-        str.append(this.email);
+        str.append(this.email+"\n");
         str.append("Nome: ");
-        str.append(this.nome);
-        str.append("Password: ");
-        str.append(this.password);
-        str.append("Morada: ");
-        str.append(this.morada);
-        str.append("Data de Nascimento: ");
-        str.append(this.data_Nascimento);
+        str.append(this.nome+"\n");
         return str.toString();
     }
 
