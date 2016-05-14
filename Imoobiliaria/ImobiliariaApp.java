@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.TreeMap;
+import java.util.Set;
+import java.util.HashSet;
 
 public class ImobiliariaApp
 {
@@ -314,8 +316,12 @@ public class ImobiliariaApp
     private static void topConsultados(){
         Scanner is = new Scanner(System.in);
         int numero;
-        numero = inputNumero();
-        imo.getTopImoveis(numero);
+        Set<String> lista = new HashSet<String>();
+        numero = inputConsultas();
+        lista = imo.getTopImoveis(numero);
+        for(String i:lista){
+            System.out.println(i);
+        }
     }
 
     private static void alterarEstado(){
@@ -574,6 +580,21 @@ public class ImobiliariaApp
         }
         is.close();
         return andar;
+    }
+    
+    private static int inputConsultas(){
+        int consultas;
+        System.out.print("Número de consultas: ");
+        Scanner is = new Scanner(System.in);
+        try{
+            consultas = is.nextInt();
+        }
+        catch(InputMismatchException e){
+            System.out.println("Número de consultas inválido!");
+            consultas = inputConsultas();
+        }
+        is.close();
+        return consultas;
     }
 
     private static int inputCasasBanho(){
