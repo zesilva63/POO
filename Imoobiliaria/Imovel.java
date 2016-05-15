@@ -2,6 +2,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.GregorianCalendar;
+import java.io.Serializable;
 
 /**
  * Classe relativa a um Imovel.
@@ -15,7 +16,7 @@ import java.util.GregorianCalendar;
 import java.util.Iterator;
 
 
-public abstract class Imovel {
+public abstract class Imovel implements Serializable {
 
     // VARIAVEIS DE INSTÂNCIA
 

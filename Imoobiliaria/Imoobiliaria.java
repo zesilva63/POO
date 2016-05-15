@@ -15,9 +15,10 @@ import java.util.TreeMap;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.*;
 import java.io.*;
 
-public class Imoobiliaria {
+public class Imoobiliaria implements Serializable{
 
 
    // VARIAVEIS DE INSTANCIA
@@ -92,27 +93,6 @@ public class Imoobiliaria {
     public void fechaSessao(){
         this.utilizador = null;
     }
-
-
-
-    public void gravaObj() throws IOException {
-        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("imoobiliaria_file"));
-        oos.writeObject(this);
-
-        oos.flush();
-        oos.close();
-    }
-
-    public static Imoobiliaria leObj() throws IOException, ClassNotFoundException {
-        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("imoobiliaria_file"));
-
-        Imoobiliaria te= (Imoobiliaria) ois.readObject();
-
-        ois.close();
-        return te;
-    }
-
-
 
     // VENDEDORES
 
@@ -274,5 +254,32 @@ public class Imoobiliaria {
         else throw new SemAutorizacaoException("Apenas Compradores registados estão autorizados.");
     }
 
+    // GRAVAR
+    
+    public void gravaObj(String fich) throws IOException {
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fich));
+        oos.writeObject(this);
 
+        oos.flush();
+        oos.close();
+    }
+
+    public static Imoobiliaria leObj(String fich) throws IOException, ClassNotFoundException {
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fich));
+
+        Imoobiliaria te = (Imoobiliaria) ois.readObject();
+
+        ois.close();
+        return te;
+    }
+    
+    public void log(String f, boolean ap) throws IOException {
+        FileWriter fw = new FileWriter(f, ap);
+        fw.write("\n----------- LOG - LOG - LOG - LOG - LOG ----------------\n");
+        fw.write(this.toString());
+        fw.write("\n----------- LOG - LOG - LOG - LOG - LOG ----------------\n");
+        fw.flush();
+        fw.close();
+    }
+    
 }

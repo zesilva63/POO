@@ -19,11 +19,13 @@ public class ImobiliariaApp
     private ImobiliariaApp() {}
                    
     public static void main(String[] args) {
+        String file_name = "imo_estado";
         carregarMenus();
-        initApp();
+        initApp(file_name);
         apresentarMenu();
         try {
-            imo.gravaObj();
+            imo.gravaObj(file_name);
+            imo.log("log.txt", true);
         }
         catch (IOException e) {
             System.out.println("Não consegui gravar os dados!");
@@ -106,9 +108,9 @@ public class ImobiliariaApp
         menu_cria_imovel = new Menu(menu6);
     }
 
-    private static void initApp(){
+    private static void initApp(String fich){
         try {
-            imo = Imoobiliaria.leObj();
+            imo = Imoobiliaria.leObj(fich);
         }
         catch (IOException e) {
             imo = new Imoobiliaria();

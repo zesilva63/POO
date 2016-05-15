@@ -4,7 +4,9 @@
  * @author Grupo 60
  */
 
-public abstract class Utilizador {
+import java.io.Serializable;
+
+public abstract class Utilizador implements Serializable {
 
     // Variaveis de instância
     private String email;
