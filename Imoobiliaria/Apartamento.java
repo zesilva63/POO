@@ -218,21 +218,21 @@ public class Apartamento extends Imovel implements Habitavel {
     public String toString() {
         StringBuilder str;
         str = new StringBuilder();
-        str.append(super.toString()).append("\n");
+        str.append(super.toString());
         str.append("Tipo de Apartamento: ");
-        str.append(this.tipo);
+        str.append(this.tipo+"\n");
         str.append("Área: ");
-        str.append(this.area);
+        str.append(this.area+"\n");
         str.append("Número de Quartos: ");
-        str.append(this.quartos);
+        str.append(this.quartos+"\n");
         str.append("Número de Casas de Banho: ");
-        str.append(this.casas_Banho);
+        str.append(this.casas_Banho+"\n");
         str.append("Número da porta: ");
-        str.append(this.numero);
+        str.append(this.numero+"\n");
         str.append("Andar: ");
-        str.append(this.andar);
+        str.append(this.andar+"\n");
         str.append("Garagem: ");
-        str.append(this.garagem);
+        str.append(this.garagem+"\n");
         return str.toString();
     }
 
