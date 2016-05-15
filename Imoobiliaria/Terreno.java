@@ -171,7 +171,8 @@ public class Terreno extends Imovel implements Habitavel {
     public String toString() {
       StringBuilder str;
       str = new StringBuilder();
-      str.append(super.toString()).append("\n");
+      str.append(super.toString());
+      str.append("Tipo: Terreno\n");
       str.append("Tipo de Terreno: ");
       str.append(this.tipo+"\n");
       str.append("Área: ");
@@ -182,6 +183,7 @@ public class Terreno extends Imovel implements Habitavel {
       str.append(this.carga_eletrica+"\n");
       str.append("Saneamento: ");
       str.append(this.saneamento+"\n");
+      str.append("********************************\n");
       return str.toString();
    }
 

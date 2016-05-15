@@ -182,7 +182,8 @@ public class LojaHabitavel extends Imovel implements Habitavel {
     public String toString() {
         StringBuilder str;
         str = new StringBuilder();
-        str.append(super.toString()).append("\n");
+        str.append(super.toString());
+        str.append("Tipo: Loja Habitável\n");
         str.append("Área: ");
         str.append(this.area+"\n");
         str.append("WC: ");
@@ -191,6 +192,7 @@ public class LojaHabitavel extends Imovel implements Habitavel {
         str.append(this.tipo_Negocio+"\n");
         str.append("Número da porta: ");
         str.append(this.numero+"\n");
+        str.append("********************************\n");
         return str.toString();
     }
 

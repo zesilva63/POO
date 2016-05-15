@@ -15,11 +15,12 @@ public class ImobiliariaApp
     private static Menu menu_principal,menu_registo,menu_vendedor,
                    menu_comprador,menu_comprador_registado,
                    menu_cria_imovel,menu_logado;
+                   
     private ImobiliariaApp() {}
                    
     public static void main(String[] args) {
         carregarMenus();
-        carregarDados();
+        initApp();
         apresentarMenu();
         try {
             imo.gravaObj();
@@ -105,7 +106,7 @@ public class ImobiliariaApp
         menu_cria_imovel = new Menu(menu6);
     }
 
-    private static void carregarDados(){
+    private static void initApp(){
         try {
             imo = Imoobiliaria.leObj();
         }
@@ -261,11 +262,10 @@ public class ImobiliariaApp
         for(Map.Entry<Imovel,Vendedor> entry : imoveisVendedores.entrySet()){
             Imovel i = entry.getKey();
             Vendedor v = entry.getValue();
-            System.out.println("#### Vendedor ####");
+            System.out.println("\n******************* Vendedor *******************");
             System.out.println(v);
-            System.out.println("##################");
             System.out.println(i);
-            System.out.println("##################");
+            System.out.println("************************************************");
         }
     }
 
@@ -343,11 +343,13 @@ public class ImobiliariaApp
 
     private static void adicionaImovel(){
         Imovel imovel = criaImovel();
-        try{
-            imo.registaImovel(imovel);
-        }
-        catch(ImovelExisteException | SemAutorizacaoException e){
-            System.out.println(e.getMessage());
+        if(imovel!=null){
+            try{
+                imo.registaImovel(imovel);
+            }
+            catch(ImovelExisteException | SemAutorizacaoException e){
+                System.out.println(e.getMessage());
+            }
         }
     }
 

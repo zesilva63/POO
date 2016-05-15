@@ -160,7 +160,8 @@ public class Loja extends Imovel {
     public String toString() {
         StringBuilder str;
         str = new StringBuilder();
-        str.append(super.toString()).append("\n");
+        str.append(super.toString());
+        str.append("Tipo: Loja\n");
         str.append("Área: ");
         str.append(this.area+"\n");
         str.append("WC: ");
@@ -169,6 +170,7 @@ public class Loja extends Imovel {
         str.append(this.tipo_Negocio+"\n");
         str.append("Número da porta: ");
         str.append(this.numero+"\n");
+        str.append("********************************\n");
         return str.toString();
     }
 

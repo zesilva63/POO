@@ -219,6 +219,7 @@ public class Apartamento extends Imovel implements Habitavel {
         StringBuilder str;
         str = new StringBuilder();
         str.append(super.toString());
+        str.append("Tipo: Apartamento\n");
         str.append("Tipo de Apartamento: ");
         str.append(this.tipo+"\n");
         str.append("Área: ");
@@ -233,6 +234,7 @@ public class Apartamento extends Imovel implements Habitavel {
         str.append(this.andar+"\n");
         str.append("Garagem: ");
         str.append(this.garagem+"\n");
+        str.append("********************************\n");
         return str.toString();
     }
 

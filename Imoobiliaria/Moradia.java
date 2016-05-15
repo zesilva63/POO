@@ -225,7 +225,8 @@ public class Moradia extends Imovel implements Habitavel {
     public String toString() {
       StringBuilder str;
       str = new StringBuilder();
-      str.append(super.toString()).append("\n");
+      str.append(super.toString());
+      str.append("Tipo: Moradia\n");
       str.append("Tipo de Moradia: ");
       str.append(this.tipo+"\n");
       str.append("Área: ");
@@ -240,6 +241,7 @@ public class Moradia extends Imovel implements Habitavel {
       str.append(this.casas_Banho+"\n");
       str.append("Número da porta: ");
       str.append(this.numero+"\n");
+      str.append("********************************\n");
       return str.toString();
    }
 

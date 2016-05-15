@@ -161,9 +161,9 @@ public abstract class Utilizador {
     public String toString() {
         StringBuilder str;
         str = new StringBuilder();
-        str.append("Email: ");
+        str.append("    Email: ");
         str.append(this.email+"\n");
-        str.append("Nome: ");
+        str.append("    Nome: ");
         str.append(this.nome+"\n");
         return str.toString();
     }

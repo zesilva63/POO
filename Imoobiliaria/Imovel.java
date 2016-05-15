@@ -247,6 +247,7 @@ public abstract class Imovel {
     public String toString() {
         StringBuilder str;
         str = new StringBuilder();
+        str.append("************ Imóvel ************\n");
         str.append("Rua: ");
         str.append(this.rua+"\n");
         str.append("Preço: ");
