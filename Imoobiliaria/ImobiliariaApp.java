@@ -89,10 +89,10 @@ public class ImobiliariaApp
                            "Alterar estado de um Imóvel",
                            "Imóveis mais consultados"};
         String [] menu4 = {"Lista de Imóveis de um dado tipo",
-                           "Lista de Imóveis habitáveis até a um determinado preço",
+                           "Lista de Imóveis habitáveis",
                            "Todos os Imóveis e respectivos vendedores"};
         String [] menu5 = {"Lista de Imóveis de um dado tipo",
-                           "Lista de Imóveis habitáveis até a um determinado preço",
+                           "Lista de Imóveis habitáveis",
                            "Todos os Imóveis e respectivos vendedores",
                            "Marcar um Imóvel como favorito",
                            "Consultar favoritos"};
