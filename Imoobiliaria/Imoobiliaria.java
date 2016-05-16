@@ -25,6 +25,7 @@ public class Imoobiliaria implements Serializable{
     private Map<String,Imovel> imoveis;
     private Map<String,Utilizador> utilizadores;
     private Utilizador utilizador;
+    private int id;
 
 
     // CONSTRUTORES
@@ -36,6 +37,7 @@ public class Imoobiliaria implements Serializable{
         this.imoveis = new TreeMap<String,Imovel>();
         this.utilizadores = new TreeMap<String,Utilizador>();
         this.utilizador = null;
+        this.id = 0;
     }
 
 
@@ -103,6 +105,7 @@ public class Imoobiliaria implements Serializable{
                 this.imoveis.put(im.getId(),im);
                 Vendedor v1 = (Vendedor) this.utilizador;
                 v1.adicionaPortfolio(im);
+                this.id++;
             }
             else throw new ImovelExisteException("Imovel já existe.");
         }
@@ -184,6 +187,10 @@ public class Imoobiliaria implements Serializable{
 
    public Utilizador getUtilizador(){
        return this.utilizador;
+   }
+   
+   public int getId(){
+       return this.id;
    }
     // TODOS OS UTILIZADORES
 
@@ -280,6 +287,22 @@ public class Imoobiliaria implements Serializable{
         fw.write("\n----------- LOG - LOG - LOG - LOG - LOG ----------------\n");
         fw.flush();
         fw.close();
+    }
+    
+    public String toString(){
+        StringBuilder str;
+        str = new StringBuilder();
+        str.append("Imóveis: ");
+        for(Imovel i: this.imoveis.values())
+            str.append(i.getId() + " ");
+        str.append("\n");
+        str.append("Utilizadores: ");
+        for(Utilizador u: this.utilizadores.values())
+            str.append(u.getEmail() + " " );
+        str.append("\n");
+        str.append("Utilizador logado: \n");
+        str.append(this.utilizador);
+        return str.toString();
     }
     
 }

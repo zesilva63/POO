@@ -6,8 +6,9 @@
  */
 
 import java.util.GregorianCalendar;
+import java.io.Serializable;
 
-public class Consulta {
+public class Consulta implements Serializable {
 
    // VARIAVEIS DE INSTANCIA
    private String email;

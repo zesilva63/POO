@@ -361,15 +361,14 @@ public class ImobiliariaApp
 
         menu_cria_imovel.executa();
         if(menu_cria_imovel.getOpcao() !=0){
-            String id,rua,estado;
-            Double preco, preco_Minimo;
-            System.out.print("ID: ");
-            id = is.nextLine();
+            String rua,estado;
+            Double preco, preco_Minimo; String id;
             System.out.print("Rua: ");
             rua = is.nextLine();
             preco = inputPreco();
             preco_Minimo = inputPrecoMinimo();
             estado = "em venda";
+            id = "ID_" + imo.getId();
 
             switch(menu_cria_imovel.getOpcao()){
                 case 1: double area_loja; boolean wc_loja; String tipo_Negocio,wc_string;

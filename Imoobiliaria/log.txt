@@ -1,0 +1,62 @@
+
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+Imóveis: ola 
+Utilizadores: 1 2 3 
+Utilizador logado: 
+    Email: 3
+    Nome: 3
+
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+Imóveis: 
+Utilizadores: 1 
+Utilizador logado: 
+null
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+Imóveis: ID_0 ID_1 
+Utilizadores: 1 
+Utilizador logado: 
+    Email: 1
+    Nome: 1
+
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+Imóveis: 
+Utilizadores: 
+Utilizador logado: 
+null
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+Imóveis: 
+Utilizadores: 
+Utilizador logado: 
+null
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+Imóveis: ID_0 
+Utilizadores: 1 2 
+Utilizador logado: 
+null
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+Imóveis: ID_0 
+Utilizadores: 1 2 
+Utilizador logado: 
+    Email: 2
+    Nome: 2
+
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+Imóveis: ID_0 
+Utilizadores: 1 2 
+Utilizador logado: 
+null
+----------- LOG - LOG - LOG - LOG - LOG ----------------

@@ -249,6 +249,8 @@ public abstract class Imovel implements Serializable {
         StringBuilder str;
         str = new StringBuilder();
         str.append("************ Imóvel ************\n");
+        str.append("ID: ");
+        str.append(this.id+"\n");
         str.append("Rua: ");
         str.append(this.rua+"\n");
         str.append("Preço: ");
