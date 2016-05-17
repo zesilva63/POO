@@ -25,6 +25,7 @@ public class Imoobiliaria implements Serializable{
     private Map<String,Imovel> imoveis;
     private Map<String,Utilizador> utilizadores;
     private Utilizador utilizador;
+    private Leilao leilao;
     private int id;
 
 
@@ -261,6 +262,24 @@ public class Imoobiliaria implements Serializable{
         else throw new SemAutorizacaoException("Apenas Compradores registados estão autorizados.");
     }
 
+    // LEILAO
+    public void iniciaLeilao ( Imovel im , int horas ) throws SemAutorizacaoException {
+        if(this.utilizador.getClass().getSimpleName().equals("Vendedor")){
+            Leilao leilao = new Leilao(im,horas);
+        }
+        else throw new SemAutorizacaoException ("Apenas Vendedores.");
+    }
+    
+    public void arrancaLeilao(){
+         this.leilao.arrancaLeilao();
+    }
+    
+    public Comprador encerraLeilao(){
+        if(this.leilao.encerraLeilao().getValor() > this.leilao.getImovel().getPreco_Minimo());
+            String idComprador = this.leilao.encerraLeilao().getLicitador();
+        return (Comprador) utilizadores.get(idComprador);
+    }
+    
     // GRAVAR
     
     public void gravaObj(String fich) throws IOException {

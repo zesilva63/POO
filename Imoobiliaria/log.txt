@@ -60,3 +60,17 @@ Utilizadores: 1 2
 Utilizador logado: 
 null
 ----------- LOG - LOG - LOG - LOG - LOG ----------------
+
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+Imóveis: 
+Utilizadores: 
+Utilizador logado: 
+null
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+Imóveis: 
+Utilizadores: 
+Utilizador logado: 
+null
+----------- LOG - LOG - LOG - LOG - LOG ----------------

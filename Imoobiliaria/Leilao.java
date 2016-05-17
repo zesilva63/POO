@@ -1,33 +1,22 @@
-import java.util.TreeSet;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.lang.Double;
 import java.util.Comparator;
+import java.util.Collections;
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
+import java.io.Serializable;
 
-public class Leilao {
+public class Leilao implements Serializable {
    
-    private TreeSet<Licitacao> licitadores;
+    private ArrayList<Licitacao> licitadores;
     private Imovel imovel;
     private int tempo;
 
-    private Leilao (Imovel im, int horas){
-        this.licitadores = new TreeSet<Licitacao>(new ComparatorLicitacao()); 
+    public Leilao (Imovel im, int horas){
+        this.licitadores = new ArrayList<Licitacao>(); 
         this.imovel = im.clone();
         this.tempo = horas;
-    }
-
-    /*private Comprador vencedor(ArrayList<Licitacao> list){
-        Collections.sort(list,new ComparatorLicitacao());
-        return list.get(0);
-
-    }*/
-
-    public void iniciaLeilao ( Imovel im , int horas ) throws SemAutorizacaoException{
-        /*nao sei se temos que verificar se o imovel existe*/
-        if(im == null){
-            Leilao leilao = new Leilao(im,horas);
-        }
-        else throw new SemAutorizacaoException ("Leilao ja se encontra aberto");/*ou será para ver se so podem ter vendedores a inicar??*/
-
     }
     
     //Adicionar comprador ao leilão:
@@ -41,10 +30,40 @@ public class Leilao {
 
     }
     
+    public void arrancaLeilao(){
+        System.out.println("#########COMEÇA O LEILÃO##########");
+        LocalTime now1 = LocalTime.now();
+        LocalTime now2 = LocalTime.now();
+        for(Licitacao l: licitadores){
+            l.setTempo(now1);
+        }
+        long secondsBetween = ChronoUnit.SECONDS.between(now1, now2);
+        while((tempo*60) > (int) secondsBetween){ 
+            for(Licitacao l : licitadores){
+                now2=LocalTime.now();
+                l.actualizaValor(now2);
+               
+                System.out.println(l.getLicitador() + "faz uma licitação de" + l.getValor() + "€");
+            }
+            now2 = LocalTime.now();
+            secondsBetween = ChronoUnit.SECONDS.between(now1, now2);
+        }
+    }
+    
     //Encerrar um leilão:
-    public Comprador encerraLeilao(){
+    public Licitacao encerraLeilao(){
         this.imovel=null; 
         this.tempo=0;
-        return null /*vencedor(licitadores)*/;
+        Collections.sort(licitadores, new ComparatorLicitacao());
+        return licitadores.get(0);
     }
+    
+    public Imovel getImovel(){
+        return this.imovel;
+    }
+    
+    public int getTempo(){
+        return this.tempo;
+    }
+    
 }

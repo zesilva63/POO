@@ -1,3 +1,5 @@
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 
 public class Licitacao
 {
@@ -5,6 +7,7 @@ public class Licitacao
     private double limite;
     private double incremento;
     private double valor;
+    private LocalTime tempo;
     private String licitador;
     
     public Licitacao(String licitador, double limite, double incremento,double minutos){
@@ -21,6 +24,26 @@ public class Licitacao
         this.incremento=l.getIncremento();
         this.licitador=l.getLicitador();
         this.valor=l.getValor();
+    }
+    
+    public void actualizaValor(LocalTime agora){
+        long secondsBetween = ChronoUnit.SECONDS.between(tempo, agora);
+        if(secondsBetween > minutos && valor != limite){
+            if(valor>limite) 
+                this.valor=limite;
+            else if(valor<limite){
+                    valor+=incremento;
+            }
+            tempo=agora;
+        }
+    }
+    
+    public LocalTime getTempo(){
+        return this.tempo;
+    }
+    
+    public void setTempo(LocalTime tempo){
+        this.tempo=tempo;
     }
     
     public double getMinutos(){
