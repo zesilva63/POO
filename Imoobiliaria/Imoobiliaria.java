@@ -144,6 +144,11 @@ public class Imoobiliaria implements Serializable{
          if(i != null) { // imovel existe
             if(estado.equals("em venda") || estado.equals("vendido") || estado.equals("reservado")) {
                i.setEstado(estado);
+               if(estado.equals("vendido")) {
+                  Vendedor v = (Vendedor) this.utilizador;
+                  v.removePortfolio(i);
+                  v.adicionaVendidos(i);
+               }
             } else {
                throw new EstadoInvalidoException("Estado Inválido.");
             }
@@ -189,7 +194,7 @@ public class Imoobiliaria implements Serializable{
    public Utilizador getUtilizador(){
        return this.utilizador;
    }
-   
+
    public int getId(){
        return this.id;
    }
@@ -269,19 +274,19 @@ public class Imoobiliaria implements Serializable{
         }
         else throw new SemAutorizacaoException ("Apenas Vendedores.");
     }
-    
+
     public void arrancaLeilao(){
          this.leilao.arrancaLeilao();
     }
-    
+
     public Comprador encerraLeilao(){
         if(this.leilao.encerraLeilao().getValor() > this.leilao.getImovel().getPreco_Minimo());
             String idComprador = this.leilao.encerraLeilao().getLicitador();
         return (Comprador) utilizadores.get(idComprador);
     }
-    
+
     // GRAVAR
-    
+
     public void gravaObj(String fich) throws IOException {
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fich));
         oos.writeObject(this);
@@ -298,7 +303,7 @@ public class Imoobiliaria implements Serializable{
         ois.close();
         return te;
     }
-    
+
     public void log(String f, boolean ap) throws IOException {
         FileWriter fw = new FileWriter(f, ap);
         fw.write("\n----------- LOG - LOG - LOG - LOG - LOG ----------------\n");
@@ -307,7 +312,7 @@ public class Imoobiliaria implements Serializable{
         fw.flush();
         fw.close();
     }
-    
+
     public String toString(){
         StringBuilder str;
         str = new StringBuilder();
@@ -323,5 +328,5 @@ public class Imoobiliaria implements Serializable{
         str.append(this.utilizador);
         return str.toString();
     }
-    
+
 }

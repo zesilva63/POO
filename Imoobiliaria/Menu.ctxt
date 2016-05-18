@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=opcoes
 comment0.target=Menu(java.lang.String[])
-comment0.text=\r\n\ Construtor\ para\ objetos\ da\ classe\ Menu\r\n
+comment0.text=\n\ Construtor\ para\ objetos\ da\ classe\ Menu\n
 comment1.params=
 comment1.target=void\ executa()
 comment2.params=

@@ -74,3 +74,10 @@ Utilizadores:
 Utilizador logado: 
 null
 ----------- LOG - LOG - LOG - LOG - LOG ----------------
+
+----------- LOG - LOG - LOG - LOG - LOG ----------------
+Imóveis: 
+Utilizadores: 
+Utilizador logado: 
+null
+----------- LOG - LOG - LOG - LOG - LOG ----------------

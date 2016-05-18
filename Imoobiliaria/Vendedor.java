@@ -94,4 +94,8 @@ public class Vendedor extends Utilizador {
       this.vendidos.put(i.getId(),i);
    }
 
+   public void removePortfolio(Imovel i) {
+      this.vendidos.remove(i);
+   }
+
 }
