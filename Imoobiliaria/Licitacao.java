@@ -60,11 +60,27 @@ public class Licitacao implements Serializable
     }
     
     /**
+     * Definir os minutos da licitação.
+     * @param
+     */
+    public void setMinutos(long minutos){
+        this.minutos=minutos;
+    }
+    
+    /**
      * Devolver o limite da licitação.
      * @return
      */
     public double getLimite(){
         return this.limite;
+    }
+    
+    /**
+     * Definir o limite da licitação.
+     * @param limite
+     */
+    public void setLimite(double limite){
+        this.limite = limite;
     }
     
     /**
@@ -76,11 +92,26 @@ public class Licitacao implements Serializable
     }
     
     /**
+     * Definir o incremento da licitação.
+     * @param incremento
+     */
+    public void setIncremento(double incremento){
+        this.incremento = incremento;
+    }
+    
+    /**
      * Devolver o licitador da liciatação.
      * @return
      */
     public String getLicitador(){
         return this.licitador;
+    }
+    
+    /**
+     * Definir o licitador.
+     */
+    public void setLicitador(String licitador){
+        this.licitador = licitador;
     }
     
     /**

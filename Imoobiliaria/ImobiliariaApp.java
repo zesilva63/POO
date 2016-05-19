@@ -539,12 +539,16 @@ public class ImobiliariaApp
                         break;
 
                 case 5: String tipo_terreno; int area_terreno;
-                        float diametro_canalizacoes,carga_eletrica,saneamento;
+                        float diametro_canalizacoes,carga_eletrica;
+                        boolean saneamento;
                         tipo_terreno = inputTipo();
                         area_terreno = (int) inputArea();
                         diametro_canalizacoes = inputCanalizacoes();
                         carga_eletrica = inputCargaEletrica();
                         saneamento = inputSaneamento();
+                        imovel = new Terreno(id,rua,preco,preco_Minimo,estado,null,tipo_terreno,
+                        diametro_canalizacoes,carga_eletrica,saneamento);
+                        break;
             }
 
         is.close();
@@ -840,19 +844,15 @@ public class ImobiliariaApp
      * Input de informação para o número do saneamento.
      * @return 
      */
-    private static float inputSaneamento(){
-        float total;
-        System.out.print("Saneamento: ");
+    private static boolean inputSaneamento(){
+        String saneamento_string; boolean saneamento;
+        System.out.print("Saneamento (S/N): ");
         Scanner is = new Scanner(System.in);
-        try{
-            total = is.nextFloat();
-        }
-        catch(InputMismatchException e){
-            System.out.println("Valor inválido!");
-            total = inputSaneamento();
-        }
+        saneamento_string = is.nextLine();
+        if(saneamento_string.equals("S")|| saneamento_string.equals("s")) saneamento = true;
+        else saneamento = false;
         is.close();
-        return total;
+        return saneamento;
     }
     
     /**

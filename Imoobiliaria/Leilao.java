@@ -92,4 +92,27 @@ public class Leilao implements Serializable {
         return this.horas;
     }
     
+    /**
+     * Retornar o montante no momento.
+     * @return
+     */
+    public int getMontante(){
+        return this.montante;
+    }
+    
+    /**
+     * Retornar as licitações até ao momento.
+     * @return
+     */
+    public ArrayList<Licitacao> getLicitadores(){
+        return this.licitadores;
+    }
+    
+    /**
+     * Retornar a licitação vencedora.
+     * @return
+     */
+    public Licitacao getVencedora(){
+        return this.vencedora;
+    }
 }
