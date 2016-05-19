@@ -10,5 +10,5 @@ comment3.target=Licitacao\ encerraLeilao()
 comment4.params=
 comment4.target=Imovel\ getImovel()
 comment5.params=
-comment5.target=int\ getTempo()
+comment5.target=int\ getHoras()
 numComments=6

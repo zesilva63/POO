@@ -66,7 +66,7 @@ public class Testes
         try {
             assertTrue(imo.getConsultas().size()>0);
         } catch(Exception e) {
-            //fail();
+            fail();
         }
         
         imo.fechaSessao();

@@ -3,13 +3,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.GregorianCalendar;
 import java.io.Serializable;
-
-/**
- * Classe relativa a um Imovel.
- *
- * @author Grupo 60
- */
-
 import java.util.List;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
@@ -255,8 +248,6 @@ public abstract class Imovel implements Serializable {
         str.append(this.rua+"\n");
         str.append("Preço: ");
         str.append(this.preco+"\n");
-        str.append("Preço Minimo: ");
-        str.append(this.preco_Minimo+"\n");
         str.append("Estado: ");
         str.append(this.estado+"\n");
         return str.toString();

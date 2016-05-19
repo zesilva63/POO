@@ -93,7 +93,7 @@ public class Vendedor extends Utilizador {
    public void adicionaVendidos(Imovel i) {
       this.vendidos.put(i.getId(),i);
    }
-
+   
    public void removePortfolio(Imovel i) {
       this.vendidos.remove(i);
    }

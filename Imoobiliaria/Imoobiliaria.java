@@ -15,8 +15,13 @@ import java.util.TreeMap;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
-import java.util.*;
-import java.io.*;
+import java.io.Serializable;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.io.FileWriter;
 
 public class Imoobiliaria implements Serializable{
 
@@ -38,6 +43,7 @@ public class Imoobiliaria implements Serializable{
         this.imoveis = new TreeMap<String,Imovel>();
         this.utilizadores = new TreeMap<String,Utilizador>();
         this.utilizador = null;
+        this.leilao=null;
         this.id = 0;
     }
 
@@ -136,8 +142,7 @@ public class Imoobiliaria implements Serializable{
       else throw new SemAutorizacaoException("Apenas Vendedores estão autorizados a efectuar esta operação.");
    }
 
-
-    public void setEstado(String idImovel , String estado) throws ImovelInexistenteException , SemAutorizacaoException , EstadoInvalidoException {
+   public void setEstado(String idImovel , String estado) throws ImovelInexistenteException , SemAutorizacaoException , EstadoInvalidoException {
 
       if(this.utilizador.getClass().getSimpleName().equals("Vendedor"))  {
          Imovel i = this.imoveis.get(idImovel);
@@ -159,7 +164,7 @@ public class Imoobiliaria implements Serializable{
       else {
            throw new SemAutorizacaoException("Sem autorização para efectuar tal ação.");
       }
-    }
+   }
 
     public Set<String> getTopImoveis (int n) {
       Set<String> lista = new HashSet<String>();
@@ -176,7 +181,6 @@ public class Imoobiliaria implements Serializable{
         Map<Imovel,Vendedor> imoveis = new HashMap<Imovel,Vendedor>();
 
         for(Imovel im : this.imoveis.values()){
-
             for(Utilizador util : this.utilizadores.values()){
                 if(util.getClass().getSimpleName().equals("Vendedor")){
                     Vendedor v = (Vendedor) util;
@@ -194,11 +198,12 @@ public class Imoobiliaria implements Serializable{
    public Utilizador getUtilizador(){
        return this.utilizador;
    }
-
+   
    public int getId(){
        return this.id;
    }
-    // TODOS OS UTILIZADORES
+   
+   // TODOS OS UTILIZADORES
 
     /**
     * Devolve uma lista com os imoveis de um dado Tipo e até um certo Preço.
@@ -269,24 +274,69 @@ public class Imoobiliaria implements Serializable{
 
     // LEILAO
     public void iniciaLeilao ( Imovel im , int horas ) throws SemAutorizacaoException {
+        if(this.utilizador == null) throw new SemAutorizacaoException("Necessita de iniciar sessão.");
         if(this.utilizador.getClass().getSimpleName().equals("Vendedor")){
-            Leilao leilao = new Leilao(im,horas);
+            this.leilao = new Leilao(im,horas);
+            correLeilao();
         }
         else throw new SemAutorizacaoException ("Apenas Vendedores.");
     }
-
-    public void arrancaLeilao(){
-         this.leilao.arrancaLeilao();
+    
+    public void adicionaComprador(String id, double limite, double incrementos, double minutos) throws LeilaoTerminadoException {
+        if(leilao != null) leilao.adicionaComprador(id,limite,incrementos,minutos);
+        else throw new LeilaoTerminadoException("Leilão terminado.");
     }
-
+    
+    public void correLeilao(){
+        Comprador vencedor;
+        try{
+            adicionaComprador("utilizador_01",1000,300,3);
+            adicionaComprador("utilizador_02",8000,200,4);
+            adicionaComprador("utilizador_03",20000,100,5);
+            adicionaComprador("utilizador_04",18000,600,3);
+            adicionaComprador("utilizador_05",4000,100,10);
+            adicionaComprador("utilizador_06",9000,500,9);
+            adicionaComprador("utilizador_07",6000,200,4);
+            adicionaComprador("utilizador_08",10000,400,5);
+            adicionaComprador("utilizador_09",5000,300,4);
+            adicionaComprador("utilizador_10",8000,100,3);
+        }
+        catch(Exception e){leilao.encerraLeilao();}
+        leilao.arrancaLeilao();
+        vencedor = encerraLeilao();
+        if(vencedor != null){
+            System.out.println("O vencedor do leilão é: ");
+            System.out.println(vencedor);
+        }
+        else System.out.println("Nenhuma licitação atingiu o Preço Mínimo do Imóvel!");
+    }
+     
+    public Imovel getImovelLeilao(String idImovel) throws ImovelInexistenteException {
+        if(this.imoveis.containsKey(idImovel))
+            return this.imoveis.get(idImovel);
+        else throw new ImovelInexistenteException("O Imovel não existe.");
+    }
+    
     public Comprador encerraLeilao(){
-        if(this.leilao.encerraLeilao().getValor() > this.leilao.getImovel().getPreco_Minimo());
-            String idComprador = this.leilao.encerraLeilao().getLicitador();
-        return (Comprador) utilizadores.get(idComprador);
+        Licitacao vencedora = leilao.encerraLeilao();
+        if(vencedora == null)
+            return null;
+        else{
+            Imovel i = leilao.getImovel();
+            i.setEstado("reservado");
+            String vencedor_string = vencedora.getLicitador();
+            Comprador vencedor = new Comprador(vencedora.getLicitador()+"@mail.com",vencedora.getLicitador(),"olamundo","Rua da Bandeira","20 de Janeiro",null);
+            return vencedor.clone();
+        }
     }
-
+    
+    public Leilao getLeilao(){
+        if(this.leilao != null) return this.leilao;
+        else return null;
+    }
+    
     // GRAVAR
-
+    
     public void gravaObj(String fich) throws IOException {
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fich));
         oos.writeObject(this);
@@ -303,16 +353,16 @@ public class Imoobiliaria implements Serializable{
         ois.close();
         return te;
     }
-
+    
     public void log(String f, boolean ap) throws IOException {
         FileWriter fw = new FileWriter(f, ap);
-        fw.write("\n----------- LOG - LOG - LOG - LOG - LOG ----------------\n");
+        fw.write("\n-------------------------- LOG --------------------------\n");
         fw.write(this.toString());
-        fw.write("\n----------- LOG - LOG - LOG - LOG - LOG ----------------\n");
+        fw.write("\n-------------------------- LOG --------------------------\n");
         fw.flush();
         fw.close();
     }
-
+    
     public String toString(){
         StringBuilder str;
         str = new StringBuilder();
@@ -328,5 +378,5 @@ public class Imoobiliaria implements Serializable{
         str.append(this.utilizador);
         return str.toString();
     }
-
+    
 }

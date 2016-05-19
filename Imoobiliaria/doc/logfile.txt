@@ -12,9 +12,9 @@ C:\Program Files (x86)\BlueJ\jdk\bin\javadoc.exe
 -source
 1.8
 -classpath
-C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.8.2.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-core.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-device.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-gpio-extension.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-service.jar;C:\Users\Dinis\Desktop\POO-Trabalho\POO\Imoobiliaria
+C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.8.2.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-core.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-device.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-gpio-extension.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-service.jar;C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria
 -d
-C:\Users\Dinis\Desktop\POO-Trabalho\POO\Imoobiliaria\doc
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\doc
 -encoding
 UTF-8
 -charset
@@ -23,19 +23,307 @@ UTF-8
 C:\Program Files (x86)\BlueJ\lib\bjdoclet.jar
 -doclet
 bluej.doclet.doclets.formats.html.HtmlDoclet
-C:\Users\Dinis\Desktop\POO-Trabalho\POO\Imoobiliaria\ImobiliariaApp.java
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java
 <---- end of javadoc command ---->
-Loading source file C:\Users\Dinis\Desktop\POO-Trabalho\POO\Imoobiliaria\ImobiliariaApp.java...
-Constructing Javadoc information...
-Standard Doclet version 1.8.0_40
-Building tree for all the packages and classes...
-Generating C:\Users\Dinis\Desktop\POO-Trabalho\POO\Imoobiliaria\doc\ImobiliariaApp.html...
-Generating C:\Users\Dinis\Desktop\POO-Trabalho\POO\Imoobiliaria\doc\package-frame.html...
-Generating C:\Users\Dinis\Desktop\POO-Trabalho\POO\Imoobiliaria\doc\package-summary.html...
-Generating C:\Users\Dinis\Desktop\POO-Trabalho\POO\Imoobiliaria\doc\constant-values.html...
-Building index for all the packages and classes...
-Building index for all classes...
-Generating C:\Users\Dinis\Desktop\POO-Trabalho\POO\Imoobiliaria\doc\allclasses-frame.html...
-Generating C:\Users\Dinis\Desktop\POO-Trabalho\POO\Imoobiliaria\doc\allclasses-noframe.html...
-Generating C:\Users\Dinis\Desktop\POO-Trabalho\POO\Imoobiliaria\doc\index.html...
-Generating C:\Users\Dinis\Desktop\POO-Trabalho\POO\Imoobiliaria\doc\stylesheet.css...
+Loading source file C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java...
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:273: error: not a statement
+        Scanner 
+        ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:273: error: ';' expected
+        Scanner 
+               ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:313: error: ')' expected
+            imo.getLeilao().adicionaComprador(comprador
+                                                       ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:312: error: 'try' without 'catch', 'finally' or resource declarations
+        try{
+        ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:318: error: illegal start of expression
+    private static void consultarFavoritos(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:318: error: illegal start of expression
+    private static void consultarFavoritos(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:318: error: ';' expected
+    private static void consultarFavoritos(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:318: error: ';' expected
+    private static void consultarFavoritos(){
+                                            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:328: error: illegal start of expression
+    private static void favoritoImovel(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:328: error: illegal start of expression
+    private static void favoritoImovel(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:328: error: ';' expected
+    private static void favoritoImovel(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:328: error: ';' expected
+    private static void favoritoImovel(){
+                                        ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:342: error: illegal start of expression
+    private static void imoveisVendedores(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:342: error: illegal start of expression
+    private static void imoveisVendedores(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:342: error: ';' expected
+    private static void imoveisVendedores(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:342: error: ';' expected
+    private static void imoveisVendedores(){
+                                           ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:355: error: illegal start of expression
+    private static void habitaveisPreco(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:355: error: illegal start of expression
+    private static void habitaveisPreco(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:355: error: ';' expected
+    private static void habitaveisPreco(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:355: error: ';' expected
+    private static void habitaveisPreco(){
+                                         ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:369: error: illegal start of expression
+    private static void consultarImoveisTipo(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:369: error: illegal start of expression
+    private static void consultarImoveisTipo(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:369: error: ';' expected
+    private static void consultarImoveisTipo(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:369: error: ';' expected
+    private static void consultarImoveisTipo(){
+                                              ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:383: error: illegal start of expression
+    private static void consultarImoveis(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:383: error: illegal start of expression
+    private static void consultarImoveis(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:383: error: ';' expected
+    private static void consultarImoveis(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:383: error: ';' expected
+    private static void consultarImoveis(){
+                                          ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:399: error: illegal start of expression
+    private static void topConsultados(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:399: error: illegal start of expression
+    private static void topConsultados(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:399: error: ';' expected
+    private static void topConsultados(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:399: error: ';' expected
+    private static void topConsultados(){
+                                        ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:410: error: illegal start of expression
+    private static void alterarEstado(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:410: error: illegal start of expression
+    private static void alterarEstado(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:410: error: ';' expected
+    private static void alterarEstado(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:410: error: ';' expected
+    private static void alterarEstado(){
+                                       ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:427: error: illegal start of expression
+    private static void adicionaImovel(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:427: error: illegal start of expression
+    private static void adicionaImovel(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:427: error: ';' expected
+    private static void adicionaImovel(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:427: error: ';' expected
+    private static void adicionaImovel(){
+                                        ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:439: error: illegal start of expression
+    private static Imovel criaImovel(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:439: error: illegal start of expression
+    private static Imovel criaImovel(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:439: error: ';' expected
+    private static Imovel criaImovel(){
+                         ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:439: error: ';' expected
+    private static Imovel criaImovel(){
+                                      ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:527: error: illegal start of expression
+    private static boolean inputWC(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:527: error: illegal start of expression
+    private static boolean inputWC(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:527: error: ';' expected
+    private static boolean inputWC(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:527: error: ';' expected
+    private static boolean inputWC(){
+                                    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:538: error: illegal start of expression
+    private static boolean inputGaragem(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:538: error: illegal start of expression
+    private static boolean inputGaragem(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:538: error: ';' expected
+    private static boolean inputGaragem(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:538: error: ';' expected
+    private static boolean inputGaragem(){
+                                         ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:549: error: illegal start of expression
+    private static double inputPreco(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:549: error: illegal start of expression
+    private static double inputPreco(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:549: error: ';' expected
+    private static double inputPreco(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:549: error: ';' expected
+    private static double inputPreco(){
+                                      ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:564: error: illegal start of expression
+     private static double inputPrecoMinimo(){
+     ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:564: error: illegal start of expression
+     private static double inputPrecoMinimo(){
+             ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:564: error: ';' expected
+     private static double inputPrecoMinimo(){
+                   ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:564: error: ';' expected
+     private static double inputPrecoMinimo(){
+                                             ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:579: error: illegal start of expression
+    private static double inputArea(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:579: error: illegal start of expression
+    private static double inputArea(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:579: error: ';' expected
+    private static double inputArea(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:579: error: ';' expected
+    private static double inputArea(){
+                                     ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:594: error: illegal start of expression
+    private static double inputAreaCoberta(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:594: error: illegal start of expression
+    private static double inputAreaCoberta(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:594: error: ';' expected
+    private static double inputAreaCoberta(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:594: error: ';' expected
+    private static double inputAreaCoberta(){
+                                            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:609: error: illegal start of expression
+    private static double inputAreaTerreno(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:609: error: illegal start of expression
+    private static double inputAreaTerreno(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:609: error: ';' expected
+    private static double inputAreaTerreno(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:609: error: ';' expected
+    private static double inputAreaTerreno(){
+                                            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:624: error: illegal start of expression
+    private static int inputNumero(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:624: error: illegal start of expression
+    private static int inputNumero(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:624: error: ';' expected
+    private static int inputNumero(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:624: error: ';' expected
+    private static int inputNumero(){
+                                    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:639: error: illegal start of expression
+    private static int inputQuartos(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:639: error: illegal start of expression
+    private static int inputQuartos(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:639: error: ';' expected
+    private static int inputQuartos(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:639: error: ';' expected
+    private static int inputQuartos(){
+                                     ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:654: error: illegal start of expression
+    private static int inputAndar(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:654: error: illegal start of expression
+    private static int inputAndar(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:654: error: ';' expected
+    private static int inputAndar(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:654: error: ';' expected
+    private static int inputAndar(){
+                                   ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:669: error: illegal start of expression
+    private static int inputConsultas(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:669: error: illegal start of expression
+    private static int inputConsultas(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:669: error: ';' expected
+    private static int inputConsultas(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:669: error: ';' expected
+    private static int inputConsultas(){
+                                       ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:684: error: illegal start of expression
+    private static int inputCasasBanho(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:684: error: illegal start of expression
+    private static int inputCasasBanho(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:684: error: ';' expected
+    private static int inputCasasBanho(){
+                  ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:684: error: ';' expected
+    private static int inputCasasBanho(){
+                                        ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:699: error: illegal start of expression
+    private static String inputTipoNegocio(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:699: error: illegal start of expression
+    private static String inputTipoNegocio(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:699: error: ';' expected
+    private static String inputTipoNegocio(){
+                         ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:699: error: ';' expected
+    private static String inputTipoNegocio(){
+                                            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:708: error: illegal start of expression
+    private static String inputTipo(){
+    ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:708: error: illegal start of expression
+    private static String inputTipo(){
+            ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:708: error: ';' expected
+    private static String inputTipo(){
+                         ^
+C:\Users\Dinis\Desktop\POO_2\POO\Imoobiliaria\ImobiliariaApp.java:708: error: ';' expected
+    private static String inputTipo(){
+                                     ^
+100 errors

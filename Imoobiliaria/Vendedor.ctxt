@@ -1,17 +1,17 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Vendedor()
-comment0.text=\n\ Cria\ uma\ inst\u00E2ncia\ de\ um\ Vendedor.\n
+comment0.text=\r\n\ Cria\ uma\ inst\u00E2ncia\ de\ um\ Vendedor.\r\n
 comment1.params=v
 comment1.target=Vendedor(Vendedor)
-comment1.text=\n\ Construtor\ por\ c\u00F3pia.\n\ @param\ v\n
+comment1.text=\r\n\ Construtor\ por\ c\u00F3pia.\r\n\ @param\ v\r\n
 comment10.params=i
 comment10.target=void\ adicionaVendidos(Imovel)
 comment11.params=i
 comment11.target=void\ removePortfolio(Imovel)
 comment2.params=email\ nome\ password\ morada\ data_nascimento\ p\ v
 comment2.target=Vendedor(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.util.HashMap,\ java.util.HashMap)
-comment2.text=\n\ Construtor\ por\ parametro\n\ @param\ email\n\ @param\ nome\n\ @param\ password\n\ @param\ morada\n\ @param\ data_nascimento\n\ @param\ p\n\ @param\ v\n
+comment2.text=\r\n\ Construtor\ por\ parametro\r\n\ @param\ email\r\n\ @param\ nome\r\n\ @param\ password\r\n\ @param\ morada\r\n\ @param\ data_nascimento\r\n\ @param\ p\r\n\ @param\ v\r\n
 comment3.params=
 comment3.target=java.util.Map\ getPortfolio()
 comment4.params=

@@ -14,7 +14,7 @@ public class ImobiliariaApp
     private static Imoobiliaria imo;
     private static Menu menu_principal,menu_registo,menu_vendedor,
                    menu_comprador,menu_comprador_registado,
-                   menu_cria_imovel,menu_logado;
+                   menu_cria_imovel,menu_logado,menu_leilao_vendedor;
                    
     private ImobiliariaApp() {}
                    
@@ -87,7 +87,11 @@ public class ImobiliariaApp
         String [] menu3 = {"Colocar Imóvel à venda",
                            "Consultas aos Imóveis",
                            "Alterar estado de um Imóvel",
-                           "Imóveis mais consultados"};
+                           "Imóveis mais consultados",
+                           "Lista de Imóveis de um dado tipo",
+                           "Lista de Imóveis habitáveis",
+                           "Todos os Imóveis e respectivos vendedores",
+                           "Leilões"};
         String [] menu4 = {"Lista de Imóveis de um dado tipo",
                            "Lista de Imóveis habitáveis",
                            "Todos os Imóveis e respectivos vendedores"};
@@ -98,6 +102,7 @@ public class ImobiliariaApp
                            "Consultar favoritos"};
         String[] menu6 = {"Loja","Loja Habitável","Apartamento","Moradia",
                           "Terreno"};
+        String[] menu7 = {"Iniciar leilão"};
 
         menu_logado = new Menu(menu0);
         menu_principal = new Menu(menu1);
@@ -106,6 +111,7 @@ public class ImobiliariaApp
         menu_comprador = new Menu(menu4);
         menu_comprador_registado = new Menu(menu5);
         menu_cria_imovel = new Menu(menu6);
+        menu_leilao_vendedor = new Menu(menu7);
     }
 
     private static void initApp(String fich){
@@ -211,10 +217,18 @@ public class ImobiliariaApp
                         break;
                 case 4: topConsultados();
                         break;
+                case 5: consultarImoveisTipo();
+                        break;
+                case 6: habitaveisPreco();
+                        break;
+                case 7: imoveisVendedores();
+                        break;   
+                case 8: running_menu_leilao_vendedor();
+                        break;
             }
         }while(menu_vendedor.getOpcao()!=0);
     }
-
+    
     private static void running_menu_comprador_registado(){
         do{
             menu_comprador_registado.executa();
@@ -232,7 +246,33 @@ public class ImobiliariaApp
             }
         }while(menu_comprador_registado.getOpcao()!=0);
     }
-
+    
+    private static void running_menu_leilao_vendedor(){
+        do{
+            menu_leilao_vendedor.executa();
+            switch(menu_leilao_vendedor.getOpcao()){
+                case 1: iniciar_leilao();
+                        break;
+            }
+        
+        }while(menu_leilao_vendedor.getOpcao()!=0);
+    }
+    
+    private static void iniciar_leilao(){
+        Scanner is = new Scanner(System.in);
+        int tempo;
+        Imovel imovel = inputID();
+        System.out.print("Tempo (segundos): ");
+        tempo = is.nextInt();
+        
+        try{
+            imo.iniciaLeilao(imovel,tempo);
+        }
+        catch(SemAutorizacaoException e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
     // Esta função devia estar no Imobiliaria
     private static void consultarFavoritos(){
 
@@ -677,4 +717,20 @@ public class ImobiliariaApp
         is.close();
         return total;
     }
+    
+    private static Imovel inputID(){
+        Scanner is = new Scanner(System.in);
+        String id; 
+        System.out.print("ID_Imóvel: ");
+        id = is.nextLine();
+        Imovel imovel;
+        try{
+            imovel = imo.getImovelLeilao(id);
+        }
+        catch(ImovelInexistenteException e){
+            System.out.println(e.getMessage());
+            imovel = inputID();
+        }
+        return imovel;
+    }    
 }
