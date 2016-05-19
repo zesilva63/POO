@@ -185,10 +185,10 @@ public class Apartamento extends Imovel implements Habitavel {
     }
 
 
-    /*
+    /**
      * Devolve uma cópia desta instância Apartamento.
      * @return
-     */
+    */
     public Apartamento clone(){
         return new Apartamento(this);
     }

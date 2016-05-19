@@ -209,7 +209,7 @@ public abstract class Imovel implements Serializable {
 
     // CLONE
 
-    /*
+    /**
      * Devolve uma cópia desta instância Imóvel.
      * @return
     */

@@ -19,6 +19,9 @@ public class Menu
         this.op = 0;
     }
 
+    /**
+     * Função para executar o menu.
+     */
     public void executa(){
         do {
             showMenu();
@@ -27,6 +30,9 @@ public class Menu
         while(this.op == -1);
     }
     
+    /**
+     * Função para mostrar o menu.
+     */
     private void showMenu() {
         System.out.println("\n******************* Menu *******************");
         for (int i=0; i<this.opcoes.size(); i++) {
@@ -38,7 +44,9 @@ public class Menu
         System.out.println("*********************************************");
     }
     
-    /** Ler uma opção válida */
+    /**
+     * Função ler uma opção do menu.
+     */
     private int lerOpcao() {
         int op; 
         Scanner is = new Scanner(System.in);
@@ -57,6 +65,10 @@ public class Menu
         return op;
     }
     
+    /**
+     * Obter opção selecionada.
+     * @return 
+     */
     public int getOpcao() {
         return this.op;
     }

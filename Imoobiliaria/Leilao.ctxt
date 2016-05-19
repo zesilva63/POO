@@ -1,14 +1,20 @@
 #BlueJ class context
 comment0.params=im\ horas
 comment0.target=Leilao(Imovel,\ int)
+comment0.text=\r\n\ Construtor\ por\ par\u00E2metro.\r\n\ @param\ im\r\n\ @param\ horas\r\n
 comment1.params=idComprador\ limite\ incrementos\ minutos
 comment1.target=void\ adicionaComprador(java.lang.String,\ double,\ double,\ double)
+comment1.text=\r\n\ Adicionar\ um\ comprador\ ao\ leil\u00E3o.\r\n\ @param\ idComprador\r\n\ @param\ limite\r\n\ @param\ incrementos\r\n\ @param\ minutos\r\n
 comment2.params=
 comment2.target=void\ arrancaLeilao()
+comment2.text=\r\n\ Arrancar\ e\ executar\ o\ leil\u00E3o.\r\n
 comment3.params=
 comment3.target=Licitacao\ encerraLeilao()
+comment3.text=\r\n\ Encerrar\ o\ leil\u00E3o.\r\n\ @return\r\n
 comment4.params=
 comment4.target=Imovel\ getImovel()
+comment4.text=\r\n\ Retornar\ o\ Im\u00F3vel\ correspondente\ do\ leil\u00E3o.\r\n\ @return\r\n
 comment5.params=
 comment5.target=int\ getHoras()
+comment5.text=\r\n\ Retornar\ o\ tempo\ correspondente\ do\ leil\u00E3o.\r\n\ @return\ \r\n
 numComments=6

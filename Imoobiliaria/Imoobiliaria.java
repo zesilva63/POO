@@ -47,7 +47,11 @@ public class Imoobiliaria implements Serializable{
         this.id = 0;
     }
 
-
+    /**
+     * Construtor por parâmetros de uma Imoobiliaria.
+     * @param u
+     * @param i
+     */
     public Imoobiliaria(TreeMap<String,Utilizador> u, TreeMap<String,Imovel> i) {
 
        this.utilizador = null;
@@ -65,7 +69,10 @@ public class Imoobiliaria implements Serializable{
 
 
     // REGISTOS DO PROGRAMA
-
+    /**
+     * Registar um utilizador na Imobiliária.
+     * @param utilizador
+     */
     public void registarUtilizador ( Utilizador utilizador ) throws UtilizadorExistenteException{
 
        if(this.utilizadores.containsKey(utilizador.getEmail())){
@@ -76,7 +83,11 @@ public class Imoobiliaria implements Serializable{
         }
     }
 
-
+    /**
+     * Iniciar sessão na aplicação.
+     * @param email
+     * @param password
+     */
      public void iniciaSessao(String email, String password) throws SemAutorizacaoException {
 
         if (this.utilizador == null) {
@@ -98,14 +109,19 @@ public class Imoobiliaria implements Serializable{
 
     }
 
-
+    /**
+     * Fechar sessão na aplicação.
+     */
     public void fechaSessao(){
         this.utilizador = null;
     }
 
     // VENDEDORES
 
-
+    /**
+     * Registar um Imóvel na aplicação.
+     * @param im
+     */
     public void registaImovel(Imovel im) throws ImovelExisteException , SemAutorizacaoException {
         if(this.utilizador.getClass().getSimpleName().equals("Vendedor")){
             if(this.imoveis.containsValue(im) == false) {
@@ -119,6 +135,10 @@ public class Imoobiliaria implements Serializable{
         else throw new SemAutorizacaoException("Apenas Vendedores estão autorizados.");
     }
 
+    /**
+     * Obter uma lista das últimas consultas feitas.
+     * @return
+     */
     public List<Consulta> getConsultas() throws SemAutorizacaoException {
       int i = 0;
       ArrayList<Consulta> lista = new ArrayList<Consulta>();
@@ -142,6 +162,11 @@ public class Imoobiliaria implements Serializable{
       else throw new SemAutorizacaoException("Apenas Vendedores estão autorizados a efectuar esta operação.");
    }
 
+   /**
+    * Mudar o estado de um Imóvel.
+    * @param idImovel
+    * @param estado
+    */
    public void setEstado(String idImovel , String estado) throws ImovelInexistenteException , SemAutorizacaoException , EstadoInvalidoException {
 
       if(this.utilizador.getClass().getSimpleName().equals("Vendedor"))  {
@@ -166,6 +191,11 @@ public class Imoobiliaria implements Serializable{
       }
    }
 
+   /**
+    * Devolver os Imóveis com mais que um determinado número de consultas.
+    * @param n
+    * @return
+    */
     public Set<String> getTopImoveis (int n) {
       Set<String> lista = new HashSet<String>();
       Vendedor v = (Vendedor) this.utilizador;
@@ -177,6 +207,10 @@ public class Imoobiliaria implements Serializable{
       return lista;
    }
 
+   /**
+    * Obter o mapeamento de todos os Imóveis e vendedores.
+    * @return
+    */
    public Map <Imovel,Vendedor> getMapeamentoImoveis (){
         Map<Imovel,Vendedor> imoveis = new HashMap<Imovel,Vendedor>();
 
@@ -195,10 +229,18 @@ public class Imoobiliaria implements Serializable{
         return imoveis;
     }
 
+   /**
+    * Obter o utilizador com sessão iniciada na aplicação.
+    * @return
+    */
    public Utilizador getUtilizador(){
        return this.utilizador;
    }
    
+   /**
+    * Obter o #ID do próximo Imóvel a ser registado na aplicação.
+    * @return 
+    */
    public int getId(){
        return this.id;
    }
@@ -246,7 +288,10 @@ public class Imoobiliaria implements Serializable{
     }
 
     // COMPRADORES
-
+    /**
+     * Obter os favoritos de um Comprador.
+     * @return
+     */
     public TreeSet<Imovel> getFavoritos() throws SemAutorizacaoException {
         TreeSet<Imovel> lista = null;
         if(this.utilizador.getClass().getSimpleName().equals("Comprador")) {
@@ -261,6 +306,10 @@ public class Imoobiliaria implements Serializable{
         return lista;
     }
 
+    /**
+     * Definir um Imóvel como favorito de um determinado Comprador.
+     * @param idImovel
+     */
     public void setFavorito(String idImovel) throws SemAutorizacaoException, ImovelInexistenteException {
         if(this.utilizador.getClass().getSimpleName().equals("Comprador")){
             if(this.imoveis.containsKey(idImovel)) {
@@ -273,6 +322,11 @@ public class Imoobiliaria implements Serializable{
     }
 
     // LEILAO
+    /**
+     * Função para iniciar e simular um leilão.
+     * @param im
+     * @param horas
+     */
     public void iniciaLeilao ( Imovel im , int horas ) throws SemAutorizacaoException {
         if(this.utilizador == null) throw new SemAutorizacaoException("Necessita de iniciar sessão.");
         if(this.utilizador.getClass().getSimpleName().equals("Vendedor")){
@@ -282,11 +336,21 @@ public class Imoobiliaria implements Serializable{
         else throw new SemAutorizacaoException ("Apenas Vendedores.");
     }
     
+    /**
+     * Adicionar um Comprador ao leilão.
+     * @param id
+     * @param limite
+     * @param incrementos
+     * @param minutos
+     */
     public void adicionaComprador(String id, double limite, double incrementos, double minutos) throws LeilaoTerminadoException {
         if(leilao != null) leilao.adicionaComprador(id,limite,incrementos,minutos);
         else throw new LeilaoTerminadoException("Leilão terminado.");
     }
     
+    /**
+     * Correr um leilão, adicionando utilizadores arbitrários ao mesmo.
+     */
     public void correLeilao(){
         Comprador vencedor;
         try{
@@ -311,12 +375,21 @@ public class Imoobiliaria implements Serializable{
         else System.out.println("Nenhuma licitação atingiu o Preço Mínimo do Imóvel!");
     }
      
+    /**
+     * Retornar um Imóvel para o Leilão, apenas no caso deste Imóvel existir.
+     * @param idImovel
+     * @return 
+     */
     public Imovel getImovelLeilao(String idImovel) throws ImovelInexistenteException {
         if(this.imoveis.containsKey(idImovel))
             return this.imoveis.get(idImovel);
         else throw new ImovelInexistenteException("O Imovel não existe.");
     }
     
+    /**
+     * Encerrar o leilão.
+     * @return
+     */
     public Comprador encerraLeilao(){
         Licitacao vencedora = leilao.encerraLeilao();
         if(vencedora == null)
@@ -330,13 +403,20 @@ public class Imoobiliaria implements Serializable{
         }
     }
     
+    /**
+     * Devolver o leilão que está aberto.
+     * @return 
+     */
     public Leilao getLeilao(){
         if(this.leilao != null) return this.leilao;
         else return null;
     }
     
     // GRAVAR
-    
+    /**
+     * Gravar o estado da aplicação num determinado ficheiro.
+     * @param fich
+     */
     public void gravaObj(String fich) throws IOException {
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fich));
         oos.writeObject(this);
@@ -345,6 +425,11 @@ public class Imoobiliaria implements Serializable{
         oos.close();
     }
 
+    /**
+     * Iniciar a aplicação com o estado guardado num determinado ficheiro.
+     * @param fich
+     * @return
+     */
     public static Imoobiliaria leObj(String fich) throws IOException, ClassNotFoundException {
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fich));
 
@@ -354,6 +439,11 @@ public class Imoobiliaria implements Serializable{
         return te;
     }
     
+    /**
+     * Fazer um ficheiro de texto log com toda a informação na Imobiliária no momento em que é fechada.
+     * @param f
+     * @param ap
+     */
     public void log(String f, boolean ap) throws IOException {
         FileWriter fw = new FileWriter(f, ap);
         fw.write("\n-------------------------- LOG --------------------------\n");

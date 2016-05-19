@@ -19,6 +19,7 @@ comment5.target=java.util.GregorianCalendar\ getData()
 comment5.text=\r\n\ Obter\ a\ data\ em\ que\ uma\ dada\ Consulta\ foi\ efetuada.\r\n\ @return\r\n
 comment6.params=
 comment6.target=Consulta\ clone()
+comment6.text=\r\n\ Fazer\ o\ clone\ de\ uma\ consulta.\r\n\ @return\r\n
 comment7.params=
 comment7.target=java.lang.String\ toString()
 numComments=8

@@ -135,7 +135,7 @@ public abstract class Utilizador implements Serializable {
         this.data_Nascimento = data;
     }
 
-    /*
+    /**
      * Devolve uma cópia desta instância
      * @return
      */

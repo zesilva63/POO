@@ -17,7 +17,10 @@ public class ImobiliariaApp
                    menu_cria_imovel,menu_logado,menu_leilao_vendedor;
                    
     private ImobiliariaApp() {}
-                   
+    
+    /**
+     * Função que faz executar toda a aplicação ImoobliáriaApp.
+     */
     public static void main(String[] args) {
         String file_name = "imo_estado";
         carregarMenus();
@@ -33,6 +36,9 @@ public class ImobiliariaApp
         System.out.println("Volte sempre!");
     }
 
+    /**
+     * Apresenta o menu principal.
+     */
     private static void apresentarMenu(){
         int running = 1;
 
@@ -64,6 +70,9 @@ public class ImobiliariaApp
 
     }
 
+    /**
+     * Apresenta o Menu consoante o tipo de utilizador com sessão iniciada.
+     */
     private static void menu(){
 
         if(imo.getUtilizador() == null)
@@ -75,7 +84,10 @@ public class ImobiliariaApp
             else running_menu_comprador_registado();
         }
     }
-
+    
+    /**
+     * Carrega todos os menus para apresentar.
+     */
     private static void carregarMenus() {
         String[] menu0 = {"Menu",
                         "Fechar sessão"};
@@ -114,6 +126,10 @@ public class ImobiliariaApp
         menu_leilao_vendedor = new Menu(menu7);
     }
 
+    /**
+     * Carrega o estado da aplicação da última vez que esta foi fechada.
+     * @param fich
+     */
     private static void initApp(String fich){
         try {
             imo = Imoobiliaria.leObj(fich);
@@ -132,6 +148,9 @@ public class ImobiliariaApp
         }
     }
 
+    /**
+     * Registo na ImobiliáriaApp.
+     */
     private static void registo(){
         Utilizador user;
         Scanner is = new Scanner(System.in);
@@ -168,6 +187,9 @@ public class ImobiliariaApp
         is.close();
     }
 
+    /**
+     * Inicio de sessão na ImobiliariaApp.
+     */
     private static void iniciarSessao(){
         Scanner is = new Scanner(System.in);
         String email,password;
@@ -186,10 +208,16 @@ public class ImobiliariaApp
         is.close();
     }
 
+    /**
+     * Fechar sessão na ImobiliariaApp.
+     */
     private static void fecharSessao(){
         imo.fechaSessao();
     }
 
+    /**
+     * Executar o menu para utilizadores não registados na ImobiliariaApp.
+     */
      private static void running_menu_comprador(){
         do{
             menu_comprador.executa();
@@ -204,7 +232,9 @@ public class ImobiliariaApp
         }while(menu_comprador.getOpcao()!=0);
     }
 
-
+    /**
+     * Executar menu para vendedores.
+     */
     private static void running_menu_vendedor(){
         do{
             menu_vendedor.executa();
@@ -229,6 +259,9 @@ public class ImobiliariaApp
         }while(menu_vendedor.getOpcao()!=0);
     }
     
+    /**
+     * Executar menu para compradores registados na ImobiliariaApp.
+     */
     private static void running_menu_comprador_registado(){
         do{
             menu_comprador_registado.executa();
@@ -247,6 +280,9 @@ public class ImobiliariaApp
         }while(menu_comprador_registado.getOpcao()!=0);
     }
     
+    /**
+     * Executar menu dos leilões.
+     */
     private static void running_menu_leilao_vendedor(){
         do{
             menu_leilao_vendedor.executa();
@@ -258,6 +294,9 @@ public class ImobiliariaApp
         }while(menu_leilao_vendedor.getOpcao()!=0);
     }
     
+    /**
+     * Iniciar e simular um leilão.
+     */
     private static void iniciar_leilao(){
         Scanner is = new Scanner(System.in);
         int tempo;
@@ -273,7 +312,9 @@ public class ImobiliariaApp
         }
     }
     
-    // Esta função devia estar no Imobiliaria
+    /**
+     * Consultar favoritos de um comprador.
+     */
     private static void consultarFavoritos(){
 
         Map<String,Imovel> favoritos = new HashMap<String,Imovel>();
@@ -284,6 +325,9 @@ public class ImobiliariaApp
 
     }
 
+    /**
+     * Definir um Imóvel como favorito de um comprador.
+     */
     private static void favoritoImovel(){
         Scanner is = new Scanner(System.in);
         String idImovel;
@@ -298,6 +342,9 @@ public class ImobiliariaApp
         is.close();
     }
 
+    /**
+     * Fazer mapeamento de todos os Imóveis e respectivos vendedores.
+     */
     private static void imoveisVendedores(){
         Map<Imovel,Vendedor> imoveisVendedores = new TreeMap<Imovel,Vendedor>();
         imoveisVendedores = imo.getMapeamentoImoveis();
@@ -311,6 +358,9 @@ public class ImobiliariaApp
         }
     }
 
+    /**
+     * Listagem de Imóveis Habitáveis até um determinado preço.
+     */
     private static void habitaveisPreco(){
         Scanner is = new Scanner(System.in);
         List<Habitavel> lista = new ArrayList<Habitavel>();
@@ -325,6 +375,9 @@ public class ImobiliariaApp
         is.close();
     }
 
+    /**
+     * Consultar todos os Imóveis de um determinado tipo.
+     */
     private static void consultarImoveisTipo(){
         Scanner is = new Scanner(System.in);
         List<Imovel> lista = new ArrayList<Imovel>();
@@ -339,6 +392,9 @@ public class ImobiliariaApp
         is.close();
     }
 
+    /**
+     * Listagem das consultas feitas aos Imóveis de um determinado vendedor.
+     */
     private static void consultarImoveis(){
        List<Consulta> lista = new ArrayList<Consulta>();
        try{
@@ -355,6 +411,9 @@ public class ImobiliariaApp
 
     }
 
+    /**
+     * Listagem de Imóveis com consultas superiores a um determinado número.
+     */
     private static void topConsultados(){
         Scanner is = new Scanner(System.in);
         int numero;
@@ -366,6 +425,9 @@ public class ImobiliariaApp
         }
     }
 
+    /**
+     * Alterar o estado de um determinado Imóvel existente.
+     */
     private static void alterarEstado(){
         String id,estado;
         Scanner is = new Scanner(System.in);
@@ -383,6 +445,9 @@ public class ImobiliariaApp
         is.close();
     }
 
+    /**
+     * Adicionar um Imóvel à Imobiliária.
+     */
     private static void adicionaImovel(){
         Imovel imovel = criaImovel();
         if(imovel!=null){
@@ -395,6 +460,10 @@ public class ImobiliariaApp
         }
     }
 
+    /**
+     * Criar um Imóvel para ser adicionado à Imobiliária.
+     * @return 
+     */
     private static Imovel criaImovel(){
         Imovel imovel = null;
         Scanner is = new Scanner(System.in);
@@ -482,7 +551,11 @@ public class ImobiliariaApp
        }
        return imovel;
     }
-
+    
+    /**
+     * Input de informação para um WC.
+     * @return 
+     */
     private static boolean inputWC(){
         String wc_string; boolean wc;
         System.out.print("Wc (S/N): ");
@@ -494,6 +567,10 @@ public class ImobiliariaApp
         return wc;
     }
 
+    /**
+     * Input de informação para uma garagem.
+     * @return 
+     */
     private static boolean inputGaragem(){
         String garagem_string; boolean garagem;
         System.out.print("Garagem (S/N): ");
@@ -505,6 +582,10 @@ public class ImobiliariaApp
         return garagem;
     }
 
+    /**
+     * Input de informação para um preço.
+     * @return 
+     */
     private static double inputPreco(){
         double preco;
         System.out.print("Preço: ");
@@ -520,6 +601,10 @@ public class ImobiliariaApp
         return preco;
     }
 
+    /**
+     * Input de informação para um preço minimo.
+     * @return 
+     */
      private static double inputPrecoMinimo(){
         double preco;
         System.out.print("Preço Mínimo: ");
@@ -535,6 +620,10 @@ public class ImobiliariaApp
         return preco;
     }
 
+    /**
+     * Input de informação para uma área.
+     * @return 
+     */
     private static double inputArea(){
         double area;
         System.out.print("Área: ");
@@ -550,6 +639,10 @@ public class ImobiliariaApp
         return area;
     }
 
+    /**
+     * Input de informação para uma área coberta.
+     * @return 
+     */
     private static double inputAreaCoberta(){
         double area;
         System.out.print("Área Coberta: ");
@@ -565,6 +658,10 @@ public class ImobiliariaApp
         return area;
     }
 
+    /**
+     * Input de informação para uma área de um terreno.
+     * @return 
+     */
     private static double inputAreaTerreno(){
         double area;
         System.out.print("Área Terreno: ");
@@ -580,6 +677,10 @@ public class ImobiliariaApp
         return area;
     }
 
+    /**
+     * Input de informação para um número.
+     * @return 
+     */
     private static int inputNumero(){
         int numero;
         System.out.print("Número: ");
@@ -595,6 +696,10 @@ public class ImobiliariaApp
         return numero;
     }
 
+    /**
+     * Input de informação para um número de quartos.
+     * @return 
+     */
     private static int inputQuartos(){
         int quartos;
         System.out.print("Quartos: ");
@@ -610,6 +715,10 @@ public class ImobiliariaApp
         return quartos;
     }
 
+    /**
+     * Input de informação para um andar.
+     * @return 
+     */
     private static int inputAndar(){
         int andar;
         System.out.print("Andar: ");
@@ -625,6 +734,10 @@ public class ImobiliariaApp
         return andar;
     }
     
+    /**
+     * Input de informação para um número de consultas.
+     * @return 
+     */
     private static int inputConsultas(){
         int consultas;
         System.out.print("Número de consultas: ");
@@ -640,6 +753,10 @@ public class ImobiliariaApp
         return consultas;
     }
 
+    /**
+     * Input de informação para um número de casas de banho.
+     * @return 
+     */
     private static int inputCasasBanho(){
         int casas_banho;
         System.out.print("Casas de banho: ");
@@ -655,6 +772,10 @@ public class ImobiliariaApp
         return casas_banho;
     }
 
+    /**
+     * Input de informação para um tipo de negócio.
+     * @return 
+     */
     private static String inputTipoNegocio(){
         String tipo_negocio;
         System.out.print("Tipo de negócio: ");
@@ -664,6 +785,10 @@ public class ImobiliariaApp
         return tipo_negocio;
     }
 
+    /**
+     * Input de informação para um tipo.
+     * @return 
+     */
     private static String inputTipo(){
         String tipo;
         System.out.print("Tipo: ");
@@ -673,6 +798,10 @@ public class ImobiliariaApp
         return tipo;
     }
 
+    /**
+     * Input de informação para o número de canalizações.
+     * @return 
+     */
     private static float inputCanalizacoes(){
         float total;
         System.out.print("Canalizações: ");
@@ -688,6 +817,10 @@ public class ImobiliariaApp
         return total;
     }
 
+    /**
+     * Input de informação para o número da carga elétrica.
+     * @return 
+     */
     private static float inputCargaEletrica(){
         float total;
         System.out.print("Carga Elétrica: ");
@@ -703,6 +836,10 @@ public class ImobiliariaApp
         return total;
     }
 
+    /**
+     * Input de informação para o número do saneamento.
+     * @return 
+     */
     private static float inputSaneamento(){
         float total;
         System.out.print("Saneamento: ");
@@ -718,6 +855,10 @@ public class ImobiliariaApp
         return total;
     }
     
+    /**
+     * Input de informação para um id_imóvel.
+     * @return 
+     */
     private static Imovel inputID(){
         Scanner is = new Scanner(System.in);
         String id; 

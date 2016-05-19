@@ -12,20 +12,20 @@ import static java.util.stream.Collectors.toMap;
 public class Comprador extends Utilizador {
 
     // VARIAVEIS DE INSTÂNCIA
-	private Map<String,Imovel> favoritos;
+    private Map<String,Imovel> favoritos;
 
 
-	// CONSTRUTORES
+    // CONSTRUTORES
 
-	/**
-	 * Cria uma instância de um Comprador.
-	 */
+    /**
+     * Cria uma instância de um Comprador.
+     */
     public Comprador(){
         super("Comprador","","","","");
         favoritos = new HashMap<String,Imovel>();
     }
 
-	 /**
+     /**
      * Construtor por cópia.
      * @param c
      */
@@ -34,7 +34,7 @@ public class Comprador extends Utilizador {
         this.favoritos = c.getFavoritos();
     }
 
-	 /**
+     /**
      * Construtor por parametro
      * @param email
      * @param nome
@@ -49,40 +49,53 @@ public class Comprador extends Utilizador {
         if (f!=null) setFavoritos(f);
     }
 
-	 // GETTERS E SETTERS
-
+    // GETTERS E SETTERS
+    /** 
+     * Devolve os Imóveis favoritos de um Comprador.
+     * @return 
+     */
     public Map<String,Imovel> getFavoritos(){
-		 return this.favoritos.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
-	}
-
-
-    public void setFavoritos(Map<String,Imovel> imoveis){
-		 this.favoritos = imoveis.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
+         return this.favoritos.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
     }
 
-	 // CLONE
+    /** 
+     * Define os Imóveis favoritos de um Comprador.
+     * @param imoveis 
+     */
+    public void setFavoritos(Map<String,Imovel> imoveis){
+         this.favoritos = imoveis.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
+    }
 
+     // CLONE
+    /**
+     * Devolve uma cópia do Comprador.
+     * @return
+     */
     public Comprador clone(){
         return new Comprador(this);
     }
 
 
-	 // EQUALS
-
-	 public boolean equals(Object obj){
+     // EQUALS
+    /**
+     * Compara a igualdade com outro objecto
+     * @param obj
+     * @return
+     */
+     public boolean equals(Object obj){
        if(this == obj)
          return true;
        if ((obj==null) || (this.getClass() != obj.getClass()))
          return false;
        Comprador c = (Comprador) obj;
-         return (super.equals(c)); /* falta equals de cada um dos imoveis caso seja necessário */
+         return (super.equals(c)); 
     }
 
-	 /**
-	 * Adiciona um Imovel aos Favoritos.
-	 * @param
-	 */
-	 public void adicionaFavorito(Imovel i) {
-		 this.favoritos.put(i.getId(),i);
-	 }
+     /**
+     * Adiciona um Imovel aos Favoritos.
+     * @param
+     */
+     public void adicionaFavorito(Imovel i) {
+         this.favoritos.put(i.getId(),i);
+     }
 }

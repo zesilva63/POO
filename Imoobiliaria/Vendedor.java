@@ -51,32 +51,51 @@ public class Vendedor extends Utilizador {
         if(p!=null) this.setVendidos(v);
     }
 
-
+    /** 
+     * Devolve o portfólio de um Vendedor.
+     * @return 
+     */
     public Map<String,Imovel> getPortfolio(){
         return this.portfolio.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
     }
 
-
+    /** 
+     * Devolve os Imóveis vendidos de um Vendedor.
+     * @return 
+     */
     public Map<String,Imovel> getVendidos(){
         return this.vendidos.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue().clone()));
     }
 
-
+    /** 
+     * Define o portfólio de um Vendedor.
+     * @param imoveis 
+     */
     public void setPortfolio(Map<String,Imovel> imoveis){
         this.portfolio = imoveis.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue()));
     }
 
-
+    /** 
+     * Define os Imóveis vendidos de um Vendedor.
+     * @param imoveis
+     */
     public void setVendidos(Map<String,Imovel> imoveis){
         this.vendidos = imoveis.entrySet().stream().collect(toMap(e->e.getKey(), e->e.getValue()));
     }
 
-
+    /**
+     * Devolve uma cópia do Comprador.
+     * @return
+     */
     public Vendedor clone(){
         return new Vendedor(this);
     }
 
-
+   /**
+     * Compara a igualdade com outro objecto
+     * @param obj
+     * @return
+     */
    public boolean equals(Object obj){
       if(this == obj)
         return true;
@@ -86,14 +105,26 @@ public class Vendedor extends Utilizador {
         return (super.equals(v)); /* falta equals de cada um dos imoveis caso seja necessário */
    }
 
+   /**
+     * Adicionar um Imóvel ao portfólio 
+     * @param i
+     */
    public void adicionaPortfolio(Imovel i) {
       this.portfolio.put(i.getId(),i);
    }
 
+   /**
+     * Adicionar um Imóvel aos vendidos 
+     * @param i
+     */
    public void adicionaVendidos(Imovel i) {
       this.vendidos.put(i.getId(),i);
    }
    
+   /**
+     * Remover um Imóvel dos vendidos 
+     * @param i
+     */
    public void removePortfolio(Imovel i) {
       this.vendidos.remove(i);
    }

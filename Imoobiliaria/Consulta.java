@@ -73,6 +73,10 @@ public class Consulta implements Serializable {
 
 
    //CLONE
+   /**
+   * Fazer o clone de uma consulta.
+   * @return
+   */
    public Consulta clone(){
     return new Consulta(this);
    }

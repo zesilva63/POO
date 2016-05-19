@@ -8,6 +8,14 @@ public class Licitacao implements Serializable
     private long tempo;
     private String licitador;
     
+    /**
+     * Construtor por parametro
+     * @param licitador
+     * @param limite
+     * @param incremento
+     * @param minutos
+     */
+    
     public Licitacao(String licitador, double limite, double incremento,double minutos){
         this.minutos=minutos;
         this.limite=limite;
@@ -15,6 +23,10 @@ public class Licitacao implements Serializable
         this.licitador=licitador;
     }
     
+    /**
+     * Construtor por cópia
+     * @param l
+     */
     public Licitacao(Licitacao l){
         this.minutos=l.getMinutos();
         this.limite=l.getLimite();
@@ -22,34 +34,68 @@ public class Licitacao implements Serializable
         this.licitador=l.getLicitador();
     }
     
+    /**
+     * Devolver o último tempo da licitação.
+     * @return
+     */
     public long getTempo(){
         return this.tempo;
     }
     
+    
+    /**
+     * Definir o útlimo tempo da licitação.
+     * @param
+     */
     public void setTempo(long tempo){
         this.tempo=tempo;
     }
     
+    /**
+     * Devolver os Minutos da licitação.
+     * @return
+     */
     public double getMinutos(){
         return this.minutos;
     }
     
+    /**
+     * Devolver o limite da licitação.
+     * @return
+     */
     public double getLimite(){
         return this.limite;
     }
     
+    /**
+     * Devolver o incremento da licitação.
+     * @return 
+     */
     public double getIncremento(){
         return this.incremento;
     }
     
+    /**
+     * Devolver o licitador da liciatação.
+     * @return
+     */
     public String getLicitador(){
         return this.licitador;
     }
     
+    /**
+     * Fazer um clone da Licitação.
+     * @return
+     */
     public Licitacao clone (){
         return new Licitacao(this);
     }
     
+    /**
+     * Compara a igualdade com outro objecto
+     * @param obj
+     * @return
+     */
     public boolean equals(Object obj){
       if(this == obj)
         return true;

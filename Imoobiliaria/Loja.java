@@ -128,7 +128,7 @@ public class Loja extends Imovel {
 
     // CLONE
 
-    /*
+    /**
      * Devolve uma cópia desta instância Loja.
      * @return
      */

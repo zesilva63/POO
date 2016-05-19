@@ -139,7 +139,7 @@ public class Terreno extends Imovel implements Habitavel {
     }
 
 
-    /*
+    /**
      * Devolve uma cópia desta instância Terreno.
      * @return
      */

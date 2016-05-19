@@ -149,7 +149,7 @@ public class LojaHabitavel extends Imovel implements Habitavel {
 
     // CLONE
 
-    /*
+    /**
      * Devolve uma cópia desta instância LojaHabitavel.
      * @return
      */

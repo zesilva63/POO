@@ -12,14 +12,26 @@ public class Leilao implements Serializable {
     private Imovel imovel;
     private int horas;
     private int montante;
-
+    
+    /**
+     * Construtor por parâmetro.
+     * @param im
+     * @param horas
+     */
     public Leilao (Imovel im, int horas){
         this.licitadores = new ArrayList<Licitacao>(); 
         this.imovel = im;
         this.horas = horas;
+        this.montante = 0;
     }
     
-    //Adicionar comprador ao leilão:
+    /**
+     * Adicionar um comprador ao leilão.
+     * @param idComprador
+     * @param limite
+     * @param incrementos
+     * @param minutos
+     */
     public void adicionaComprador ( String idComprador , double limite ,  double incrementos , double minutos ) throws LeilaoTerminadoException{
         
         if(horas!=0){
@@ -30,6 +42,9 @@ public class Leilao implements Serializable {
 
     }
     
+    /**
+     * Arrancar e executar o leilão.
+     */
     public void arrancaLeilao(){
         long inicio = System.currentTimeMillis();
         this.montante = 0;
@@ -53,14 +68,26 @@ public class Leilao implements Serializable {
         }
     }
     
+    /**
+     * Encerrar o leilão.
+     * @return
+     */
     public Licitacao encerraLeilao(){
         return this.vencedora;
     }
     
+    /**
+     * Retornar o Imóvel correspondente do leilão.
+     * @return
+     */
     public Imovel getImovel(){
         return this.imovel;
     }
     
+    /**
+     * Retornar o tempo correspondente do leilão.
+     * @return 
+     */
     public int getHoras(){
         return this.horas;
     }
