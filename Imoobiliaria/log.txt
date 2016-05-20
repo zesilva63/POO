@@ -1,323 +1,50 @@
 
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: ola 
-Utilizadores: 1 2 3 
-Utilizador logado: 
-    Email: 3
-    Nome: 3
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: 
-Utilizadores: 1 
-Utilizador logado: 
-null
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: ID_0 ID_1 
-Utilizadores: 1 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: 
-Utilizadores: 
-Utilizador logado: 
-null
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: 
-Utilizadores: 
-Utilizador logado: 
-null
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: ID_0 
-Utilizadores: 1 2 
-Utilizador logado: 
-null
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: ID_0 
-Utilizadores: 1 2 
-Utilizador logado: 
-    Email: 2
-    Nome: 2
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: ID_0 
-Utilizadores: 1 2 
-Utilizador logado: 
-null
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: 
-Utilizadores: 
-Utilizador logado: 
-null
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: 
-Utilizadores: 
-Utilizador logado: 
-null
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: 
-Utilizadores: 
-Utilizador logado: 
-null
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: 
-Utilizadores: 
-Utilizador logado: 
-null
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: 
-Utilizadores: 1 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: 
-Utilizadores: 1 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: 
-Utilizadores: 1 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: ID_0 
-Utilizadores: 1 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: ID_0 
-Utilizadores: 1 2 
-Utilizador logado: 
-    Email: 2
-    Nome: 2
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: ID_0 
-Utilizadores: 1 2 
-Utilizador logado: 
-    Email: 2
-    Nome: 2
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: ID_0 
-Utilizadores: 1 2 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: ID_0 
-Utilizadores: 1 2 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: ID_0 
-Utilizadores: 1 2 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: ID_0 
-Utilizadores: 1 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: ID_0 
-Utilizadores: 1 
-Utilizador logado: 
-null
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: ID_0 
-Utilizadores: 1 
-Utilizador logado: 
-null
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-Imóveis: 
-Utilizadores: 1 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
------------ LOG - LOG - LOG - LOG - LOG ----------------
-
--------------------------- LOG --------------------------
-Imóveis: 
-Utilizadores: 
-Utilizador logado: 
-null
--------------------------- LOG --------------------------
-
--------------------------- LOG --------------------------
-Imóveis: 
-Utilizadores: 1 
-Utilizador logado: 
-null
--------------------------- LOG --------------------------
-
--------------------------- LOG --------------------------
-Imóveis: ID_0 
-Utilizadores: 1 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
--------------------------- LOG --------------------------
-
--------------------------- LOG --------------------------
-Imóveis: ID_0 
-Utilizadores: 1 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
--------------------------- LOG --------------------------
-
--------------------------- LOG --------------------------
-Imóveis: ID_0 
-Utilizadores: 1 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
--------------------------- LOG --------------------------
-
 -------------------------- LOG --------------------------
 Imóveis: ID_0 ID_1 ID_2 ID_3 ID_4 
-Utilizadores: 1 2 3 
+Utilizadores: vendedor_1@mail.com vendedor_2@mail.com 
 Utilizador logado: 
-    Email: 3
-    Nome: 3
+    Email: vendedor_2@mail.com
+    Nome: vendedor_2
 
 -------------------------- LOG --------------------------
 
 -------------------------- LOG --------------------------
-Imóveis: ID_0 ID_1 ID_2 ID_3 ID_4 
-Utilizadores: 1 2 3 
+Imóveis: ID_0 ID_1 ID_2 ID_3 ID_4 ID_5 ID_6 
+Utilizadores: vendedor_1@mail.com vendedor_2@mail.com vendedor_3@mail.com 
+Utilizador logado: 
+    Email: vendedor_3@mail.com
+    Nome: vendedor_3
+
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Imóveis: ID_0 ID_1 ID_10 ID_11 ID_12 ID_13 ID_14 ID_15 ID_16 ID_17 ID_18 ID_2 ID_3 ID_4 ID_5 ID_6 ID_7 ID_8 ID_9 
+Utilizadores: comprador_0@mail.com vendedor_10@mail.com vendedor_1@mail.com vendedor_2@mail.com vendedor_3@mail.com vendedor_4@mail.com vendedor_5@mail.com vendedor_6@mail.com vendedor_7@mail.com vendedor_8@mail.com vendedor_9@mail.com 
 Utilizador logado: 
 null
 -------------------------- LOG --------------------------
 
 -------------------------- LOG --------------------------
-Imóveis: ID_0 ID_1 ID_2 ID_3 ID_4 ID_5 
-Utilizadores: 1 2 3 
+Imóveis: ID_0 ID_1 ID_10 ID_11 ID_12 ID_13 ID_14 ID_15 ID_16 ID_17 ID_18 ID_2 ID_3 ID_4 ID_5 ID_6 ID_7 ID_8 ID_9 
+Utilizadores: comprador_0@mail.com comprador_1@mail.com comprador_2@mail.com comprador_3@mail.com comprador_4@mail.com vendedor_10@mail.com vendedor_1@mail.com vendedor_2@mail.com vendedor_3@mail.com vendedor_4@mail.com vendedor_5@mail.com vendedor_6@mail.com vendedor_7@mail.com vendedor_8@mail.com vendedor_9@mail.com 
 Utilizador logado: 
-    Email: 2
-    Nome: 2
+    Email: vendedor_5@mail.com
+    Nome: vendedor_5
 
 -------------------------- LOG --------------------------
 
 -------------------------- LOG --------------------------
-Imóveis: ID_0 ID_1 ID_2 ID_3 ID_4 ID_5 
-Utilizadores: 1 2 3 
+Imóveis: ID_0 ID_1 ID_10 ID_11 ID_12 ID_13 ID_14 ID_15 ID_16 ID_17 ID_18 ID_2 ID_3 ID_4 ID_5 ID_6 ID_7 ID_8 ID_9 
+Utilizadores: comprador_0@mail.com comprador_1@mail.com comprador_2@mail.com comprador_3@mail.com comprador_4@mail.com comprador_5@mail.com vendedor_10@mail.com vendedor_1@mail.com vendedor_2@mail.com vendedor_3@mail.com vendedor_4@mail.com vendedor_5@mail.com vendedor_6@mail.com vendedor_7@mail.com vendedor_8@mail.com vendedor_9@mail.com 
 Utilizador logado: 
-    Email: 1
-    Nome: 1
+    Email: comprador_5@mail.com
+    Nome: comprador_5
 
 -------------------------- LOG --------------------------
 
 -------------------------- LOG --------------------------
-Imóveis: ID_0 
-Utilizadores: 1 
+Imóveis: ID_0 ID_1 ID_10 ID_11 ID_12 ID_13 ID_14 ID_15 ID_16 ID_17 ID_18 ID_2 ID_3 ID_4 ID_5 ID_6 ID_7 ID_8 ID_9 
+Utilizadores: comprador_0@mail.com comprador_10@mail.com comprador_1@mail.com comprador_2@mail.com comprador_3@mail.com comprador_4@mail.com comprador_5@mail.com comprador_6@mail.com comprador_7@mail.com comprador_8@mail.com comprador_9@mail.com vendedor_10@mail.com vendedor_1@mail.com vendedor_2@mail.com vendedor_3@mail.com vendedor_4@mail.com vendedor_5@mail.com vendedor_6@mail.com vendedor_7@mail.com vendedor_8@mail.com vendedor_9@mail.com 
 Utilizador logado: 
-    Email: 1
-    Nome: 1
-
--------------------------- LOG --------------------------
-
--------------------------- LOG --------------------------
-Imóveis: ID_0 
-Utilizadores: 1 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
--------------------------- LOG --------------------------
-
--------------------------- LOG --------------------------
-Imóveis: ID_0 
-Utilizadores: 1 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
--------------------------- LOG --------------------------
-
--------------------------- LOG --------------------------
-Imóveis: ID_0 ID_1 
-Utilizadores: 1 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
--------------------------- LOG --------------------------
-
--------------------------- LOG --------------------------
-Imóveis: ID_0 ID_1 ID_2 
-Utilizadores: 1 
-Utilizador logado: 
-    Email: 1
-    Nome: 1
-
+null
 -------------------------- LOG --------------------------
