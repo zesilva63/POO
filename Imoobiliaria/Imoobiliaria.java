@@ -224,7 +224,6 @@ public class Imoobiliaria implements Serializable{
                     }
                 }
             }
-
         }
         return imoveis;
     }
@@ -236,15 +235,15 @@ public class Imoobiliaria implements Serializable{
    public Utilizador getUtilizador(){
        return this.utilizador;
    }
-   
+
    /**
     * Obter o #ID do próximo Imóvel a ser registado na aplicação.
-    * @return 
+    * @return
     */
    public int getId(){
        return this.id;
    }
-   
+
    // TODOS OS UTILIZADORES
 
     /**
@@ -335,7 +334,7 @@ public class Imoobiliaria implements Serializable{
         }
         else throw new SemAutorizacaoException ("Apenas Vendedores.");
     }
-    
+
     /**
      * Adicionar um Comprador ao leilão.
      * @param id
@@ -347,7 +346,7 @@ public class Imoobiliaria implements Serializable{
         if(leilao != null) leilao.adicionaComprador(id,limite,incrementos,minutos);
         else throw new LeilaoTerminadoException("Leilão terminado.");
     }
-    
+
     /**
      * Correr um leilão, adicionando utilizadores arbitrários ao mesmo.
      */
@@ -374,18 +373,18 @@ public class Imoobiliaria implements Serializable{
         }
         else System.out.println("Nenhuma licitação atingiu o Preço Mínimo do Imóvel!");
     }
-     
+
     /**
      * Retornar um Imóvel para o Leilão, apenas no caso deste Imóvel existir.
      * @param idImovel
-     * @return 
+     * @return
      */
     public Imovel getImovelLeilao(String idImovel) throws ImovelInexistenteException {
         if(this.imoveis.containsKey(idImovel))
             return this.imoveis.get(idImovel);
         else throw new ImovelInexistenteException("O Imovel não existe.");
     }
-    
+
     /**
      * Encerrar o leilão.
      * @return
@@ -402,16 +401,16 @@ public class Imoobiliaria implements Serializable{
             return vencedor.clone();
         }
     }
-    
+
     /**
      * Devolver o leilão que está aberto.
-     * @return 
+     * @return
      */
     public Leilao getLeilao(){
         if(this.leilao != null) return this.leilao;
         else return null;
     }
-    
+
     // GRAVAR
     /**
      * Gravar o estado da aplicação num determinado ficheiro.
@@ -438,7 +437,7 @@ public class Imoobiliaria implements Serializable{
         ois.close();
         return te;
     }
-    
+
     /**
      * Fazer um ficheiro de texto log com toda a informação na Imobiliária no momento em que é fechada.
      * @param f
@@ -452,7 +451,7 @@ public class Imoobiliaria implements Serializable{
         fw.flush();
         fw.close();
     }
-    
+
     public String toString(){
         StringBuilder str;
         str = new StringBuilder();
@@ -468,5 +467,5 @@ public class Imoobiliaria implements Serializable{
         str.append(this.utilizador);
         return str.toString();
     }
-    
+
 }
